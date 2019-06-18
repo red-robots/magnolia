@@ -11,10 +11,8 @@
 	Custom client login, link and title.
 ---------------------------------------*/
 function my_login_logo() { 
-  $custom_logo_id = get_theme_mod( 'custom_logo' );
-  $logoImg = wp_get_attachment_image_src($custom_logo_id,'large');
-  $logo_url = ($logoImg) ? $logoImg[0] : '';
-  if($custom_logo_id) { ?>
+  $logo_url = get_bloginfo('template_url') . '/images/logo.png';
+  if($logo_url) { ?>
   <style type="text/css">
     body.login div#login h1 a {
       <?php if($logo_url) { ?>

@@ -11,8 +11,8 @@
 	?>
 
 	<?php /*=== SECTION 1 ===*/ ?>
-	<div id="section1"  class="parallax-window section fp-auto-height-responsive" data-parallax="scroll" data-image-src="<?php echo $img1_src;?>">
-		<div class="wrapper">
+	<div id="section0"  data-anchor="page1" class="parallax-window section first-section fp-auto-height-responsive" data-parallax="scroll" data-image-src="<?php echo $img1_src;?>">
+		<div class="wrapper clear">
 			<div class="taglinediv">
 				<?php if ($title_1 && $title_2) { ?>
 					<h1 class="tagline orig">
@@ -34,8 +34,8 @@
 		$button_text = get_field('button_text');
 		$button_link = get_field('button_link');
 	?>
-	<div id="section2" class="section">
-	    <div class="wrapper">
+	<div id="section1" data-anchor="page2" class="section">
+	    <div class="wrapper clear">
 			<div class="intro about animated medwrap text-center large-text">
 				<?php echo $about ?>
 				<?php if ($button_text && $button_link) { ?>
@@ -47,21 +47,154 @@
 
 	<?php  
 		/*=== SECTION 3 ===*/
-		$about = get_field('about');
-		$button_text = get_field('button_text');
-		$button_link = get_field('button_link');
+		$services = get_field('service');
 	?>
-	<div id="section3" class="section">
-		<div class="wrapper">
+	<div id="section2" data-anchor="page3" class="section services-section">
+		<div class="wrapper clear">
 			<div class="intro whatwedo">
 				<h2 class="section-title text-center">What We Do</h2>
-				<p>Lorem ipsum gravida donec nulla orci maecenas leo, praesent feugiat vulputate sed himenaeos quisque, nostra cursus dolor potenti viverra nec blandit varius enim faucibus ante consectetur convallis a vitae lacinia venenatis iaculis ornare turpis.</p>
-				<p>Scelerisque nisi ut viverra curabitur justo ut maecenas sagittis mi eleifend, sed ullamcorper velit bibendum nostra mollis urna condimentum nibh rutrum ultricies, volutpat aenean quisque sodales pellentesque lectus auctor feugiat molestie class vivamus ultricies pharetra proin habitasse porttitor morbi, sit justo amet suspendisse dictumst lectus nostra fermentum, varius lorem quisque diam hendrerit hac proin rutrum blandit lacus dictum cursus amet conubia euismod mollis posuere dui laoreet.</p>
-				<p>Morbi volutpat rhoncus aliquet dui ornare vitae duis justo purus suscipit tristique est, porta primis eleifend inceptos curae rutrum mattis iaculis non nisi nullam pharetra pellentesque vitae malesuada neque senectus nisi augue vel, litora lacus cubilia sagittis nostra suspendisse egestas etiam, massa integer congue lacinia molestie tempor senectus aliquam primis dictum dapibus porttitor auctor molestie tempus massa faucibus curabitur integer.</p>
+				<?php if ($services) { ?>
+				<div class="services fullwidth">
+					<div class="flexrow">
+						<?php foreach ($services as $svc) { 
+						$s_icon = $svc['service_icon'];
+						$s_title = $svc['service_title'];
+						$s_text = $svc['service_description']; ?>
+						<div class="fbox svc text-center">
+							<?php if ($s_icon) { ?>
+							<div class="svc-icon">
+								<span><img src="<?php echo $s_icon['url'] ?>" alt="<?php echo $s_icon['title'] ?>" /></span>
+							</div>	
+							<?php } ?>
+							<?php if ($s_title) { ?>
+								<h3 class="box-title"><?php echo $s_title ?></h3>
+							<?php } ?>
+							<?php if ($s_text) { ?>
+								<div class="svc-text"><?php echo $s_text ?></div>
+							<?php } ?>
+						</div>	
+						<?php } ?>
+					</div>
+				</div>	
+				<?php } ?>
 			</div>
 		</div>
 	</div>
+
+
+	<?php  
+		/*=== SECTION 4 ===*/
+		$why_title = get_field('why_title');
+		$description = get_field('description');
+		$details = get_field('details');
+	?>
+	<div id="section3" data-anchor="page4" class="section whyus-section">
+		<div class="wrapper clear">
+			<div class="intro whyus text-center">
+				<?php if ($why_title) { ?>
+					<h2 class="section-title text-center"><?php echo $why_title ?></h2>
+				<?php } ?>
+				
+				<?php if ($description) { ?>
+				<div class="why-text fullwidth">
+					<?php echo $description ?>
+				</div>	
+				<?php } ?>
+
+				<?php if ($details) { ?>
+				<div class="whydetails fullwidth">
+					<div class="medwrap">
+						<div class="flexrow">
+							<?php $i=1; foreach ($details as $d) { 
+							$d_icon = $d['icon'];
+							$d_title = $d['title'];
+							$d_text = $d['description']; ?>
+							<div id="wcol<?php echo $i;?>" class="whybox">
+								<?php if ($d_icon) { ?>
+								<div class="icon">
+									<span><img src="<?php echo $d_icon['url'] ?>" alt="<?php echo $d_icon['title'] ?>" /></span>
+								</div>	
+								<?php } ?>
+								<?php if ($d_title) { ?>
+									<h3 class="title"><?php echo $d_title ?></h3>
+								<?php } ?>
+								<?php if ($d_text) { ?>
+									<div class="text"><?php echo $d_text ?></div>
+								<?php } ?>
+							</div>	
+							<?php $i++; } ?>
+						</div>
+					</div>
+				</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+
+	<?php  
+	/*=== Contact Us ===*/
+	$contact_description = get_field('contact_description');
+	?>
+	<div id="section4" data-anchor="page5" class="section contactus-section clear">
+		<div class="wrapper clear">
+			<div id="contact" class="intro contactus text-center">
+				<h2 class="section-title text-center">Contact us.</h2>
+				<?php if ($contact_description) { ?>
+					<div class="contact-text"><?php echo $contact_description ?></div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+	
+
+	<?php /*=== FOOTER ===*/ ?>
+	<?php
+	$phone_number = get_field('phone_number','option');  
+	$address_1 = get_field('address_1','option');  
+	$address_2 = get_field('address_2','option');  
+
+	$linkedin = get_field('linkedin','option');
+	$facebook = get_field('facebook','option');
+	$twitter = get_field('twitter','option');
+	?>
+	<div id="footer" data-anchor="page6" class="section clear footer-section">
+		<div class="wrapper">
+			<div class="intro footer-info text-center">
+				<h2 class="section-title"><?php echo get_bloginfo('name'); ?></h2>
+				<?php if ($phone_number) { ?>
+				<div class="phone"><?php echo $phone_number ?></div>	
+				<?php } ?>
+				<?php if ($address_1) { ?>
+				<div class="address add1"><?php echo $address_1 ?></div>	
+				<?php } ?>
+				<?php if ($address_2) { ?>
+				<div class="address add2"><?php echo $address_2 ?></div>	
+				<?php } ?>
+
+				<?php if ($linkedin || $facebook || $twitter) { ?>
+				<div class="social-links">
+					<?php if ($linkedin) { ?>
+					<a href="<?php echo $linkedin ?>" target="_blank"><i class="fab fa-linkedin-in"></i><span class="sr-only">Linkedin</span></a>
+					<?php } ?>
+					<?php if ($facebook) { ?>
+					<a href="<?php echo $facebook ?>" target="_blank"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+					<?php } ?>
+					<?php if ($twitter) { ?>
+					<a href="<?php echo $twitter ?>" target="_blank"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+					<?php } ?>
+				</div>
+				<?php } ?>
+
+				<div class="copyright">
+					Copyright <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?>. All Rights Reserved.
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>
+
+
 
 <?php endwhile; ?>
 <?php

@@ -25,24 +25,42 @@ jQuery(document).ready(function ($) {
 	$('#fullpage').fullpage({
 		scrollBar:false,
 		lazyLoading:true,
-		autoScrolling:true,
 		scrollingSpeed: 1000,
 		responsiveWidth: 900,
-		responsiveHeight: 600,
+		responsiveHeight: 700,
 		autoScrolling: true,
-		fitToSection:false,
+		fitToSection: false,
+		scrollOverflow: true,
+		anchors: ['page1', 'page2', 'page3','page4'],
 		afterLoad: function(anchorLink, index){
 			var loadedSection = $(this);
 			$("#site_logo").addClass("animateThis show");
 			setTimeout(unAnimateLogo, 3000);
 			loadedSection.find('.about').addClass('fadeInUp');
+			//$("body").addClass('scrolled');
 		},
 		onLeave: function(anchorLink, index){
 			$("#site_logo").removeClass('show');
 			var loadedSection = $(this);
 			loadedSection.find('.about').removeClass('fadeInUp');
+			//$("body").removeClass('scrolled');
 		}
 	});
+
+	// var myFullpage = new fullpage('#fullpage', {
+ //        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+ //        scrollOverflow: true
+ //    });
+
+	$(window).scroll(function() {    
+	    var scroll = $(window).scrollTop();
+	     //>=, not <=
+	   if (scroll >= 300) {
+	        $("body").addClass('scrolled');
+	    } else {
+	    	$("body").removeClass('scrolled');
+	    }
+	}); //missing );
 
 	/*
 	*
@@ -107,28 +125,6 @@ jQuery(document).ready(function ($) {
 
 
 
-
-
-// $('#fullpage').fullpage({
-// 		scrollBar:true,
-// 		lazyLoading:true,
-// 		autoScrolling:false,
-// 		responsiveWidth: 900,
-// 		responsiveHeight: 500,
-// 		scrollBar: true,
-// 		fitToSection:false,
-// 		parallax: true,
-// 		parallaxOptions: {
-// 			type: 'reveal',
-// 			percentage: 62,
-// 			property: 'translate'
-// 		},
-// 		afterLoad: function(anchorLink, index){
-// 			var loadedSection = $(this);
-			
-// 		}
-// 	});
-
 // 	initialize(false);
 
 // function initialize(hasScrollBar){
@@ -148,6 +144,42 @@ jQuery(document).ready(function ($) {
 // 		fitToSection:false
 // 	});
 // }
+
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top - 80
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          //$target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            //$target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
 
 
 

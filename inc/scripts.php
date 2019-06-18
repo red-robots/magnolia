@@ -32,19 +32,21 @@ function acstarter_scripts() {
 			true 
 		);
 
-	// wp_enqueue_script( 
-	// 		'fullpage', 
-	// 		get_template_directory_uri() . '/assets/js/vendors/fullpage.js', 
-	// 		array(), '3.0.5', 
-	// 		true 
-	// 	);
-
 	wp_enqueue_script( 
 			'extension-fullpage', 
-			get_template_directory_uri() . '/assets/js/vendors/fullpage.extensions.min.js', 
-			array(), '3.0.5', 
+			get_template_directory_uri() . '/assets/js/vendors/iscroll.min.js', 
+			array(), '5.2.0', 
 			true 
 		);
+
+	wp_enqueue_script( 
+			'scrolloverflow', 
+			get_template_directory_uri() . '/assets/js/vendors/scrolloverflow.min.js', 
+			array(), '5.2.0', 
+			true 
+		);
+
+	
 
 
 
