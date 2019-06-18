@@ -42,9 +42,10 @@ if( function_exists('acf_add_options_page') ) {acf_add_options_page();}
 /*-------------------------------------
   Hide Front End Admin Menu Bar
 ---------------------------------------*/
-if ( ! current_user_can( 'manage_options' ) ) {
-    show_admin_bar( false );
-}
+show_admin_bar( false );
+// if ( ! current_user_can( 'manage_options' ) ) {
+//     show_admin_bar( false );
+// }
  /*-------------------------------------
   Move Yoast to the Bottom
 ---------------------------------------*/
