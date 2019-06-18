@@ -1,0 +1,65 @@
+.main-navigation {
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-top: 35px;
+	@include mid {
+		margin-top: 0;
+		width: 300px;
+		position: absolute;
+		top: 60px;
+		right: 0;
+		z-index: 11;
+		float: none;
+		animation-delay: 1.1s;
+	}
+	@media screen and (max-width:899px) {
+		&.animated.fadeInRight {
+			// transition-property: none !important;
+			// transform: none !important;
+			// animation: none !important;
+			-webkit-animation-name: fadeIn;
+  			animation-name: fadeIn;
+  			animation-delay: 2s;
+		}
+	}
+	ul {
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+	}
+	.menu {
+		display: inline-block;
+		text-align: center;
+		@include mid {
+			float: right;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	.menu > li {
+		float: left;
+	}
+	.menu a {
+		color: #FFF;
+		text-decoration: none;
+		font-size: 16px;
+		position: relative;
+	}
+	.menu > li > a {
+		padding: 8px 25px 10px;
+		line-height: 1.2;
+	}
+	.menu li.last > a {
+		&:before {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 4px solid #FFF;
+		}
+	}
+}
