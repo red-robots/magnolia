@@ -1,15 +1,20 @@
 html, body, .site {
 	height: 100%!important;
 }
+.default-template {
+	background: #FFF;
+	color: $color-dark-blue;
+	.site-main {
+		min-height: 30em;
+	}
+}
 .section {
 	background: #FFF;
 	color: $color__text-main;
 	font-weight: 300;
+	position: relative;
 	&.parallax-window {
 		background: transparent;
-	}
-	.wrapper {
-		padding-bottom: 40px;
 	}
 }
 .first-section {
@@ -18,7 +23,15 @@ html, body, .site {
 .taglinediv {
 	display: inline-block;
 	position: relative;
-	margin-top: 8%;
+	margin: 10% auto 0;
+	transform: scale(.8);
+	@include transition(all ease-out .3s);
+	@include tab {
+		transform: unset;
+	}
+	@include mid {
+		margin: 5% auto 0;
+	}
 }
 .tagline {
 	position: relative;
@@ -40,9 +53,12 @@ html, body, .site {
 	span.t1 {
 		font-family: $font-secondary;
 		font-weight: 200;
-		font-size: 1em;
+		font-size: 0.7em;
 		text-transform: lowercase;
 		padding: 30px 50px 15px;
+		@include tab {
+			font-size: 1em;
+		}
 		@include mid {
 			font-size: 1.3em;
 		}
@@ -50,8 +66,11 @@ html, body, .site {
 	span.t2 {
 		font-family: 'Poppins', sans-serif;
 		font-weight: 600;
-		font-size: 1.8em;
+		font-size: 1.5em;
 		text-transform: uppercase;
+		@include tab {
+			font-size: 1.8em;
+		}
 		@include mid {
 			font-size: 2em;
 		}
@@ -224,13 +243,9 @@ html, body, .site {
 	}
 }
 .about {
-	padding-top: 5%;
-	opacity: 0;
-	//@include transition(all ease-out .3s);
-	-webkit-animation-duration: .6s;
-  	animation-duration: .6s;
+	opacity: 1;
   	@include mid {
-  		padding-top: 8%;
+  
   	}
 	p strong {
 		width: 100%;
@@ -263,6 +278,7 @@ html, body, .site {
 		color: #FFF;
 		background: $color__text-main;
 		border-color: $color__text-main;
+		transform: scale(1.1);
 	}
 }
 .section.services-section {
@@ -315,33 +331,33 @@ html, body, .site {
 		padding: 0 20%;
 	}
 }
-.whatwedo {
-	@include desk {
-		padding-top: 8%;
-	}
-	.section-title {
-		margin-bottom: 15px;
-	}
-}
+
 .section.whyus-section {
 	background: $color-light-blue;
 	color: #FFF;
-	.whyus {
-		padding-top: 14%;
+	.wrapper {
+		padding-top: 8%;
+		padding-bottom: 6%;
 	}
 }
 .whydetails {
 	padding-top: 4%;
 	padding-bottom: 4%;
 	.whybox {
-		padding: 20px;
+		padding: 15px 20px 20px;
+		border-top: 1px solid #FFF;
 		@include tab {
+			padding: 20px;
 			width: 50%;
 			padding: 20px;
+			border-top: none;
 		}
 		@include desk {
 			padding: 20px 40px;
 		}
+	}
+	.whybox:first-child {
+		border-top: none;
 	}
 	@include tab {
 		.whybox:nth-child(1),
@@ -362,11 +378,16 @@ html, body, .site {
 	}
 }
 
-.contactus-section .contactus {
-	padding-top: 10%;
-	@include mid {
-		padding-top: 15%;
-		padding-bottom: 8%;
+.contactus-section {
+	.wrapper {
+		padding-top: 5%;
+	}
+	.contactus {
+		padding-top: 7%;
+		@include mid {
+			padding-top: 5%;
+			padding-bottom: 5%;
+		}
 	}
 }
 
@@ -388,6 +409,7 @@ html, body, .site {
 		max-width: 800px;
 		width: 100%;
 		margin: 0 auto;
+		font-weight: 400;
 		input[type="text"],
 		input[type="email"],
 		textarea {
@@ -432,6 +454,47 @@ html, body, .site {
 		background: #FFF;
 		padding: 10px 20px;
 		margin: 0 auto;
+		@include transition(all ease-out .3s);
+		&:hover {
+			color: #FFF;
+			border-color: $color-dark-blue;
+			background: $color-dark-blue;
+			transform: scale(1.1);
+		}
+	}
+}
+
+.section-one {
+	height: 100%;
+	.wrapper {
+		height: 100%;
+		padding-top: 0;
+		padding-bottom: 0;
+		@include flexbox();
+		@include flexbox-direction(row);
+		@include flexbox-justify(center);
+		@include flexbox-align-items(center);
+	}
+}
+
+.section-two {
+	.wrapper {
+		padding-top: 6%;
+		padding-bottom: 10%;
+		@include desk {
+			padding-top: 6%;
+			padding-bottom: 8%;
+		}
+	}
+}
+
+.section-three {
+	.wrapper {
+		padding-top: 6%;
+		padding-bottom: 6%;
+	}
+	.section-title {
+		margin-bottom: 15px;
 	}
 }
 
@@ -440,6 +503,59 @@ html, body, .site {
 	color: #FFF;
 }
 
+.section-logo {
+	margin-bottom: 6%;
+	.magnoliasvg .st0 {
+		fill: $color-dark-blue;
+	}
+	.magnoliasvg .st0.logotxt2 {
+		fill: $color-light-blue;
+	}
+	.logov2 {
+		display: inline-block;
+		width: 350px;
+		@include mid {
+			width: 380px;
+		}
+		@include desk {
+			width: 500px;
+		}
+		&.animated {
+			.animate-stroke {
+				fill: $color-dark-blue;
+				stroke: $color-dark-blue;
+				stroke-width: 0;
+				animation: logo 3s normal forwards ease-in-out;
+			}
+
+			.animated2 {
+				-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.fadeInUp2 {
+				-webkit-animation-name: fadeInUp;
+				animation-name: fadeInUp;
+			}
+
+			.fadeInLeft2 {
+			  -webkit-animation-name: fadeInLeft;
+			  animation-name: fadeInLeft;
+			}
+			.fadeInRight2 {
+			  -webkit-animation-name: fadeInRight;
+			  animation-name: fadeInRight;
+			}
+
+			.hline {
+				animation-delay: 1s;
+			}
+		}
+
+		
+	}
+}
 .footer-section {
 	.wrapper {
 		padding-top: 5%;
@@ -476,41 +592,36 @@ html, body, .site {
 	}
 }
 
-@media screen and (max-width:899px) {
-	.first-section.fp-auto-height-responsive.fp-section {
-		height: 100%!important;
+body.error404 {
+	.site-main {
+		@include flexbox();
+		@include flexbox-align-items(center);
+		@include flexbox-justify(center);
 	}
-	.section.services-section {
-		padding-top: 20px;
-		padding-bottom: 20px;
+	.page-header {
+		position: relative;
+		margin-top: -7%;
 	}
-	#section1.section,
-	#footer.section,
-	.services-section.section,
-	.whyus-section.section,
-	.contactus-section.section {
-		height: auto!important;
-		.fp-scrollable,
-		.fp-tableCell {
-			height: auto!important;
+	.txt404 {
+		font-size: 100px;
+		font-weight: 300;
+		color: #e4e4e4;
+		span {
+			border-bottom: 5px solid #e4e4e4;
+			margin-bottom: 28px;
+			display: inline-block;
 		}
 	}
-	.contactus-section.section {
-		.wrapper {
-			padding-bottom: 0;
-		}
+	h1 {
+		font-size: 1.8em;
+		font-weight: 500;
+		line-height: 1.3;
+		margin: 0 0;
+		position: relative;
 	}
-	.section.whyus-section .whyus {
-		padding-top: 0;
-	}
-	#section1.section,
-	.services-section.section,
-	.whyus-section.section,
-	#footer.section {
-		.wrapper {
-			padding-top: 40px;
-			padding-bottom: 40px;
-		}
+	.icondiv span {
+		font-size: 6em;
+		color: #e4e4e4;
 	}
 }
 

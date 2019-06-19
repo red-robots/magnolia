@@ -21,6 +21,7 @@ a {
 body {
 	font-size: 16px;
 	line-height: 1.5;
+	color: #FFF;
 }
 .clear:before, .clear:after { content: " "; display: table; }
 .clear { *zoom: 1; }
@@ -92,11 +93,7 @@ body {
 	}
 }
 
-body.fp-viewing-page5 .logoSVG {
-	@include mid {
-		width: 390px;
-	}
-}
+
 .magnoliasvg {
   display: block;
   margin: 0 auto;
@@ -166,152 +163,40 @@ body.fp-viewing-page5 .logoSVG {
 	z-index: 1000;
 	padding-bottom: 10px;
 	background: transparent;
+	opacity: 1;
+	transform: translateY(0);
+	@include transition(all ease-in-out .5s);
 }
 
-// body.fp-viewing-1,
-// body.fp-viewing-2,
-// body.fp-viewing-3,
-// body.fp-viewing-4 {
-// 	.magnoliasvg .st0 {
-// 		fill: $color-dark-blue;
-// 		stroke: $color-dark-blue;
-// 	}
-// 	.magnoliasvg .logotxt2.st0 {
-// 		fill: $color-light-blue;
-// 		stroke: $color-light-blue;
-// 	}
-// }
-body.fp-viewing-1 {
+body.subpage {
+	.site-header {
+		position: relative;
+	}
 	.logo-wrapper {
-		padding-top: 40px;
-		padding-bottom: 10px;
+		padding-top: 15px;
+	}
+	.main-navigation {
+		top: 0;
+		margin-top: 10px;
+		padding-bottom: 8px;
 		@include mid {
-			padding-top: 60px;
+			top: 25px;
+			margin-top: 0;
 			padding-bottom: 0;
 		}
 	}
+	.main-navigation,
+	.animateThis * {
+		animation: none!important;
+	}
 }
-
-body.fp-viewing-page2,
-body.fp-viewing-page3,
-body.fp-viewing-page4,
-body.fp-viewing-page5 {
+body.scrolled {
 	.site-header {
-		background: #FFF;
-	}
-	.logo-wrapper {
-		padding-top: 30px;
-		padding-bottom: 10px;
-	}
-	.main-navigation {
-		margin-top: 0;
-		@include mid {
-			margin-top: -15px;
-		}
-	}
-	.magnoliasvg .st0 {
-		fill: $color-dark-blue;
-		stroke: $color-dark-blue;
-	}
-	.magnoliasvg .logotxt2.st0 {
-		fill: $color-light-blue;
-		stroke: $color-light-blue;
-	}
-
-}
-
-body.fp-viewing-page5 {
-	.main-navigation {
-		display: none;
+		transform: translateY(-100%);
+		opacity: 0;
+		z-index: -999;
 	}
 }
-
-body.fp-viewing-page1 {
-	.main-navigation .menu a {
-		color: #FFF
-	}
-	.menu li.last > a {
-		&:before {
-			border-color: #FFF;
-		}
-	}
-}
-
-body.fp-responsive {
-	.site-header {
-		background: transparent;
-	}
-	.magnoliasvg .st0 {
-		fill: #FFF!important;
-		stroke: #FFF!important;
-	}
-	.magnoliasvg .logotxt2.st0 {
-		fill: #FFF!important;
-		stroke: #FFF!important;
-	}
-	&.fp-viewing-4 .logoSVG {
-		width: 310px;
-	}
-	.main-navigation .menu a {
-		color: #FFF;
-	}
-	.main-navigation .menu li.last > a:before {
-		border-color: #FFF;
-	}
-}
-body.fp-responsive.scrolled {
-	.site-header {
-		background: #FFF;
-	}
-	.logo-wrapper {
-		padding-top: 30px;
-		padding-bottom: 10px;
-	}
-	.main-navigation {
-		margin-top: 15px;
-		margin-bottom: 10px;
-		@include mid {
-			margin-top: -15px;
-			margin-bottom: 0;
-		}
-	}
-	.magnoliasvg .st0 {
-		fill: $color-dark-blue!important;
-		stroke: $color-dark-blue!important;
-	}
-	.magnoliasvg .logotxt2.st0 {
-		fill: $color-light-blue!important;
-		stroke: $color-light-blue!important;
-	}
-	&.fp-viewing-4 .logoSVG {
-		width: 380px;
-	}
-	.main-navigation .menu a {
-		color: $color-dark-blue;
-	}
-	.main-navigation .menu li.last > a:before {
-		border-color: $color-dark-blue;
-	}
-	&.fp-viewing-4 {
-		.logo-wrapper {
-			padding-top: 40px;
-			@include mid {
-				padding-top: 30px;
-			}
-		}
-		.main-navigation {
-			display: none;
-		}
-	}
-}
-
-
-
-body.fp-viewing-page6 .site-header {
-	display: none;
-}
-
-
 
 .site-footer {
 	width: 100%;
