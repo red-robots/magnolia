@@ -46,9 +46,12 @@ function acstarter_scripts() {
 			true 
 		);
 
-	
-
-
+	wp_enqueue_script( 
+			'scrollspy', 
+			get_template_directory_uri() . '/assets/js/vendors/scrollspy.js', 
+			array(), '0.1.2', 
+			true 
+		);
 
 
 	wp_enqueue_script( 

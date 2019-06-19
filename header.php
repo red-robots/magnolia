@@ -27,8 +27,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
 			<div class="logo-wrapper"><a id="site_logo" class="logoSVG animateThis show" href="<?php echo get_site_url(); ?>"><?php get_template_part('template-parts/logo'); ?><span class="sr-only"><?php echo get_bloginfo('name') ?></span></a></div>
@@ -46,5 +46,6 @@
 			</nav>
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
+	<div id="content" class="contentwrapper clear">
 
 

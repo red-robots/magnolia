@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-
-
 	<?php
 		$img1 = get_field('banner_image');
 		$img1_src = ($img1) ? $img1['url'] : '';
@@ -15,13 +13,13 @@
 		<div class="wrapper clear">
 			<div class="taglinediv">
 				<?php if ($title_1 && $title_2) { ?>
-					<h1 class="tagline orig">
+					<h1 class="tagline orig wow">
 						<span class="t1"><em><?php echo $title_1 ?></em></span>
 						<span class="t2"><em><?php echo $title_2 ?></em></span>
 					</h1>
 					<div class="tagline clone">
-						<span class="t1 animated fadeIn"><em><?php echo $title_1 ?></em></span>
-						<span class="t2 animated zoomIn"><em><?php echo $title_2 ?></em></span>
+						<span class="t1  wow fadeInDown"><em><?php echo $title_1 ?></em></span>
+						<span class="t2  wow fadeInUp"><em><?php echo $title_2 ?></em></span>
 					</div>
 				<?php } ?>
 			</div>
@@ -153,7 +151,6 @@
 			</div>
 		</div>
 	</section>
-	
 
 <?php endwhile; ?>
 <?php

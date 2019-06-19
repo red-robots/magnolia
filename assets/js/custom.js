@@ -52,10 +52,14 @@ jQuery(document).ready(function ($) {
 	$(window).scroll(function() {    
 	    var scroll = $(window).scrollTop();
 	     //>=, not <=
-	   if (scroll >= 220) {
+	   if (scroll >= 320) {
 	        $("body").addClass('scrolled');
+	        $(".tagline.orig").removeClass('animated');
+	        $(".tagline.clone span").removeClass('animated');
 	    } else {
 	    	$("body").removeClass('scrolled');
+	    	$(".tagline.orig").addClass('animated');
+	    	$(".tagline.clone span").addClass('animated');
 	    }
 	}); //missing );
 
@@ -100,13 +104,6 @@ jQuery(document).ready(function ($) {
 	------------------------------------*/
 	$('.js-blocks').matchHeight();
 
-	/*
-	*
-	*	Wow Animation
-	*
-	------------------------------------*/
-	new WOW().init();
-
 
 	$(document).on("click","#toggleMenu",function(){
 		$(this).toggleClass('open');
@@ -150,6 +147,25 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+
+	// var divPosition = $("#section1").offset().top;
+	// if(divPosition>300) {
+	// 	$('body').addClass("scrolled");
+	// }
+	var wow = new WOW();
+    wow.init();
+
+	WOW.prototype.addBox = function(element){
+	    this.boxes.push(element);
+	};
+
+	$('.wow').on('scrollSpy:exit', function() {
+		$(this).css({
+		 'visibility': 'hidden',
+		 'animation-name': 'none'
+		}).removeClass('animated');
+		wow.addBox(this);
+	}).scrollSpy();
 
 
 });// END #####################################    END

@@ -1,6 +1,9 @@
 html, body, .site {
 	height: 100%!important;
 }
+.content-main-wrapper {
+	height: 100%!important;
+}
 .default-template {
 	background: #FFF;
 	color: $color-dark-blue;
@@ -79,7 +82,7 @@ html, body, .site {
 			display: block;
 		}
 	}
-	&.animatedLine {
+	&.animated {
 		&:before {
 			content:"";
 			display: block;
@@ -87,9 +90,10 @@ html, body, .site {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 100%;
+			width: 0;
 			height: 4px;
 			animation: vertical_middle_line 1s normal forwards ease;
+			animation-delay: 2.2s;
 		}
 		span.t1 {
 			&:before, &:after {
@@ -97,17 +101,19 @@ html, body, .site {
 				display: block;
 				background: #FFF;
 				width: 4px;
-				height: 136%;
+				height: 0;
 				position: absolute;
 				top: 0;
 			}
 			&:before {
 				left: 0;
 				animation: bottom_to_top 1s normal forwards ease-in-out;
+				animation-delay: 2.2s;
 			}
 			&:after {
 				right: 0;
 				animation: top_to_bottom 1s normal forwards ease-in-out;
+				animation-delay: 2.2s;
 			}
 		}
 		span.t2 {
@@ -116,21 +122,25 @@ html, body, .site {
 					content:"";
 					display: block;
 					background: #FFF;
-					width: 13%;
+					width: 0;
 					height: 5px;
 					position: absolute;
-					top: 40%;
+					top: 48%;
 				}
 				&:before {
 					left: 0;
 					animation: bottom_left_to_right 1s normal forwards ease-in-out;
+					animation-delay: 2.2s;
 				}
 				&:after {
 					right: 0;
 					animation: bottom_right_to_left 1s normal forwards ease-in-out;
+					animation-delay: 2.2s;
 				}
 			}
 		}
+
+
 	}
 }
 
@@ -152,7 +162,7 @@ html, body, .site {
 		}
 	}
 	span.t2 {
-		animation-delay: 2.5s;
+		animation-delay: 2s;
 		em {
 			&:before, &:after {
 				display: none;
@@ -415,6 +425,11 @@ html, body, .site {
 		textarea {
 			border-radius: 0px;
 			border: 3px solid #dedede;
+			outline: none;
+			@include transition(all ease .3s);
+			&:focus {
+				border-color: $color-dark-blue;
+			}
 		}
 		.field_sublabel_below .ginput_complex.ginput_container label {
 			margin-bottom: 0;
@@ -465,7 +480,8 @@ html, body, .site {
 }
 
 .section-one {
-	height: 100%;
+	// height: 100%;
+	height: 100vh;
 	.wrapper {
 		height: 100%;
 		padding-top: 0;

@@ -7,7 +7,7 @@ $linkedin = get_field('linkedin','option');
 $facebook = get_field('facebook','option');
 $twitter = get_field('twitter','option');
 ?>
-
+</div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear footer-section">
 		<div class="wrapper">
 			<div class="intro footer-info text-center">
