@@ -437,6 +437,7 @@ html, body, .site {
 		ul.gform_fields li.gfield {
 			position: relative;
 			margin-top: 20px;
+			padding-right: 0!important;
 		}
 		#field_1_1 label.gfield_label {
 			display: none;
@@ -476,6 +477,27 @@ html, body, .site {
 			background: $color-dark-blue;
 			transform: scale(1.1);
 		}
+	}
+	.gform_wrapper .gfield_description.validation_message, 
+	.gform_wrapper .top_label .gfield_description.validation_message {
+		font-size: 13px;
+		padding: 5px 15px!important;
+	}
+	.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+		background-color: rgba(255,223,224,.25);
+		margin-bottom: 6px!important;
+		border-top: 1px solid #C89797;
+		border-bottom: 1px solid #C89797;
+		padding-bottom: 6px;
+		padding-top: 2px;
+		box-sizing: border-box;
+	}
+	.gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+		max-width: calc(100%)!important;
+	}
+	.gform_wrapper .validation_message,
+	.gform_wrapper div.validation_error {
+		color: #e61d1d;
 	}
 }
 
