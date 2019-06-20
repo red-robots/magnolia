@@ -1950,7 +1950,7 @@ to{width:100%}
 .footer-section .wrapper{padding-top:5%;padding-bottom:5%}
 .footer-section .section-title{font-size:20px;font-weight:700;margin-bottom:20px}
 .footer-section .phone{margin-bottom:20px}
-.footer-section .copyright{margin-top:25px}
+.footer-section .copyright{margin-top:25px;width:50%;margin:25px auto}
 .social-links{margin:30px 0 0}
 .social-links a{display:inline-block;width:32px;height:32px;text-align:center;border:1px solid #FFF;line-height:30px;color:#FFF;background:transparent;margin:2px}
 .social-links a:hover{color:#091f40;background:#FFF}

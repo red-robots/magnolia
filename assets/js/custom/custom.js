@@ -54,8 +54,8 @@ jQuery(document).ready(function ($) {
 	     //>=, not <=
 	   if (scroll >= 320) {
 	        $("body").addClass('scrolled');
-	        $(".tagline.orig").removeClass('animated');
-	        $(".tagline.clone span").removeClass('animated');
+	        // $(".tagline.orig").removeClass('animated');
+	        // $(".tagline.clone span").removeClass('animated');
 	    } else {
 	    	$("body").removeClass('scrolled');
 	    	$(".tagline.orig").addClass('animated');
@@ -159,13 +159,13 @@ jQuery(document).ready(function ($) {
 	    this.boxes.push(element);
 	};
 
-	$('.wow').on('scrollSpy:exit', function() {
-		$(this).css({
-		 'visibility': 'hidden',
-		 'animation-name': 'none'
-		}).removeClass('animated');
-		wow.addBox(this);
-	}).scrollSpy();
+	// $('.wow').on('scrollSpy:exit', function() {
+	// 	$(this).css({
+	// 	 'visibility': 'hidden',
+	// 	 'animation-name': 'none'
+	// 	}).removeClass('animated');
+	// 	wow.addBox(this);
+	// }).scrollSpy();
 
 
 });// END #####################################    END

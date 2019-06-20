@@ -37,7 +37,7 @@ $twitter = get_field('twitter','option');
 				<?php } ?>
 
 				<div class="copyright">
-					Copyright <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?>. All Rights Reserved.
+					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?>, In Organization, cannot exercise fiduciary powers over your trust(s) until it has received its charter from the Tennessee Department of Financial Institutions
 				</div>
 			</div>
 		</div>
