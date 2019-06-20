@@ -271,9 +271,11 @@ html, body, .site {
 	float: left;
 }
 .flexrow {
-	@include flexbox();
-	@include flexbox-wrap(wrap);
-	@include flexbox-direction(row);
+	@media screen and (min-width: $tabwidth) {
+		@include flexbox();
+		@include flexbox-wrap(wrap);
+		@include flexbox-direction(row);
+	}
 }
 
 .morebtn {

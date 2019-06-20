@@ -1878,8 +1878,8 @@ to{width:100%}
 }.about{opacity:1}
 .about p strong{width:100%;display:inline-block;padding:0 12%;font-weight:600;line-height:1.2}
 .fullwidth{width:100%;float:left}
-.flexrow{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-.morebtn{color:#091f40;font-weight:300;text-decoration:none;display:inline-block;padding:6px 18px;background:transparent;border:5px solid #ebebeb}
+@media screen and (min-width:600px){.flexrow{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+}.morebtn{color:#091f40;font-weight:300;text-decoration:none;display:inline-block;padding:6px 18px;background:transparent;border:5px solid #ebebeb}
 .morebtn:hover{color:#FFF;background:#091f40;border-color:#091f40;-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
 .section.services-section{background:#ebebeb}
 .section-title{font-size:2em;font-weight:300;margin:0}
