@@ -146,7 +146,7 @@
 				<div class="section-logo"><a class="logov2 animateStroke wow" data-wow-offset="10" data-wow-delay="1s" href="<?php echo get_site_url(); ?>"><?php get_template_part('template-parts/logo'); ?></a></div>
 				<h2 class="section-title text-center animated zoomIn wow">Contact us.</h2>
 				<?php if ($contact_description) { ?>
-					<div class="contact-text animated fadeIn wow" data-wow-delay="1s"><?php echo $contact_description ?></div>
+					<div class="contact-text clear animated fadeInUp wow"><?php echo $contact_description ?></div>
 				<?php } ?>
 			</div>
 		</div>

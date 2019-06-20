@@ -388,11 +388,14 @@ html, body, .site {
 	}
 }
 
-.contactus-section {
+.contactus-section.parallax-window.section {
 	.wrapper {
 		padding-top: 5%;
 	}
 	.contactus {
+		max-width: 800px;
+		width: 100%;
+		margin: 0 auto;
 		padding-top: 7%;
 		@include mid {
 			padding-top: 5%;
@@ -403,6 +406,7 @@ html, body, .site {
 
 .contact-text {
 	font-size: 16px;
+	background: transparent;
 	@include mid {
 		font-size: 20px;
 	}
@@ -415,11 +419,21 @@ html, body, .site {
 			color: $color-light-blue;
 		}
 	}
-	.gform_wrapper form {
-		max-width: 800px;
+	.gform_wrapper {
+		margin-bottom: 10%;
 		width: 100%;
-		margin: 0 auto;
+		float: left;
+		background: #FFF;
+	}
+	.gform_wrapper form {
+		display: block;
+		padding: 20px;
+		background: #FFF;
 		font-weight: 400;
+		position: relative;
+		z-index: 5;
+		width: 100%;
+		float: left;
 		input[type="text"],
 		input[type="email"],
 		textarea {
@@ -456,6 +470,12 @@ html, body, .site {
 		li.gfield.gfield_html {
 			text-align: center;
 		}
+		.field_sublabel_below .ginput_complex.ginput_container label {
+			font-size: 12px;
+		}
+	}
+	.gform_wrapper ul.gform_fields > li:first-child {
+		margin-top: 0!important;
 	}
 	.gform_footer {
 		text-align: center;

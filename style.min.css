@@ -1902,15 +1902,16 @@ to{width:100%}
 @media(min-width:600px){.whydetails .whybox:nth-child(1),.whydetails .whybox:nth-child(3){border-right:1px solid #FFF}
 .whydetails .whybox:nth-child(1),.whydetails .whybox:nth-child(2){border-bottom:1px solid #FFF}
 }.whydetails .title{font-size:17px;font-weight:700;margin:0;color:#091f40;text-transform:none}
-.contactus-section .wrapper{padding-top:5%}
-.contactus-section .contactus{padding-top:7%}
-@media(min-width:900px){.contactus-section .contactus{padding-top:5%;padding-bottom:5%}
-}.contact-text{font-size:16px}
+.contactus-section.parallax-window.section .wrapper{padding-top:5%}
+.contactus-section.parallax-window.section .contactus{max-width:800px;width:100%;margin:0 auto;padding-top:7%}
+@media(min-width:900px){.contactus-section.parallax-window.section .contactus{padding-top:5%;padding-bottom:5%}
+}.contact-text{font-size:16px;background:transparent}
 @media(min-width:900px){.contact-text{font-size:20px}
 }.contact-text p strong{font-weight:normal}
 .contact-text a{color:#091f40}
 .contact-text a:hover{color:#5c8097}
-.contact-text .gform_wrapper form{max-width:800px;width:100%;margin:0 auto;font-weight:400}
+.contact-text .gform_wrapper{margin-bottom:10%;width:100%;float:left;background:#FFF}
+.contact-text .gform_wrapper form{display:block;padding:20px;background:#FFF;font-weight:400;position:relative;z-index:5;width:100%;float:left}
 .contact-text .gform_wrapper form input[type="text"],.contact-text .gform_wrapper form input[type="email"],.contact-text .gform_wrapper form textarea{border-radius:0;border:3px solid #dedede;outline:0;-webkit-transition:all ease .3s;transition:all ease .3s}
 .contact-text .gform_wrapper form input[type="text"]:focus,.contact-text .gform_wrapper form input[type="email"]:focus,.contact-text .gform_wrapper form textarea:focus{border-color:#091f40}
 .contact-text .gform_wrapper form .field_sublabel_below .ginput_complex.ginput_container label{margin-bottom:0}
@@ -1918,6 +1919,8 @@ to{width:100%}
 .contact-text .gform_wrapper form #field_1_1 label.gfield_label{display:none}
 .contact-text .gform_wrapper form label.gfield_label{display:inline-block;position:absolute;top:0;left:0;top:10px;left:10px;font-size:13px;font-weight:500;color:#909090}
 .contact-text .gform_wrapper form li.gfield.gfield_html{text-align:center}
+.contact-text .gform_wrapper form .field_sublabel_below .ginput_complex.ginput_container label{font-size:12px}
+.contact-text .gform_wrapper ul.gform_fields>li:first-child{margin-top:0 !important}
 .contact-text .gform_footer{text-align:center}
 .contact-text .gform_wrapper .gform_footer input.button,.contact-text .gform_wrapper .gform_footer input[type=submit]{border:3px solid #dedede;box-shadow:none;text-shadow:none;border-radius:0;-webkit-appearance:none;background:#FFF;padding:10px 20px;margin:0 auto;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .contact-text .gform_wrapper .gform_footer input.button:hover,.contact-text .gform_wrapper .gform_footer input[type=submit]:hover{color:#FFF;border-color:#091f40;background:#091f40;-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
