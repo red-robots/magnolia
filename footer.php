@@ -2,7 +2,7 @@
 $phone_number = get_field('phone_number','option');  
 $address_1 = get_field('address_1','option');  
 $address_2 = get_field('address_2','option');  
-$address_2 = get_field('address_2','option');  
+$address_3 = get_field('address_3','option');  
 
 $linkedin = get_field('linkedin','option');
 $facebook = get_field('facebook','option');
