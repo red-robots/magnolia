@@ -44,10 +44,9 @@ $disc = get_field('disclaimer','option');
 				<?php } ?>
 
 				<div class="copyright">
-					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?> <?php if($arr)echo $arr; ?>
+					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?>. <?php if($arr)echo $arr; ?>
 					<br><br>
 					<?php if($disc)echo $disc; ?>
-					All
 				</div>
 			</div>
 		</div>
