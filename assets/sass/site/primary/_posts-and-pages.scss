@@ -392,7 +392,22 @@ html, body, .site {
 	}
 }
 
-.contactus-section.parallax-window.section {
+// .contactus-section.parallax-window.section {
+// 	.wrapper {
+// 		padding-top: 5%;
+// 	}
+// 	.contactus {
+// 		max-width: 800px;
+// 		width: 100%;
+// 		margin: 0 auto;
+// 		padding-top: 7%;
+// 		@include mid {
+// 			padding-top: 5%;
+// 			padding-bottom: 5%;
+// 		}
+// 	}
+// }
+.contactus-section.section {
 	.wrapper {
 		padding-top: 5%;
 	}
@@ -633,8 +648,11 @@ html, body, .site {
 	}
 	.copyright {
 		margin-top: 25px;
-		width: 50%;
+		width: 90%;
 		margin: 25px auto;
+		@include tab {
+			width: 50%;
+		}
 	}
 }
 .social-links {

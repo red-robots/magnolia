@@ -1902,9 +1902,9 @@ to{width:100%}
 @media(min-width:600px){.whydetails .whybox:nth-child(1),.whydetails .whybox:nth-child(3){border-right:1px solid #FFF}
 .whydetails .whybox:nth-child(1),.whydetails .whybox:nth-child(2){border-bottom:1px solid #FFF}
 }.whydetails .title{font-size:17px;font-weight:700;margin:0;color:#091f40;text-transform:none}
-.contactus-section.parallax-window.section .wrapper{padding-top:5%}
-.contactus-section.parallax-window.section .contactus{max-width:800px;width:100%;margin:0 auto;padding-top:7%}
-@media(min-width:900px){.contactus-section.parallax-window.section .contactus{padding-top:5%;padding-bottom:5%}
+.contactus-section.section .wrapper{padding-top:5%}
+.contactus-section.section .contactus{max-width:800px;width:100%;margin:0 auto;padding-top:7%}
+@media(min-width:900px){.contactus-section.section .contactus{padding-top:5%;padding-bottom:5%}
 }.contact-text{font-size:16px;background:transparent}
 @media(min-width:900px){.contact-text{font-size:20px}
 }.contact-text p strong{font-weight:normal}
@@ -1950,8 +1950,9 @@ to{width:100%}
 .footer-section .wrapper{padding-top:5%;padding-bottom:5%}
 .footer-section .section-title{font-size:20px;font-weight:700;margin-bottom:20px}
 .footer-section .phone{margin-bottom:20px}
-.footer-section .copyright{margin-top:25px;width:50%;margin:25px auto}
-.social-links{margin:30px 0 0}
+.footer-section .copyright{margin-top:25px;width:90%;margin:25px auto}
+@media(min-width:600px){.footer-section .copyright{width:50%}
+}.social-links{margin:30px 0 0}
 .social-links a{display:inline-block;width:32px;height:32px;text-align:center;border:1px solid #FFF;line-height:30px;color:#FFF;background:transparent;margin:2px}
 .social-links a:hover{color:#091f40;background:#FFF}
 body.error404 .site-main{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
