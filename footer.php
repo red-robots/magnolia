@@ -2,10 +2,14 @@
 $phone_number = get_field('phone_number','option');  
 $address_1 = get_field('address_1','option');  
 $address_2 = get_field('address_2','option');  
+$address_2 = get_field('address_2','option');  
 
 $linkedin = get_field('linkedin','option');
 $facebook = get_field('facebook','option');
 $twitter = get_field('twitter','option');
+
+$arr = get_field('arr','option');
+$disc = get_field('disclaimer','option');
 ?>
 </div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear footer-section">
@@ -20,6 +24,9 @@ $twitter = get_field('twitter','option');
 				<?php } ?>
 				<?php if ($address_2) { ?>
 				<div class="address add2"><?php echo $address_2 ?></div>	
+				<?php } ?>
+				<?php if ($address_3) { ?>
+				<div class="address add3"><?php echo $address_3 ?></div>	
 				<?php } ?>
 
 				<?php if ($linkedin || $facebook || $twitter) { ?>
@@ -37,7 +44,12 @@ $twitter = get_field('twitter','option');
 				<?php } ?>
 
 				<div class="copyright">
-					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?>, In Organization, cannot exercise fiduciary powers over your trust(s) until it has received its charter from the Tennessee Department of Financial Institutions
+					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?>
+					<br>
+					<?php if($arr)echo $arr; ?>
+					<br>
+					<?php if($disc)echo $disc; ?>
+					All
 				</div>
 			</div>
 		</div>
