@@ -1894,6 +1894,7 @@ to{width:100%}
 }@media(min-width:1200px){.box-title{padding:0 20%}
 }.section.whyus-section{background:#5c8097;color:#FFF}
 .section.whyus-section .wrapper{padding-top:8%;padding-bottom:6%}
+.section.whyus-section .section-title sup{font-size:14px;top:-18px;right:-4px;padding-right:8px}
 .whydetails{padding-top:4%;padding-bottom:4%}
 .whydetails .whybox{padding:15px 20px 20px;border-top:1px solid #FFF}
 @media(min-width:600px){.whydetails .whybox{padding:20px;width:50%;padding:20px;border-top:0}
@@ -1952,7 +1953,8 @@ to{width:100%}
 .footer-section .phone{margin-bottom:20px}
 .footer-section .copyright{margin-top:25px;width:90%;margin:25px auto}
 @media(min-width:600px){.footer-section .copyright{width:50%}
-}.social-links{margin:30px 0 0}
+}.footer-section .copyright sup{font-size:8px;margin-left:2px;margin-right:3px;top:-6px}
+.social-links{margin:30px 0 0}
 .social-links a{display:inline-block;width:32px;height:32px;text-align:center;border:1px solid #FFF;line-height:30px;color:#FFF;background:transparent;margin:2px}
 .social-links a:hover{color:#091f40;background:#FFF}
 body.error404 .site-main{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}

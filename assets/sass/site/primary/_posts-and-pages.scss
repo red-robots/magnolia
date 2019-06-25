@@ -353,6 +353,12 @@ html, body, .site {
 		padding-top: 8%;
 		padding-bottom: 6%;
 	}
+	.section-title sup {
+		font-size: 14px;
+		top: -18px;
+		right: -4px;
+		padding-right: 8px;
+	}
 }
 .whydetails {
 	padding-top: 4%;
@@ -652,6 +658,12 @@ html, body, .site {
 		margin: 25px auto;
 		@include tab {
 			width: 50%;
+		}
+		sup {
+			font-size: 8px;
+			margin-left: 2px;
+			margin-right: 3px;
+			top: -6px;
 		}
 	}
 }
