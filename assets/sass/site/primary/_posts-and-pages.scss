@@ -253,15 +253,20 @@ html, body, .site {
 .large-text {
 	color: $color__text-main;
 	// font-size: 1.2em; 
-	line-height: 1.3;
+	line-height: 1.4;
 	font-size: 3.8vw;
 	@include mid {
-		// font-size: 1.5em;
+		line-height: 1.3;
 		font-size: 2.15vw;
 	}
 	sup {
-		font-size: 13px;
-		top: -20px;
+		font-size: 9px;
+		top: -9px;
+		left: 2px;
+		@include tab {
+			font-size: 13px;
+			top: -20px;
+		}
 	}
 }
 .about {
@@ -272,9 +277,12 @@ html, body, .site {
 	p strong {
 		width: 100%;
 		display: inline-block;
-		padding: 0 12%;
+		padding: 0 0;
 		font-weight: 600;
 		line-height: 1.2;
+		@include tab {
+			padding: 0 12%;
+		}
 	}
 }
 
