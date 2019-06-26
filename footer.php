@@ -15,7 +15,7 @@ $disc = get_field('disclaimer','option');
 	<footer id="footer" data-anchor="page6" class="section clear footer-section">
 		<div class="wrapper">
 			<div class="intro footer-info text-center">
-				<h2 class="section-title"><?php echo get_bloginfo('name'); ?></h2>
+				<h2 class="section-title wtm"><?php echo get_bloginfo('name'); ?><sup>TM</sup></h2>
 				<?php if ($phone_number) { ?>
 				<div class="phone"><?php echo $phone_number; ?></div>	
 				<?php } ?>

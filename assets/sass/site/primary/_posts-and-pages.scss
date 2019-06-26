@@ -253,6 +253,10 @@ html, body, .site {
 		// font-size: 1.5em;
 		font-size: 2.15vw;
 	}
+	sup {
+		font-size: 13px;
+		top: -20px;
+	}
 }
 .about {
 	opacity: 1;
@@ -648,6 +652,11 @@ html, body, .site {
 		font-size: 20px;
 		font-weight: 700;
 		margin-bottom: 20px;
+		sup {
+			font-size: 10px;
+			top: -8px;
+			left: 3px;
+		}
 	}
 	.phone {
 		margin-bottom: 20px;
