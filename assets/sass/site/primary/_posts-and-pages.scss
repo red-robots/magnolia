@@ -502,7 +502,17 @@ html, body, .site {
 		.field_sublabel_below .ginput_complex.ginput_container label {
 			font-size: 12px;
 		}
+		li.recaptcha-container {
+			text-align: center;
+			label {
+				display: none;
+			}
+			.ginput_recaptcha {
+				display: inline-block;
+			}
+		}
 	}
+	
 	.gform_wrapper ul.gform_fields > li:first-child {
 		margin-top: 0!important;
 	}
