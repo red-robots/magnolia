@@ -34,7 +34,7 @@
 	?>
 	<section id="section1" data-anchor="page2" class="section section-two">
 	    <div class="wrapper clear">
-			<div class="intro about animated fadeInUp wow medwrap text-center large-text">
+			<div class="intro about animated fadeInUp wow text-center large-text">
 				<?php echo $about ?>
 				<?php if ($button_text && $button_link) { ?>
 				<div class="buttondiv"><a class="morebtn" href="<?php echo $button_link ?>"><?php echo $button_text ?></a></div>	
