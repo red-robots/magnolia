@@ -52,7 +52,7 @@ jQuery(document).ready(function ($) {
 	$(window).scroll(function() {    
 	    var scroll = $(window).scrollTop();
 	     //>=, not <=
-	   if (scroll >= 320) {
+	   if (scroll >= 200) {
 	        $("body").addClass('scrolled');
 	        // $(".tagline.orig").removeClass('animated');
 	        // $(".tagline.clone span").removeClass('animated');

@@ -26,14 +26,20 @@ html, body, .site {
 .taglinediv {
 	display: inline-block;
 	position: relative;
-	margin: 10% auto 0;
+	// margin: 10% auto 0;
+	margin: -35% auto 0;
 	transform: scale(.8);
+	top: -12%;
 	@include transition(all ease-out .3s);
 	@include tab {
 		transform: unset;
+		margin: -35% auto 0;
+		top: -8%;
 	}
 	@include mid {
-		margin: 5% auto 0;
+		// margin: 5% auto 0;
+		top: 0;
+		margin: -17% auto 0;
 	}
 }
 .tagline {
@@ -512,7 +518,7 @@ html, body, .site {
 			}
 		}
 	}
-	
+
 	.gform_wrapper ul.gform_fields > li:first-child {
 		margin-top: 0!important;
 	}
@@ -568,6 +574,7 @@ html, body, .site {
 		padding-top: 0;
 		padding-bottom: 0;
 		@include flexbox();
+		@include flexbox-wrap(wrap);
 		@include flexbox-direction(row);
 		@include flexbox-justify(center);
 		@include flexbox-align-items(center);
@@ -654,9 +661,17 @@ html, body, .site {
 	}
 }
 .footer-section {
+	a {
+		text-decoration: none;
+		color: #FFF;
+	}
 	.wrapper {
-		padding-top: 5%;
-		padding-bottom: 5%;
+		padding-top: 7%;
+		padding-bottom: 4%;
+		@include tab {
+			padding-top: 5%;
+			padding-bottom: 5%;
+		}
 	}
 	.section-title {
 		font-size: 20px;
