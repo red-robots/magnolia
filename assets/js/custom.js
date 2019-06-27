@@ -148,10 +148,6 @@ jQuery(document).ready(function ($) {
 	});
 
 
-	// var divPosition = $("#section1").offset().top;
-	// if(divPosition>300) {
-	// 	$('body').addClass("scrolled");
-	// }
 	var wow = new WOW();
     wow.init();
 
@@ -167,5 +163,19 @@ jQuery(document).ready(function ($) {
 	// 	wow.addBox(this);
 	// }).scrollSpy();
 
+	/* CONTACT FORM hide Label */
+	$(document).on("focus",".contact-text .ginput_container input, .contact-text .ginput_container textarea",function(){
+		var wrapper = $(this).parents("li.gfield");
+		wrapper.find(".gfield_label").addClass('on-focus');
+	});
+	$(document).on("focusout blur",".contact-text .ginput_container input, .contact-text .ginput_container textarea",function(){
+		var wrapper = $(this).parents("li.gfield");
+		var str = $(this).val();
+		var txtVal = str.replace(/\s/g,'');
+		if( txtVal=='' ) {
+			$(this).val("");
+			wrapper.find(".gfield_label").removeClass('on-focus');
+		} 
+	});
 
 });// END #####################################    END
