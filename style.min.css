@@ -1786,7 +1786,7 @@ to{width:100%}
 }.fp-responsive .parallax-mirror{height:100% !important}
 .fp-responsive .fp-auto-height-responsive.fp-section#section1,.fp-responsive .fp-auto-height-responsive.fp-section#section1 .fp-tableCell{height:100% !important}
 .medwrap{max-width:800px;width:90%;margin:0 auto}
-.large-text{color:#091f40;line-height:1.4;font-size:20px}
+.large-text{color:#091f40;line-height:1.4;font-size:18px}
 .large-text sup{font-size:9px;top:-10px;left:2px}
 @media(min-width:900px){.large-text{line-height:1.3;font-size:2vw}
 .large-text sup{font-size:9px;top:-9px}
