@@ -34,19 +34,22 @@ html, body, .site {
 	display: inline-block;
 	position: relative;
 	// margin: 10% auto 0;
-	margin: -35% auto 0;
+	margin: -18% auto 0;
 	transform: scale(.8);
 	top: -12%;
 	@include transition(all ease-out .3s);
 	@include tab {
-		transform: unset;
-		margin: -35% auto 0;
+		transform: scale(.8);
+		margin: -10% auto 0;
 		top: -8%;
 	}
 	@include mid {
-		// margin: 5% auto 0;
+		transform: unset;
 		top: 0;
 		margin: -17% auto 0;
+	}
+	@media screen and (max-width:500px) {
+		margin: -38% auto 0;
 	}
 }
 .tagline {

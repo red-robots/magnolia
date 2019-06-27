@@ -2,7 +2,10 @@
 	width: 100%;
 	float: left;
 	text-align: center;
-	margin-top: 35px;
+	margin-top: 30px;
+	@include tab {
+		margin-top: 25px;
+	}
 	@include mid {
 		margin-top: 0;
 		width: 300px;
