@@ -22,32 +22,6 @@ jQuery(document).ready(function ($) {
 	};
 	setTimeout(animateTaglineBorder, 3000);
 
-	// $('#fullpage').fullpage({
-	// 	scrollBar:false,
-	// 	lazyLoading:true,
-	// 	scrollingSpeed: 1000,
-	// 	responsiveWidth: 900,
-	// 	responsiveHeight: 700,
-	// 	autoScrolling: true,
-	// 	fitToSection: false,
-	// 	scrollOverflow: true,
-	// 	anchors: ['page1', 'page2', 'page3','page4'],
-	// 	afterLoad: function(anchorLink, index){
-	// 		var loadedSection = $(this);
-	// 		$("#site_logo").addClass("animateThis show");
-	// 		setTimeout(unAnimateLogo, 3000);
-	// 		loadedSection.find('.about').addClass('fadeInUp');
-	// 		//$("body").addClass('scrolled');
-	// 	},
-	// 	onLeave: function(anchorLink, index){
-	// 		$("#site_logo").removeClass('show');
-	// 		var loadedSection = $(this);
-	// 		loadedSection.find('.about').removeClass('fadeInUp');
-	// 		//$("body").removeClass('scrolled');
-	// 	}
-	// });
-
-
 
 	$(window).scroll(function() {    
 	    var scroll = $(window).scrollTop();
@@ -63,46 +37,6 @@ jQuery(document).ready(function ($) {
 	    }
 	}); //missing );
 
-	/*
-	*
-	*	Responsive iFrames
-	*
-	------------------------------------*/
-	var $all_oembed_videos = $("iframe[src*='youtube']");
-	
-	$all_oembed_videos.each(function() {
-	
-		$(this).removeAttr('height').removeAttr('width').wrap( "<div class='embed-container'></div>" );
- 	
- 	});
-	
-	/*
-	*
-	*	Flexslider
-	*
-	------------------------------------*/
-	$('.flexslider').flexslider({
-		animation: "slide",
-	}); // end register flexslider
-	
-	/*
-	*
-	*	Colorbox
-	*
-	------------------------------------*/
-	$('a.gallery').colorbox({
-		rel:'gal',
-		width: '80%', 
-		height: '80%'
-	});
-
-	
-	/*
-	*
-	*	Equal Heights Divs
-	*
-	------------------------------------*/
-	$('.js-blocks').matchHeight();
 
 
 	$(document).on("click","#toggleMenu",function(){

@@ -191,15 +191,7 @@ gulp.task('styles', function () {
 gulp.task( 'vendorsJs', function() {
 	//gulp.src( jsVendorSRC )
 	gulp.src( [
-		'./assets/js/vendors/flexslider.js',
-		'./assets/js/vendors/blocks.js',
-		'./assets/js/vendors/colorbox.js',
-		'./assets/js/vendors/navigation.js',
 		'./assets/js/vendors/parallax.min.js',
-		'./assets/js/vendors/jquery.fullPage.min.js',
-		'./assets/js/vendors/iscroll.min.js',
-		'./assets/js/vendors/scrolloverflow.min.js',
-		'./assets/js/vendors/scrollspy.js',
 		'./assets/js/vendors/wow.js'
 		] )
 		.pipe( concat( jsVendorFile + '.js' ) )
