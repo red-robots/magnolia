@@ -10,6 +10,7 @@ $twitter = get_field('twitter','option');
 
 $arr = get_field('arr','option');
 $disc = get_field('disclaimer','option');
+$legal_disclaimer = get_field('legal_disclaimer','option');
 ?>
 </div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear footer-section">
@@ -43,11 +44,14 @@ $disc = get_field('disclaimer','option');
 				</div>
 				<?php } ?>
 
-				<div class="copyright">
+				<div class="copyright clear">
 					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?><sup>TM</sup>. <?php if($arr)echo $arr; ?>
 					<br><br>
 					<?php if($disc)echo $disc; ?>
 				</div>
+				<?php if ($legal_disclaimer) { ?>
+				<div class="legal-disclaimer clear"><?php echo $legal_disclaimer ?></div>
+				<?php } ?>
 			</div>
 		</div>
 	</footer>
