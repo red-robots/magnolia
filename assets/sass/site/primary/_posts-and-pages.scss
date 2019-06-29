@@ -783,7 +783,7 @@ body.error404 {
 	}
 }
 .legal-disclaimer {
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: 300;
 	line-height: 1.5;
 	text-align: justify;
@@ -795,6 +795,9 @@ body.error404 {
 	p {
 		margin-bottom: 0;
 		margin-top: 15px;
+	}
+	a {
+		text-decoration: underline;
 	}
 }
 
