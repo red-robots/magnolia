@@ -98,7 +98,6 @@ var notify       = require('gulp-notify'); // Sends message notification to you
 var browserSync  = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
 var reload       = browserSync.reload; // For manual browser reload.
 
-
 /**
  * Task: `browser-sync`.
  *
@@ -124,7 +123,7 @@ var reload       = browserSync.reload; // For manual browser reload.
 
  		// Inject CSS changes.
  		// Commnet it to reload browser for every CSS change.
- 		// injectChanges: true,
+ 		injectChanges: true,
 
  		// Use a specific port (instead of the one auto-detected by Browsersync).
  		// port: 7000,
@@ -150,14 +149,15 @@ var reload       = browserSync.reload; // For manual browser reload.
 gulp.task('styles', function () {
  	gulp.src( styleSRC )
 		.pipe( sourcemaps.init() )
-		// .pipe( sass( {
-		// 	errLogToConsole: true,
-		// 	outputStyle: 'compact',
-		// 	//outputStyle: 'compressed',
-		// 	// outputStyle: 'nested',
-		// 	// outputStyle: 'expanded',
-		// 	precision: 10
-		// } ) )
+		.pipe( sass( {
+			errLogToConsole: true,
+			outputStyle: 'expanded',
+			//outputStyle: 'compressed',
+			// outputStyle: 'nested',
+			// outputStyle: 'expanded',
+			precision: 10
+		} ) )
+		
 		.pipe(sass().on('error', sass.logError))
 		.pipe( sourcemaps.write( { includeContent: false } ) )
 		.pipe( sourcemaps.init( { loadMaps: true } ) )

@@ -1,3 +1,42 @@
+$tabwidth: 600px;
+$midwidth: 900px;
+$deskwidth: 1200px;
+
+$color__background-body: #091f40;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: #0999F3;
+$color__link-visited: purple;
+$color__link-hover: midnightblue;
+$color__text-main: #091f40;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+$color-black: #000;
+$color-dark-blue: #091f40;
+$color-light-grey: #ebebeb;
+$color-light-blue: #5c8097;
+
+$font__main: 'Open Sans', sans-serif;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$font-heading: 'Open Sans', sans-serif;
+$font-secondary: 'Roboto Slab', serif;
+
+
 @mixin tab { @media (min-width: $tabwidth) { @content; } }
 @mixin mid { @media (min-width: $midwidth) { @content; } }
 @mixin desk {  @media (min-width: $deskwidth) { @content; } }
@@ -20,6 +59,8 @@
 	content: "";
 	display: table;
 	table-layout: fixed;
+	clear: both;
+	*zoom: 1;
 }
 
 // Clear after (not all clearfix need this also)

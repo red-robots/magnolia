@@ -10,7 +10,7 @@
 
 	<?php /*=== SECTION 1 ===*/ ?>
 	<section id="section0"  data-anchor="page1" class="parallax-window section first-section section-one" data-parallax="scroll" data-image-src="<?php echo $img1_src;?>">
-		<?php get_template_part('template-parts/navigation'); ?>
+		<?php //get_template_part('template-parts/navigation'); ?>
 		<div class="wrapper clear">
 			<div class="taglinediv">
 				<?php if ($title_1 && $title_2) { ?>

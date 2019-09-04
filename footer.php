@@ -1,8 +1,16 @@
 <?php
 $phone_number = get_field('phone_number','option');  
-$address_1 = get_field('address_1','option');  
-$address_2 = get_field('address_2','option');  
-$address_3 = get_field('address_3','option');  
+// $address_1 = get_field('address_1','option');  
+// $address_2 = get_field('address_2','option');  
+// $address_3 = get_field('address_3','option');  
+$address = array();
+for($a=1; $a<=3; $a++) {
+	$a_field = 'address_' . $a;
+	$val = get_field($a_field,'option');
+	if($val) {
+		$address[] = $val;
+	}
+}
 
 $linkedin = get_field('linkedin','option');
 $facebook = get_field('facebook','option');
@@ -13,21 +21,18 @@ $disc = get_field('disclaimer','option');
 $legal_disclaimer = get_field('legal_disclaimer','option');
 ?>
 </div><!-- #content -->
-	<footer id="footer" data-anchor="page6" class="section clear footer-section">
+	<footer id="footer" data-anchor="page6" class="section clear site-footer footer-section">
 		<div class="wrapper">
-			<div class="intro footer-info text-center">
+			<div class="intro footer-info col-left">
 				<h2 class="section-title wtm"><?php echo get_bloginfo('name'); ?><sup>TM</sup></h2>
 				<?php if ($phone_number) { ?>
 				<div class="phone"><?php echo $phone_number; ?></div>	
 				<?php } ?>
-				<?php if ($address_1) { ?>
-				<div class="address add1"><?php echo $address_1; ?></div>	
-				<?php } ?>
-				<?php if ($address_2) { ?>
-				<div class="address add2"><?php echo $address_2; ?></div>	
-				<?php } ?>
-				<?php if ($address_3) { ?>
-				<div class="address add3"><?php echo $address_3; ?></div>	
+
+				<?php if ($address) { ?>
+					<?php foreach ($address as $adr) { ?>
+						<div class="address"><?php echo $adr; ?></div>	
+					<?php  } ?>
 				<?php } ?>
 
 				<?php if ($linkedin || $facebook || $twitter) { ?>
@@ -46,12 +51,7 @@ $legal_disclaimer = get_field('legal_disclaimer','option');
 
 				<div class="copyright clear">
 					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?><sup>TM</sup>. <?php if($arr)echo $arr; ?>
-					<br><br>
-					<?php if($disc)echo $disc; ?>
 				</div>
-				<?php if ($legal_disclaimer) { ?>
-				<div class="legal-disclaimer clear"><?php echo $legal_disclaimer ?></div>
-				<?php } ?>
 			</div>
 		</div>
 	</footer>

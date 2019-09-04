@@ -1,10 +1,3 @@
-/**
- *	Custom jQuery Scripts
- *	
- *	Developed by: Austin Crane	
- *	Designed by: Austin Crane
- */
-
 jQuery(document).ready(function ($) {
 	
 	var unAnimateLogo = function(){
@@ -38,16 +31,29 @@ jQuery(document).ready(function ($) {
 	}); //missing );
 
 
+	$(document).on("click",".menutoggle",function(e){
+		e.preventDefault();
+		$(".mtoggle").toggleClass('open');
+	});
 
-	$(document).on("click","#toggleMenu",function(){
+	$(document).on("click","#mainmenu > li > a",function(e){
+		e.preventDefault();
 		$(this).toggleClass('open');
-		$('.mobile-navigation').toggleClass('open');
-		$('body').toggleClass('open-mobile-menu');
-		$('.site-header .logo').toggleClass('fixed');
-		var parentdiv = $(".mobile-navigation").outerHeight();
-		var mobile_nav_height = $(".mobile-main-nav").outerHeight();
-		if(mobile_nav_height>parentdiv) {
-			$('.mobile-navigation').addClass("overflow-height");
+		$(this).parents('li').toggleClass('open');
+		$(this).next().stop(true, true).slideToggle(400); 
+	    return false;    
+	});
+
+	if( $("#mainmenu > li.current-menu-parent").length ) {
+		$("#mainmenu > li.current-menu-parent > a").addClass('open');
+	}
+
+	var homepage_anchors = ['#contact'];
+	$("#mainmenu a").each(function(){
+		var href = $(this).attr('href');
+		if($.inArray(href, homepage_anchors) !== -1) {
+			var newURL = siteURL + href;
+			$(this).attr('href',newURL);
 		}
 	});
 
