@@ -207,3 +207,25 @@ body.scrolled {
 		background: rgba(5, 3, 29, 0.5);
 	}
 }
+
+.footer-section .footernav {
+	ul {
+		margin: 20px 0 0;
+		padding: 0 0;
+		list-style: none;
+	}
+	li {
+		line-height: 1.4;
+	}
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: rgba(255,255,255,.75);
+		font-size: 16px;
+		line-height: 1.2;
+		padding: 0 0;
+		&:hover {
+			color: #FFF;
+		}
+	}
+}

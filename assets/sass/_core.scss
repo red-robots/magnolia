@@ -239,6 +239,28 @@ body.scrolled {
 	.section-title.wtm {
 		font-size: 23px;
 	}
+	.col-left {
+		margin-bottom: 20px;
+		@include tab {
+			width: 55%;
+			float: left;
+			margin-bottom: 0;
+		}
+	}
+	.col-right {
+		@include tab {
+			width: 40%;
+			float: right;
+		}
+	}
+	.cta-btn a {
+		display: inline-block;
+		text-decoration: none;
+		padding: 8px 20px;
+		background: #FFF;
+		font-size: 25px;
+		color: $color-dark-blue;
+	}
 }
 
 .first-section {
@@ -977,6 +999,7 @@ html, body, .site {
 	.copyright {
 		margin: 30px 0 0;
 		width: 100%;
+		font-size: 15px;
 	}
 }
 .social-links {

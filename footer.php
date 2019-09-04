@@ -22,7 +22,7 @@ $legal_disclaimer = get_field('legal_disclaimer','option');
 ?>
 </div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear site-footer footer-section">
-		<div class="wrapper">
+		<div class="wrapper clear">
 			<div class="intro footer-info col-left">
 				<h2 class="section-title wtm"><?php echo get_bloginfo('name'); ?><sup>TM</sup></h2>
 				<?php if ($phone_number) { ?>
@@ -53,6 +53,12 @@ $legal_disclaimer = get_field('legal_disclaimer','option');
 					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?><sup>TM</sup>. <?php if($arr)echo $arr; ?>
 				</div>
 			</div>
+
+			<div class="footer-menu col-right">
+				<div class="cta-btn"><a href="#contact">Request Information</a></div>
+				<?php wp_nav_menu( array( 'menu' => 'Footer Menu', 'menu_id' => 'footermenu', 'container_class'=>'footernav','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
+			</div>
+
 		</div>
 	</footer>
 

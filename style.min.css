@@ -1738,6 +1738,10 @@ html[xmlns] .flexslider .slides{display:block}
 .menutoggle.open span:before{-webkit-transform:translateY(16px) rotate(45deg);-ms-transform:translateY(16px) rotate(45deg);transform:translateY(16px) rotate(45deg)}
 .menutoggle.open span:after{-webkit-transform:translateY(-16px) rotate(-45deg);-ms-transform:translateY(-16px) rotate(-45deg);transform:translateY(-16px) rotate(-45deg)}
 body.scrolled .menutoggle{background:rgba(5,3,29,0.5)}
+.footer-section .footernav ul{margin:20px 0 0;padding:0;list-style:none}
+.footer-section .footernav li{line-height:1.4}
+.footer-section .footernav a{display:inline-block;text-decoration:none;color:rgba(255,255,255,0.75);font-size:16px;line-height:1.2;padding:0}
+.footer-section .footernav a:hover{color:#FFF}
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-ms-word-break:normal;word-break:normal;word-break:normal;-ms-hyphens:none;-moz-hyphens:none;-webkit-hyphens:none;hyphens:none;page-break-inside:avoid}
 *,*:before,*:after{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}
 a{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
@@ -1786,6 +1790,10 @@ body.subpage .main-navigation{top:0;margin-top:10px;padding-bottom:8px}
 body.scrolled .site-header{-webkit-transform:translateY(-100%);-ms-transform:translateY(-100%);transform:translateY(-100%);opacity:0;z-index:-999}
 .site-footer{width:100%;clear:both;font-size:18px}
 .site-footer .section-title.wtm{font-size:23px}
+.site-footer .col-left{margin-bottom:20px}
+@media(min-width:600px){.site-footer .col-left{width:55%;float:left;margin-bottom:0}
+}@media(min-width:600px){.site-footer .col-right{width:40%;float:right}
+}.site-footer .cta-btn a{display:inline-block;text-decoration:none;padding:8px 20px;background:#FFF;font-size:25px;color:#091f40}
 .first-section .site-header{position:relative}
 .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute !important;height:1px;width:1px;overflow:hidden}
 html,body,.site{height:100% !important}
@@ -1935,7 +1943,7 @@ to{width:100%}
 }.footer-section .section-title{font-size:20px;font-weight:700;margin-bottom:20px}
 .footer-section .section-title sup{font-size:10px;top:-8px;left:3px}
 .footer-section .phone{margin-bottom:20px}
-.footer-section .copyright{margin:30px 0 0;width:100%}
+.footer-section .copyright{margin:30px 0 0;width:100%;font-size:15px}
 .social-links{margin:30px 0 0}
 .social-links a{display:inline-block;width:35px;height:38px;text-align:center;border:1px solid #FFF;line-height:36px;color:#FFF;background:transparent;margin:2px}
 .social-links a:hover{color:#091f40;background:#FFF}
