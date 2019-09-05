@@ -24,6 +24,8 @@ body {
 	line-height: 1.5;
 	color: #FFF;
 	background: $color__background-body;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 p {
 	margin-bottom: 1.5em;
@@ -249,28 +251,29 @@ big {
 	}
 }
 
-body.subpage {
-	.site-header {
-		position: relative;
-	}
-	.logo-wrapper {
-		padding-top: 15px;
-	}
-	.main-navigation {
-		top: 0;
-		margin-top: 10px;
-		padding-bottom: 8px;
-		@include mid {
-			top: 25px;
-			margin-top: 0;
-			padding-bottom: 0;
-		}
-	}
-	.main-navigation,
-	.animateThis * {
-		animation: none!important;
-	}
-}
+// body.subpage {
+// 	.site-header {
+// 		position: relative;
+// 	}
+// 	.logo-wrapper {
+// 		padding-top: 15px;
+// 	}
+// 	.main-navigation {
+// 		top: 0;
+// 		margin-top: 10px;
+// 		padding-bottom: 8px;
+// 		@include mid {
+// 			top: 25px;
+// 			margin-top: 0;
+// 			padding-bottom: 0;
+// 		}
+// 	}
+// 	.main-navigation,
+// 	.animateThis * {
+// 		animation: none!important;
+// 	}
+// }
+
 body.scrolled {
 	.site-header {
 		transform: translateY(-100%);
@@ -1017,6 +1020,181 @@ html, body, .site {
 		
 	}
 }
+
+/* Subpage */
+.banner-caption {
+	font-size: 30px;
+	line-height: 1.3;
+	color: #FFF;
+	text-shadow: 1px 2px 6px rgba(0,0,0,.65);
+	@include tab {
+		font-size: 5.2vw;
+	}
+	@include desk {
+		font-size: 70px;
+	}
+}
+body.subpage {
+	.side-navigation {
+		background: rgba(5, 3, 29, 0.85);
+	}
+}
+.subpage-section {
+	h2 {
+		font-size: 30px;
+		font-weight: 500;
+		line-height: 1.3;
+		@include tab {
+			font-size: 40px;
+		}
+		@include desk {
+			font-size: 60px;
+		}
+	}
+	h3 {
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1.3;
+		@include tab {
+			font-size: 25px;
+		}
+		@include desk {
+			font-size: 30px;
+		}
+	}
+	.wrapper {
+		padding-top: 6%;
+		padding-bottom: 10%;
+		padding-left: 30px;
+		padding-right: 30px;
+		@include desk {
+			padding-top: 6%;
+			padding-bottom: 8%;
+		}
+	}
+	.top-text {
+		max-width: 1000px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	&#section3 .wrapper {
+		padding-top: 3%;
+		padding-bottom: 5%;
+	}
+	&.imagebg, 
+	&.imagebg .wrapper {
+		min-height: 20em;
+		@include tab {
+			min-height: 30em;
+		}
+		@include mid {
+			min-height: 40em;
+		}
+	}
+	&.imagebg {
+		.wrapper {
+			padding-top: 0;
+			padding-bottom: 0;
+			height: 100%;
+			text-align: center;
+			@include flexbox();
+			@include flexbox-align-items(center);
+			@include flexbox-justify(center);
+		}
+	}
+}
+.section-blue {
+	background: $color-dark-blue;
+	color: #FFF!important;
+	.large-text {
+		color: #FFF!important;
+	}
+}
+.icons-columns {
+	.flexboxes {
+		@include flexbox();
+		@include flexbox-wrap(wrap);
+		@include flexbox-direction(row);
+		margin: 0 -20px;
+	}
+	.col {
+		margin: 10px 0;
+		width: 100%;
+		@include tab {
+			width: 50%;
+		}
+		@include mid {
+			width: 25%;
+		}
+	}
+	.pad {
+		padding: 20px;
+	}
+	.icondiv {
+		margin-bottom: 25px;
+	}
+	.icondiv span {
+		display: block;
+		width: 150px;
+		height: 150px;
+		margin: 0 auto;
+		background-size: 70%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-color: #FFF;
+		border-radius: 100%;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.text {
+		font-size: 18px;
+		line-height: 1.5;
+		@include tab {
+			font-size: 3vw;
+		}
+		@include mid {
+			font-size: 25px;
+		}
+	}
+	.title {
+		margin: 0 0 10px;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $blue2;
+		text-transform: uppercase;
+		@include tab {
+			font-size: 25px;
+		}
+	}
+}
+.section-gray {
+	background: #e8e8e7;
+	color: $color-dark-blue;
+	.top-text {
+		max-width: 100%;
+	}
+	.icons-columns .title {
+		color: $color-dark-blue;
+	}
+}
+.section-teal {
+	background: #547489;
+	color: #FFF!important;
+	.wrapper {
+		padding-top: 2%;
+		padding-bottom: 8%;
+	}
+	.large-text,
+	.morebtn {
+		color: #FFF!important;
+	}
+	.morebtn {
+		padding: 7px 18px 8px;
+		font-size: 22px;
+	}
+}
 .footer-section {
 	a {
 		text-decoration: none;
@@ -1069,10 +1247,18 @@ html, body, .site {
 }
 
 body.error404 {
+	.site-header {
+		position: relative;
+		background: $color-dark-blue;
+		padding-bottom: 25px;
+	}
 	.site-main {
 		@include flexbox();
 		@include flexbox-align-items(center);
 		@include flexbox-justify(center);
+	}
+	.logo-wrapper {
+		top: -4px;
 	}
 	.page-header {
 		position: relative;

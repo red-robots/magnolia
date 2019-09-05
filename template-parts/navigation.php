@@ -1,7 +1,10 @@
-<a href="#" class="menutoggle mtoggle"><span></span></a>
-<div class="side-navigation mtoggle">
-	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mainmenu', 'container_class'=>'navwrap','link_before'=>'<span>','link_after'=>'</span><i class="xx"></i>' ) ); ?>
+<div class="navOuterWrap">
+	<a href="#" class="menutoggle mtoggle"><span></span></a>
+	<div id="sideNav" class="side-navigation mtoggle">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mainmenu', 'container_class'=>'navwrap','link_before'=>'<span>','link_after'=>'</span><i class="xx"></i>' ) ); ?>
+	</div>	
 </div>
+
 <header id="masthead" class="site-header" role="banner">
 	<div class="wrapper">
 		<div class="logo-wrapper"><a id="site_logo" class="logoSVG animateThis show" href="<?php echo get_site_url(); ?>"><?php get_template_part('template-parts/logo'); ?><span class="sr-only"><?php echo get_bloginfo('name') ?></span></a></div>

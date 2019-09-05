@@ -15,6 +15,10 @@ jQuery(document).ready(function ($) {
 	};
 	setTimeout(animateTaglineBorder, 3000);
 
+	var windowTop = $(window).scrollTop();
+	if (windowTop >= 200) {
+		$("body").addClass('scrolled');
+	}
 
 	$(window).scroll(function() {    
 	    var scroll = $(window).scrollTop();
@@ -48,6 +52,21 @@ jQuery(document).ready(function ($) {
 	if( $("#mainmenu > li.current-menu-parent").length ) {
 		$("#mainmenu > li.current-menu-parent > a").addClass('open');
 	}
+
+	/* Close Side Navigation */
+	$(document).on('click', function (e) {
+		var target = e.target;
+		var parent = target.offsetParent;
+
+		if( $(target).hasClass('menutoggle') || $(parent).hasClass('menutoggle') ) {
+			//return false;
+		} else {
+			if ($(e.target).closest("#sideNav").length === 0) {
+		        $(".menutoggle").trigger("click");
+		    }
+		}
+	    
+	});
 
 	var homepage_anchors = ['#contact'];
 	$("a").each(function(){

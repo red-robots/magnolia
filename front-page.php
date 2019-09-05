@@ -33,6 +33,7 @@
 		$button_text = get_field('button_text');
 		$button_link = get_field('button_link');
 	?>
+	<div id="content"></div>
 	<section id="section1" data-anchor="page2" class="section section-two">
 	    <div class="wrapper clear">
 			<div class="intro about animated fadeInUp wow text-center large-text">
