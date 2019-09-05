@@ -62,7 +62,8 @@ jQuery(document).ready(function ($) {
 			//return false;
 		} else {
 			if ($(e.target).closest("#sideNav").length === 0) {
-		        $(".menutoggle").trigger("click");
+		        $(".mtoggle").removeClass('open');
+				$("body").removeClass('menu-open');
 		    }
 		}
 	    
