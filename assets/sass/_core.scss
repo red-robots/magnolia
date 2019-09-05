@@ -310,6 +310,9 @@ body.scrolled {
 		background: #FFF;
 		font-size: 25px;
 		color: $color-dark-blue;
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 }
 
