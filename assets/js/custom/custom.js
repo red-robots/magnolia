@@ -34,6 +34,7 @@ jQuery(document).ready(function ($) {
 	$(document).on("click",".menutoggle",function(e){
 		e.preventDefault();
 		$(".mtoggle").toggleClass('open');
+		$("body").toggleClass('menu-open');
 	});
 
 	$(document).on("click","#mainmenu > li > a",function(e){
@@ -49,7 +50,7 @@ jQuery(document).ready(function ($) {
 	}
 
 	var homepage_anchors = ['#contact'];
-	$("#mainmenu a").each(function(){
+	$("a").each(function(){
 		var href = $(this).attr('href');
 		if($.inArray(href, homepage_anchors) !== -1) {
 			var newURL = siteURL + href;

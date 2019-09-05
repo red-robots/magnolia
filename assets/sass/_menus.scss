@@ -77,19 +77,24 @@
 .side-navigation {
 	width: 350px;
 	height: 100%;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	transition: all ease-out .3s;
-	z-index: 1003;
+	z-index: 1200;
 	transform: translateX(-100%);
+	background: rgba(5, 3, 29, 0.6);
+	overflow-y: scroll;
+	overflow-x: hidden;
 	&.open {
 		transform: translateX(0);
 	}
 	.navwrap {
-		padding: 110px 20px 20px 45px;
+		// padding: 115px 20px 40px 45px;
+		margin-top: 115px;
+		padding: 20px 20px 40px 45px;
 		text-align: left;
-		background: rgba(5, 3, 29, 0.6);
+		// background: rgba(5, 3, 29, 0.6);
 	}
 	ul {
 		margin: 0 0;
@@ -163,7 +168,7 @@
 	position: absolute;
 	top: 40px;
 	left: 25px;
-	z-index: 1005;
+	z-index: 1205;
 	@include tab {
 		top: 50px;
 		left: 50px;

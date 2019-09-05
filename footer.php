@@ -17,8 +17,10 @@ $facebook = get_field('facebook','option');
 $twitter = get_field('twitter','option');
 
 $arr = get_field('arr','option');
-$disc = get_field('disclaimer','option');
-$legal_disclaimer = get_field('legal_disclaimer','option');
+// $disc = get_field('disclaimer','option');
+// $legal_disclaimer = get_field('legal_disclaimer','option');
+$requestBtn = get_field('req_btn_name','option');
+$requestLink = get_field('req_btn_link','option');
 ?>
 </div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear site-footer footer-section">
@@ -55,7 +57,9 @@ $legal_disclaimer = get_field('legal_disclaimer','option');
 			</div>
 
 			<div class="footer-menu col-right">
-				<div class="cta-btn"><a href="#contact">Request Information</a></div>
+				<?php if ($requestBtn && $requestLink) { ?>
+					<div class="cta-btn"><a href="<?php echo $requestLink ?>"><?php echo $requestBtn ?></a></div>
+				<?php } ?>
 				<?php wp_nav_menu( array( 'menu' => 'Footer Menu', 'menu_id' => 'footermenu', 'container_class'=>'footernav','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
 			</div>
 
