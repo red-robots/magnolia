@@ -25,8 +25,12 @@
 
 <?php wp_head(); ?>
 </head>
+<?php 
+$banner = get_field('banner');
+$has_banner = ($banner) ? 'hasHero':'noHero';
+?>
 
-<body <?php body_class(); ?>>
+<body <?php body_class($has_banner); ?>>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'acstarter' ); ?></a>
 
 <div id="page" class="site">

@@ -1,38 +1,61 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ACStarter
+ * Template Name: Team
  */
-
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<?php
+	$banner = get_field('banner');
+	$banner_src = ($banner) ? $banner['url'] : '';
+	$banner_caption = get_field('banner_caption');
+	?>
+	
+	<?php if ($banner) { ?>
 
-			<?php
-			while ( have_posts() ) : the_post();
+	<?php while ( have_posts() ) : the_post(); ?>
+		
+		<h1 style="display:none;"><?php the_title(); ?></h1>
 
-				get_template_part( 'template-parts/content', 'page' );
+		<?php /*=== SECTION 1 ===*/ ?>
+		<section id="section1"  data-anchor="page1" class="parallax-window section first-section section-one" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
+			<div class="wrapper clear">
+				<div class="banner-caption">
+					<?php if ($banner_caption) { ?>
+						<div class="caption animated zoomIn"><?php echo $banner_caption ?></div>
+					<?php } ?>
+				</div>
+			</div>
+		</section>
+		
+		
+		<?php /*=== SECTION 2 ===*/ ?>
+		<div id="content"></div>
+		<section id="section2" data-anchor="page2" class="section subpage-section">
+		    <div class="wrapper clear">
+				<div class="intro about animated fadeIn wow text-center large-text">
+					<?php the_content(); ?>
+				</div>
+			</div>
+		</section>
+	
+	<?php endwhile; ?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+	<?php } else { ?>
+		<div id="primary" class="full-content-area clear default-template">
+			<main id="main" class="site-main wrapper clear" role="main">
 
-			endwhile; // End of the loop.
-			?>
+				<?php
+				while ( have_posts() ) : the_post();
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					get_template_part( 'template-parts/content', 'page' );
+
+				endwhile; // End of the loop.
+				?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	<?php } ?>
+
 
 <?php
-get_sidebar();
 get_footer();
