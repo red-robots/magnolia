@@ -1,8 +1,4 @@
-<?php
-/**
- * Template Name: Team
- */
-get_header(); ?>
+<?php get_header(); ?>
 
 	<?php
 	$banner = get_field('banner');
