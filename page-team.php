@@ -41,7 +41,7 @@ get_header(); ?>
 		<?php endwhile; ?>
 	
 		<?php /*=== SECTION 2 (Team Section) ===*/ ?>
-		<section id="section2" data-anchor="page2" class="section subpage-section">
+		<section id="section3" data-anchor="page3" class="section subpage-section">
 				<?php
 				$args = array(
 					'posts_per_page'=> -1,
