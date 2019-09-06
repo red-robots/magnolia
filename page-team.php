@@ -2,7 +2,8 @@
 /**
  * Template Name: Team
  */
-
+global $post;
+$pageId = $post->ID;
 get_header(); ?>
 
 	<?php
@@ -38,7 +39,7 @@ get_header(); ?>
 				</div>
 			</section>
 
-		<?php endwhile; ?>
+		<?php endwhile; wp_reset_postdata(); ?>
 	
 		<?php /*=== SECTION 2 (Team Section) ===*/ ?>
 		<section id="section3" data-anchor="page3" class="section subpage-section">
@@ -133,9 +134,9 @@ get_header(); ?>
 
 		<?php /*=== SECTION 3 ===*/ ?>
 		<?php 
-			$last_section_content = get_field('last_section_content'); 
-			$lsBtnName = get_field('lsBtnName'); 
-			$lsBtnLink = get_field('lsBtnLink'); 
+			$last_section_content = get_field('last_section_content',$pageId); 
+			$lsBtnName = get_field('lsBtnName',$pageId); 
+			$lsBtnLink = get_field('lsBtnLink',$pageId); 
 		?>
 		<section id="section3" data-anchor="page3" class="section section-teal subpage-section">
 		    <div class="wrapper clear">
