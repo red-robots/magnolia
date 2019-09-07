@@ -18,7 +18,7 @@ get_header(); ?>
 			<h1 style="display:none;"><?php the_title(); ?></h1>
 
 			<?php /*=== SECTION 1 ===*/ ?>
-			<section id="section1"  data-anchor="page1" class="parallax-window section first-section section-one" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
+			<section id="section1"  data-anchor="page1" class="parallax-window section first-section section-one half" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
 				<div class="wrapper clear">
 					<div class="banner-caption">
 						<?php if ($banner_caption) { ?>
@@ -33,7 +33,7 @@ get_header(); ?>
 			<div id="content"></div>
 			<section id="section2" data-anchor="page2" class="section subpage-section">
 			    <div class="wrapper clear">
-					<div class="intro about animated fadeIn wow text-center large-text">
+					<div class="intro about fadeInUp wow text-center large-text">
 						<?php the_content(); ?>
 					</div>
 				</div>

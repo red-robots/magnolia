@@ -27,6 +27,10 @@
 </head>
 <?php 
 $banner = get_field('banner');
+if(is_singular('team')) {
+	$team_id = get_the_page_id('team');
+	$banner = get_field('banner',$team_id);
+}
 $has_banner = ($banner) ? 'hasHero':'noHero';
 ?>
 

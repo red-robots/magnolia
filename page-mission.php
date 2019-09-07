@@ -15,7 +15,7 @@ get_header(); ?>
 	<h1 style="display:none;"><?php the_title(); ?></h1>
 
 	<?php /*=== SECTION 1 ===*/ ?>
-	<section id="section1"  data-anchor="page1" class="parallax-window section first-section section-one" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
+	<section id="section1"  data-anchor="page1" class="parallax-window section first-section section-one half" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
 		<?php //get_template_part('template-parts/navigation'); ?>
 		<div class="wrapper clear">
 			<div class="banner-caption">

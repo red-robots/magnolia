@@ -934,6 +934,12 @@ html, body, .site {
 .section-one {
 	// height: 100%;
 	height: 100vh;
+	&.half {
+		height: 400px;
+		@include tab {
+			height: 800px;
+		}
+	}
 	.wrapper {
 		height: 100%;
 		padding-top: 0;
@@ -1233,24 +1239,6 @@ body.subpage {
 			padding: 8%;
 		}
 	}
-	.photo {
-		background-size:cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-color: #FFF;
-		margin-bottom: 30px;
-		position: relative;
-		img {
-			width: 100%;
-			height: auto;
-			visibility: hidden;
-		}
-		span {
-			display: block;
-			width: 100%;
-			float: left;
-		}
-	}
 
 	h3.name {
 		margin: 0 0 5px;
@@ -1284,6 +1272,27 @@ body.subpage {
 		}
 	}
 }
+.photo {
+	background-size:cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	margin-bottom: 30px;
+	position: relative;
+	img {
+		width: 100%;
+		height: auto;
+		visibility: hidden;
+		&.pic {
+			visibility: visible;
+		}
+	}
+	span {
+		display: block;
+		width: 100%;
+		float: left;
+	}
+}
 .noimage {
 	position: relative;
 	background-color: #e4e4e4!important;
@@ -1303,6 +1312,118 @@ body.subpage {
 		transform: translateY(-50%);
 	}
 }
+
+.single-sidebar {
+	width: 100%;
+	margin-bottom: 30px;
+	@include tab {
+		width: 30%;
+		float: left;
+		margin-bottom: 0;
+	}
+	.photo {
+		margin-bottom: 25px;
+	}
+}
+.subpage-section .hd3 {
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: $teal;
+	text-transform: uppercase;
+	margin: 20px 0 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #acacac;
+}
+.single-content {
+	@include tab {
+		width: 65%;
+		float: right;
+	}
+}
+.teaminfo {
+	font-size: 1.2em;
+	line-height: 1.4;
+	margin-bottom: 40px;
+	@include tab {
+		font-size: 1.25em;
+		margin-bottom: 60px;
+	}
+	.info {
+		margin-bottom: 30px;
+	}
+}
+.educations {
+	.school {
+		font-weight: 600;
+		color: $color-dark-blue;
+	}
+}
+.staffinfo {
+	font-size: 1.25em;
+	line-height: 1.4;
+	h1.pagetitle {
+		font-size: 2em;
+		font-weight: 400;
+		line-height: 1.3;
+		margin: 0 0 25px;
+		@include tab {
+			font-size: 2.3em;
+		}
+	}
+	.jobtitle {
+		font-size: 25px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.ilink {
+		line-height: 1.6;
+	}
+	.ilink a {
+		text-decoration: none;
+		color: $color-dark-blue;
+	}
+	.hd3 {
+		font-size: 25px;
+		padding-bottom: 0;
+		border-bottom: none;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		@include tab {
+			margin-top: 70px;
+		}
+	}
+}
+.section-cta {
+	.wrapper {
+		padding-top: 5%;
+		padding-bottom: 5%;
+	}
+	.buttondiv {
+		text-align: center;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			font-size: 20px;
+			padding: 4px 40px 4px 60px;
+			border: 5px solid $teal;
+			color: $teal;
+			position: relative;
+			.arrow {
+				position: absolute;
+				left: 12px;
+				top: 11px;
+				font-size: 16px;
+				transition: all ease .3s;
+			}
+		}
+		a:hover .arrow {
+			margin-left: -5px;
+		}
+	}
+}
+
+
 
 /* Footer */
 .footer-section {
