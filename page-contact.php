@@ -1,9 +1,15 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: Contact Us
+ */
+
+get_header(); ?>
 
 	<?php
 	$banner = get_field('banner');
 	$banner_src = ($banner) ? $banner['url'] : '';
 	$banner_caption = get_field('banner_caption');
+	$form = get_field('form');
 	?>
 	
 	<?php if ($banner) { ?>
@@ -13,7 +19,7 @@
 		<h1 style="display:none;"><?php the_title(); ?></h1>
 
 		<?php /*=== SECTION 1 ===*/ ?>
-		<section id="section1"  data-anchor="page1" class="parallax-window section first-section section-one half" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
+		<section id="section1" class="parallax-window section first-section section-one half" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
 			<div class="wrapper clear">
 				<div class="banner-caption">
 					<?php if ($banner_caption) { ?>
@@ -24,15 +30,29 @@
 		</section>
 		
 		
-		<?php /*=== SECTION 2 ===*/ ?>
+		
 		<div id="content"></div>
-		<section id="section2" data-anchor="page2" class="section subpage-section">
+
+		<?php /*=== SECTION 2 ===*/ ?>
+		<?php if( get_the_content() ) { ?>
+		<div id="content"></div>
+		<section class="section subpage-section contactpage">
 		    <div class="wrapper clear">
 				<div class="intro about animated fadeIn wow text-center large-text">
 					<?php the_content(); ?>
 				</div>
+				<?php if ($form) { ?>
+					<div id="contact" class="intro contactus text-center">
+						<div class="contact-text clear fadeIn wow">
+							<?php echo $form; ?>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
 		</section>
+		<?php } ?>
+
+		
 	
 	<?php endwhile; ?>
 

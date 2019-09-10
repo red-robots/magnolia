@@ -1956,7 +1956,9 @@ to{width:100%}
 @media(min-width:740px){.banner-caption h1{font-size:1.1em}
 }body.subpage.noHero .site-header{position:relative;background:#091f40;padding-bottom:25px}
 body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
-.subpage-section h2{font-size:30px;font-weight:500;line-height:1.3}
+.subpage-section h1{font-size:1.8em;font-weight:500;line-height:1.3}
+@media(min-width:740px){.subpage-section h1{font-size:2em}
+}.subpage-section h2{font-size:30px;font-weight:500;line-height:1.3}
 @media(min-width:740px){.subpage-section h2{font-size:40px}
 }@media(min-width:1200px){.subpage-section h2{font-size:60px}
 }.subpage-section h3{font-size:20px;font-weight:600;line-height:1.3}
@@ -2039,7 +2041,17 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 .section-cta .buttondiv a .arrow{position:absolute;left:12px;top:11px;font-size:16px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .section-cta .buttondiv a:hover .arrow{margin-left:-5px}
 h1.entry-title{font-size:2em;font-weight:400;margin:40px 0 10px}
-.sitemaplink .sitemapnav{display:inline-block;margin:30px 0}
+.contactpage .wrapper{padding-top:2%;padding-bottom:5%}
+.contactpage .contactus{padding-top:0;padding-bottom:0}
+.contactpage .contactus .gform_title{display:none}
+.contactpage .contact-text .gform_wrapper{max-width:800px;width:100%;margin:0 auto;float:none}
+.contactpage .contact-text .gform_wrapper,.contactpage .contact-text .gform_wrapper form{background:transparent}
+.contactpage .contact-text a{display:inline-block;color:#0e97d0;text-decoration:none;position:relative}
+.contactpage .contact-text a:after{content:"";display:inline-block;width:100%;border-bottom:1px solid #0e97d0;position:absolute;bottom:0;left:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);opacity:0}
+.contactpage .contact-text a:hover:after{opacity:1;-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1)}
+.contactpage .contact-text h1{font-weight:400;font-size:2.2em;line-height:1.2;margin:0 0 30px}
+@media(min-width:900px){.contactpage .contact-text h1{font-size:3em}
+}.sitemaplink .sitemapnav{display:inline-block;margin:30px 0}
 .sitemaplink .sitemapnav ul{margin:0;padding:0;list-style:none;text-align:left;position:relative}
 .sitemaplink .sitemapnav ul ul{padding-left:25px}
 .sitemaplink .sitemapnav ul li{position:relative;padding-left:14px}
