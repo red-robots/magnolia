@@ -1044,6 +1044,15 @@ html, body, .site {
 	@include desk {
 		font-size: 70px;
 	}
+	h1 {
+		font-weight: 300;
+		font-size: 1em;
+		line-height: 1.2;
+		margin: 0 0;
+		@include tab {
+			font-size: 1.1em;
+		}
+	}
 }
 body.subpage {
 	&.noHero {
@@ -1080,11 +1089,39 @@ body.subpage {
 			font-size: 30px;
 		}
 	}
+	a {
+		display: inline-block;
+		color: $color__link;
+		text-decoration: none;
+		position: relative;
+		&:after {
+			content:"";
+			display: inline-block;
+			width: 100%;
+			border-bottom: 1px solid $color__link;
+			position: absolute;
+			bottom: 0;
+    		left: 0;
+    		transition: all ease-out .3s;
+    		transform: scaleX(0);
+    		opacity: 0;
+		}
+	}
+	a:hover {
+		&:after {
+			opacity: 1;
+			transform: scaleX(1);
+		}
+	}
 	.wrapper {
 		padding-top: 6%;
 		padding-bottom: 10%;
 		padding-left: 30px;
 		padding-right: 30px;
+		@include mid {
+			padding-left: 3%;
+			padding-right: 3%;
+		}
 		@include desk {
 			padding-top: 6%;
 			padding-bottom: 8%;
@@ -1211,6 +1248,9 @@ body.subpage {
 	.morebtn {
 		padding: 7px 18px 8px;
 		font-size: 22px;
+		&:after {
+			display: none;
+		}
 	}
 }
 .subpage-section .teams {
@@ -1269,6 +1309,9 @@ body.subpage {
 		&:hover {
 			background: $teal;
 			color: #FFF;
+		}
+		&:before,&:after {
+			display: none;
 		}
 	}
 }

@@ -1952,6 +1952,8 @@ to{width:100%}
 .banner-caption{font-size:30px;line-height:1.3;color:#FFF;text-shadow:1px 2px 6px rgba(0,0,0,0.65)}
 @media(min-width:740px){.banner-caption{font-size:5.2vw}
 }@media(min-width:1200px){.banner-caption{font-size:70px}
+}.banner-caption h1{font-weight:300;font-size:1em;line-height:1.2;margin:0}
+@media(min-width:740px){.banner-caption h1{font-size:1.1em}
 }body.subpage.noHero .site-header{position:relative;background:#091f40;padding-bottom:25px}
 body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 .subpage-section h2{font-size:30px;font-weight:500;line-height:1.3}
@@ -1960,8 +1962,12 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 }.subpage-section h3{font-size:20px;font-weight:600;line-height:1.3}
 @media(min-width:740px){.subpage-section h3{font-size:25px}
 }@media(min-width:1200px){.subpage-section h3{font-size:30px}
-}.subpage-section .wrapper{padding-top:6%;padding-bottom:10%;padding-left:30px;padding-right:30px}
-@media(min-width:1200px){.subpage-section .wrapper{padding-top:6%;padding-bottom:8%}
+}.subpage-section a{display:inline-block;color:#0e97d0;text-decoration:none;position:relative}
+.subpage-section a:after{content:"";display:inline-block;width:100%;border-bottom:1px solid #0e97d0;position:absolute;bottom:0;left:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);opacity:0}
+.subpage-section a:hover:after{opacity:1;-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1)}
+.subpage-section .wrapper{padding-top:6%;padding-bottom:10%;padding-left:30px;padding-right:30px}
+@media(min-width:900px){.subpage-section .wrapper{padding-left:3%;padding-right:3%}
+}@media(min-width:1200px){.subpage-section .wrapper{padding-top:6%;padding-bottom:8%}
 }.subpage-section .top-text{max-width:1000px;width:100%;margin:0 auto}
 .subpage-section#section3 .wrapper{padding-top:3%;padding-bottom:5%}
 .subpage-section.imagebg,.subpage-section.imagebg .wrapper{min-height:20em}
@@ -1990,6 +1996,7 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 .section-teal .wrapper{padding-top:2% !important;padding-bottom:8% !important}
 .section-teal .large-text,.section-teal .morebtn{color:#FFF !important}
 .section-teal .morebtn{padding:7px 18px 8px;font-size:22px}
+.section-teal .morebtn:after{display:none}
 .subpage-section .teams .flexbox{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .subpage-section .teams .group{width:100%}
 .subpage-section .teams .group.odd{background:#f3f3f3}
@@ -2002,6 +2009,7 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 .subpage-section .teams .excerpt{font-size:1.3em}
 .subpage-section .teams .buttondiv a{display:inline-block;border:4px solid #547489;text-decoration:none;color:#091f40;padding:5px 35px;font-size:1em;line-height:1.2}
 .subpage-section .teams .buttondiv a:hover{background:#547489;color:#FFF}
+.subpage-section .teams .buttondiv a:before,.subpage-section .teams .buttondiv a:after{display:none}
 .photo{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#FFF;margin-bottom:30px;position:relative}
 .photo img{width:100%;height:auto;visibility:hidden}
 .photo img.pic{visibility:visible}
