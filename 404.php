@@ -16,8 +16,13 @@ get_header(); ?>
 				<header class="page-header">
 					<div class="icondiv"><span><i class="fas fa-exclamation-triangle"></i></span></div>
 					<div class="txt404" style="display:none;"><span>404</span></div>
-					<h1 class="page-title"><?php esc_html_e( "We're sorry, the page you requested could not be found.", 'acstarter' ); ?></h1>
+					<h1 class="page-title">
+						<?php esc_html_e( "We're sorry, the page you requested could not be found.", 'acstarter' ); ?><br>
+						<?php esc_html_e( "Maybe try one of the links below", 'acstarter' ); ?>
+					</h1>
 				</header><!-- .page-header -->
+
+				<?php get_template_part('template-parts/sitemap'); ?>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->

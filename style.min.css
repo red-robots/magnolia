@@ -2038,6 +2038,14 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 .section-cta .buttondiv a{display:inline-block;text-decoration:none;font-size:20px;padding:4px 40px 4px 60px;border:5px solid #547489;color:#547489;position:relative}
 .section-cta .buttondiv a .arrow{position:absolute;left:12px;top:11px;font-size:16px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .section-cta .buttondiv a:hover .arrow{margin-left:-5px}
+h1.entry-title{font-size:2em;font-weight:400;margin:40px 0 10px}
+.sitemaplink .sitemapnav{display:inline-block;margin:30px 0}
+.sitemaplink .sitemapnav ul{margin:0;padding:0;list-style:none;text-align:left;position:relative}
+.sitemaplink .sitemapnav ul ul{padding-left:25px}
+.sitemaplink .sitemapnav ul li{position:relative;padding-left:14px}
+.sitemaplink .sitemapnav ul li:before{content:"";display:inline-block;width:6px;height:6px;background:#0e97d0;position:absolute;top:9px;left:0}
+.sitemaplink .sitemapnav a{text-decoration:none;color:#0e97d0}
+.sitemaplink .sitemapnav a:hover{opacity:.5}
 .footer-section a{text-decoration:none;color:#FFF}
 .footer-section .wrapper{padding-top:7%;padding-bottom:4%}
 @media(min-width:740px){.footer-section .wrapper{padding-top:5%;padding-bottom:5%}
@@ -2048,7 +2056,7 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 .social-links{margin:30px 0 0}
 .social-links a{display:inline-block;width:35px;height:38px;text-align:center;border:1px solid #FFF;line-height:36px;color:#FFF;background:transparent;margin:2px}
 .social-links a:hover{color:#091f40;background:#FFF}
-body.error404 .site-main{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+body.error404 .site-main{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:6% 0}
 body.error404 .logo-wrapper{top:-4px}
 body.error404 .page-header{position:relative;margin-top:-7%}
 body.error404 .txt404{font-size:100px;font-weight:300;color:#e4e4e4}
