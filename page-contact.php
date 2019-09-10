@@ -39,7 +39,14 @@ get_header(); ?>
 		<section class="section subpage-section contactpage">
 		    <div class="wrapper clear">
 				<div class="intro about animated fadeIn wow text-center large-text">
+					<?php ob_start(); ?>
 					<?php the_content(); ?>
+					<?php 
+						$content = ob_get_contents(); 
+						ob_end_clean();
+						$content = ($content) ? email_obfuscator($content) : '';
+						echo $content;
+					?>
 				</div>
 				<?php if ($form) { ?>
 					<div id="contact" class="intro contactus text-center">
