@@ -1074,6 +1074,11 @@ body.subpage {
 		@include tab {
 			font-size: 2em;
 		}
+		&.imgtitle {
+			font-size: 1em;
+			font-weight: 300;
+    		line-height: 1;
+		}
 	}
 	h2 {
 		font-size: 30px;
