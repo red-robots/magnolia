@@ -2010,6 +2010,7 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 @media(min-width:740px){.subpage-section .blogs .info,.subpage-section .teams .info{width:33.3%}
 }.subpage-section .blogs .info .pad,.subpage-section .teams .info .pad{padding:8%}
 .subpage-section .blogs h3.name,.subpage-section .teams h3.name{margin:0 0 5px;font-size:1.5em;font-weight:600;line-height:1.2;text-transform:uppercase;color:#091f40}
+.subpage-section .blogs h3.name.nt,.subpage-section .teams h3.name.nt{text-transform:none}
 .subpage-section .blogs h3.posttitle,.subpage-section .teams h3.posttitle{margin:0 0 5px;font-size:1.5em;font-weight:600;line-height:1.2;color:#091f40}
 .subpage-section .blogs .author,.subpage-section .blogs .jobtitle,.subpage-section .teams .author,.subpage-section .teams .jobtitle{margin:0;color:#547489;font-size:1.35em;font-weight:500;line-height:1.2}
 .subpage-section .blogs .author,.subpage-section .teams .author{font-size:15px;margin:15px 0 20px}
@@ -2019,11 +2020,13 @@ body.subpage .side-navigation{background:rgba(5,3,29,0.85)}
 .subpage-section .blogs .buttondiv a:hover,.subpage-section .teams .buttondiv a:hover{background:#547489;color:#FFF}
 .subpage-section .blogs .buttondiv a:before,.subpage-section .blogs .buttondiv a:after,.subpage-section .teams .buttondiv a:before,.subpage-section .teams .buttondiv a:after{display:none}
 .photo{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#FFF;margin-bottom:30px;position:relative}
+.photo.iconpic{background-size:70%;background-color:transparent;margin-bottom:0}
 .photo img{width:100%;height:auto;visibility:hidden}
 .photo img.pic{visibility:visible}
 .photo span{display:block;width:100%;float:left}
 .noimage{position:relative;background-color:#e4e4e4 !important}
-.noimage:before{content:"Photo Coming Soon";display:block;width:100%;padding:20px;font-size:.95em;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#ababab;text-align:center;position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+.noimage:before{content:"Image Coming Soon";display:block;width:100%;padding:20px;font-size:.95em;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#ababab;text-align:center;position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+.gray{background:#f3f3f3}
 .single-sidebar{width:100%;margin-bottom:30px}
 @media(min-width:740px){.single-sidebar{width:30%;float:left;margin-bottom:0}
 }.single-sidebar .photo{margin-bottom:25px}

@@ -14,6 +14,14 @@ function js_custom_init() {
             'supports'  => array('title','editor','thumbnail')
         ),
         array(
+            'post_type' => 'resources',
+            'menu_name' => 'Resources',
+            'plural'    => 'Resources',
+            'single'    => 'Resource',
+            'menu_icon' => 'dashicons-archive',
+            'supports'  => array('title','editor')
+        ),
+        array(
             'post_type' => 'testimonial',
             'menu_name' => 'Testimonials',
             'plural'    => 'Testimonials',

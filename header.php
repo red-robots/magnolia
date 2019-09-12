@@ -26,15 +26,17 @@
 <?php wp_head(); ?>
 </head>
 <?php 
-$banner = get_field('banner');
+$parent_id = '';
 if(is_singular('team')) {
 	$parent_id = get_the_page_id('team');
-	$banner = get_field('banner',$parent_id);
 }
 else if( is_singular('post') ) {
 	$parent_id = get_the_page_id('blog');
-	$banner = get_field('banner',$parent_id);
 }
+else if( is_singular('resources') ) {
+	$parent_id = get_the_page_id('resources');
+}
+$banner = ($parent_id) ? get_field('banner',$parent_id) : get_field('banner');
 $has_banner = ($banner) ? 'hasHero':'noHero';
 ?>
 

@@ -1285,7 +1285,7 @@ body.subpage {
 	.group {
 		width: 100%;
 		&.odd {
-			background: #f3f3f3;
+			background: $subtle_grey;
 		}
 		.wrapper {
 			padding-top: 4%;
@@ -1309,6 +1309,9 @@ body.subpage {
 		line-height: 1.2;
 		text-transform: uppercase;
 		color: $color-dark-blue;
+		&.nt {
+			text-transform: none;
+		}
 	}
 	h3.posttitle {
 		margin: 0 0 5px;
@@ -1359,6 +1362,11 @@ body.subpage {
 	background-color: #FFF;
 	margin-bottom: 30px;
 	position: relative;
+	&.iconpic {
+		background-size: 70%;
+		background-color: transparent;
+		margin-bottom: 0;
+	}
 	img {
 		width: 100%;
 		height: auto;
@@ -1377,7 +1385,7 @@ body.subpage {
 	position: relative;
 	background-color: #e4e4e4!important;
 	&:before {
-		content:"Photo Coming Soon";
+		content:"Image Coming Soon";
 		display: block;
 		width: 100%;
 		padding: 20px;
@@ -1392,7 +1400,9 @@ body.subpage {
 		transform: translateY(-50%);
 	}
 }
-
+.gray {
+	background: $subtle_grey;
+}
 .single-sidebar {
 	width: 100%;
 	margin-bottom: 30px;
