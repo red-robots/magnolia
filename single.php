@@ -1,35 +1,71 @@
-<?php
-/**
- * The template for displaying all single posts.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package ACStarter
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<?php  
+$parent_id = get_the_page_id('blog');
+$banner = get_field('banner',$parent_id);
+$banner_src = ($banner) ? $banner['url'] : '';
+$banner_caption = get_field('banner_caption',$parent_id);
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php if ($banner) { ?>
 
-		<?php
-		while ( have_posts() ) : the_post();
+	<?php while ( have_posts() ) : the_post(); ?>
+		
+		<h1 style="display:none;"><?php the_title(); ?></h1>
 
-			get_template_part( 'template-parts/content', get_post_format() );
+		<?php /*=== SECTION 1 ===*/ ?>
+		<section id="section1"  data-anchor="page1" class="parallax-window section first-section section-one half" data-parallax="scroll" data-image-src="<?php echo $banner_src;?>">
+			<div class="wrapper clear">
+				<div class="banner-caption">
+					<?php if ($banner_caption) { ?>
+						<div class="caption animated zoomIn"><?php echo $banner_caption ?></div>
+					<?php } ?>
+				</div>
+			</div>
+		</section>
+		
+		
+		<?php /*=== SECTION 2 ===*/ ?>
+		<div id="content"></div>
+		<section id="section2" data-anchor="page2" class="section subpage-section">
+		    <div class="wrapper clear">
+				<?php get_template_part('template-parts/content','single-blog'); ?>
+			</div>
+		</section>
+	
+	<?php endwhile; ?>
 
-			the_post_navigation();
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+<?php } else { ?>
+	<div id="primary" class="full-content-area clear default-template">
+		<main id="main" class="site-main wrapper clear" role="main">
 
-		endwhile; // End of the loop.
-		?>
+			<?php
+			while ( have_posts() ) : the_post();
+
+				get_template_part('template-parts/content','single-team');
+
+			endwhile; // End of the loop.
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+<?php } ?>
+
+
+<?php 
+if($parent_id) {
+$parent_title = get_the_title($parent_id);
+$parent_link = get_permalink($parent_id);
+?>
+<section class="section section-gray section-cta">
+	<div class="wrapper">
+		<div class="buttondiv">
+			<a href="<?php echo $parent_link; ?>"><i class="arrow fas fa-chevron-left"></i> Back to <?php echo $parent_title;?></a>
+		</div>
+	</div>
+</section>
+<?php } ?>
 
 <?php
-get_sidebar();
 get_footer();

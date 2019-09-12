@@ -28,8 +28,12 @@
 <?php 
 $banner = get_field('banner');
 if(is_singular('team')) {
-	$team_id = get_the_page_id('team');
-	$banner = get_field('banner',$team_id);
+	$parent_id = get_the_page_id('team');
+	$banner = get_field('banner',$parent_id);
+}
+else if( is_singular('post') ) {
+	$parent_id = get_the_page_id('blog');
+	$banner = get_field('banner',$parent_id);
 }
 $has_banner = ($banner) ? 'hasHero':'noHero';
 ?>
