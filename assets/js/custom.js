@@ -139,4 +139,11 @@ jQuery(document).ready(function ($) {
 		} 
 	});
 
+	if( $(".section#blogs .pagination").length ) {
+		$(".section#blogs .pagination a").each(function(){
+			var link = $(this).attr('href');
+			$(this).attr('href',link+'#blogs');
+		});
+	}
+
 });// END #####################################    END

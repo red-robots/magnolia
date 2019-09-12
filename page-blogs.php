@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Team
+ * Template Name: Blog
  */
 global $post;
 $pageId = $post->ID;
@@ -31,6 +31,7 @@ get_header(); ?>
 			
 			<?php /*=== SECTION 2 ===*/ ?>
 			<div id="content"></div>
+			<?php if ( get_the_content() ) { ?>
 			<section id="section2" data-anchor="page2" class="section subpage-section">
 			    <div class="wrapper clear">
 					<div class="intro about fadeInUp wow text-center large-text">
@@ -38,24 +39,39 @@ get_header(); ?>
 					</div>
 				</div>
 			</section>
+			<?php } ?>
 
 		<?php endwhile; wp_reset_postdata(); ?>
 	
-		<?php /*=== SECTION 2 (Team Section) ===*/ ?>
-		<section id="section3" data-anchor="page3" class="section subpage-section">
+		<?php /*=== SECTION 2 (Blogs) ===*/ ?>
+		<section id="blogs" data-anchor="page3" class="section subpage-section">
 				<?php
-				$args = array(
+				$perpage = 12;
+				$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
+				$all = array(
 					'posts_per_page'=> -1,
-					'post_type'		=> 'team',
+					'post_type'		=> 'post',
 					'post_status'	=> 'publish'
 				);
-				$teams = get_posts($args);
-				$total = ($teams) ? count($teams) : 0;
-				$px = get_bloginfo('template_url') . '/images/px2.png';
-				if ( $teams ) {  ?>
-				<div class="teams clear">
+				$allpost = get_posts($all);
+
+				$args = array(
+					'posts_per_page'=> $perpage,
+					'post_type'		=> 'post',
+					'post_status'	=> 'publish',
+					'paged'			=> $paged
+				);
+				$queried = new WP_Query($args);
+				$blogs = get_posts($args);
+				
+				$total = ($allpost) ? count($allpost) : 0;
+				$px1 = get_bloginfo('template_url') . '/images/px.png';
+				$px2 = get_bloginfo('template_url') . '/images/px2.png';
+				if ( $blogs ) {  ?>
+				<div class="blogs clear">
 					
-					<?php if ($total>3) { $lists = array_chunk($teams,3); ?>
+					<?php if ($total>3) { $lists = array_chunk($blogs,3); ?>
+
 						<?php $j=1; foreach ($lists as $list) { ?>
 						<div class="group <?php echo ($j%2==0) ? 'even':'odd'?>">
 							<div class="wrapper">
@@ -63,23 +79,23 @@ get_header(); ?>
 									<?php foreach ($list as $e) { 
 									$postId = $e->ID;
 									$name = $e->post_title;
-									$photo = get_field('image',$postId);
-									$bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
-									$jobtitle = get_field('title',$postId);
-									$excerpt = get_field('experience',$postId);
+									$thumbId = get_post_thumbnail_id( $postId );
+									$photo = wp_get_attachment_image_src($thumbId,'large');
+									$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+									$author = get_the_author($postId);
+									$excerpt = get_the_content('experience',$postId);
 									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
 									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
 									$pagelink = get_permalink($postId);
+									$postdate = get_the_date('F j, Y',$postId);
 									?>
 									<div class="info">
 										<div class="pad">
 											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-												<img src="<?php echo $px ?>" alt="" aria-hidden="true">
+												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
 											</div>
-											<h3 class="name"><?php echo $name; ?></h3>
-											<?php if ($jobtitle) { ?>
-											<p class="jobtitle"><?php echo $jobtitle ?></p>	
-											<?php } ?>
+											<h3 class="posttitle"><?php echo $name; ?></h3>
+											<p class="author">Posted by: <strong><?php echo $author ?></strong><br>on <span><?php echo $postdate ?></span></p>	
 											<?php if ($excerpt) { ?>
 											<p class="excerpt"><?php echo $excerpt ?></p>	
 											<?php } ?>
@@ -94,32 +110,38 @@ get_header(); ?>
 							</div>
 						</div>	
 						<?php $j++; } ?>
+
 					<?php } else { ?>
 						
 						<div class="wrapper">
 							<div class="flexbox">
-								<?php foreach ($teams as $e) { 
+								<?php foreach ($blogs as $e) { 
 								$postId = $e->ID;
 								$name = $e->post_title;
-								$photo = get_field('image',$postId);
-								$bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
-								$jobtitle = get_field('title',$postId);
-								$excerpt = get_field('experience',$postId);
+								$thumbId = get_post_thumbnail_id( $postId );
+								$photo = wp_get_attachment_image_src($thumbId,'large');
+								$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+								$author = get_the_author($postId);
+								$excerpt = get_the_content('experience',$postId);
 								$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
 								$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
+								$pagelink = get_permalink($postId);
+								$postdate = get_the_date('F j, Y',$postId);
 								?>
 								<div class="info">
 									<div class="pad">
 										<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-											<img src="<?php echo $px ?>" alt="" aria-hidden="true">
+											<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
 										</div>
-										<h3 class="name"><?php echo $name; ?></h3>
-										<?php if ($jobtitle) { ?>
-										<p class="jobtitle"><?php echo $jobtitle ?></p>	
-										<?php } ?>
+										<h3 class="posttitle"><?php echo $name; ?></h3>
+										<p class="author">Posted by: <strong><?php echo $author ?></strong><br>on <span><?php echo $postdate ?></span></p>	
 										<?php if ($excerpt) { ?>
 										<p class="excerpt"><?php echo $excerpt ?></p>	
 										<?php } ?>
+
+										<div class="buttondiv">
+											<a href="<?php echo $pagelink ?>">Read More</a>
+										</div>
 									</div>
 								</div>	
 								<?php } ?>
@@ -129,6 +151,29 @@ get_header(); ?>
 					<?php } ?>
 					
 				</div>
+
+				<?php
+				    $total_pages = $queried->max_num_pages;
+				    if ($total_pages > 1){ ?>
+
+				        <div id="pagination" class="pagination wrapper">
+				            <?php
+				                $pagination = array(
+				                    'base' => @add_query_arg('pg','%#%'),
+				                    'format' => '?paged=%#%',
+				                    'mid-size' => 1,
+				                    'current' => $paged,
+				                    'total' => $total_pages,
+				                    'prev_next' => True,
+				                    'prev_text' => __( '<span class="fas fa-chevron-left"></span>' ),
+				                    'next_text' => __( '<span class="fas fa-chevron-right"></span>' )
+				                );
+				                echo paginate_links($pagination);
+				            ?>
+				        </div>
+				        <?php
+				} ?>
+
 				<?php } ?>
 		</section>
 

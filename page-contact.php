@@ -58,7 +58,10 @@ get_header(); ?>
 			</div>
 		</section>
 		<?php } ?>
+		
 
+		<?php /*=== Learn More ===*/ ?>
+		<?php  get_template_part( 'template-parts/content', 'learnmore' ); ?>
 		
 	
 	<?php endwhile; ?>

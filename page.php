@@ -33,6 +33,10 @@
 				</div>
 			</div>
 		</section>
+
+
+		<?php /*=== Learn More ===*/ ?>
+		<?php  get_template_part( 'template-parts/content', 'learnmore' ); ?>
 	
 	<?php endwhile; ?>
 

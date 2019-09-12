@@ -1170,6 +1170,11 @@ body.subpage {
 			@include flexbox-justify(center);
 		}
 	}
+	&#blogs {
+		.wrapper {
+			padding-bottom: 3%;
+		}
+	}
 }
 .section-blue {
 	background: $color-dark-blue;
@@ -1266,6 +1271,7 @@ body.subpage {
 		}
 	}
 }
+.subpage-section .blogs,
 .subpage-section .teams {
 	.flexbox {
 		@include flexbox();
@@ -1301,12 +1307,27 @@ body.subpage {
 		text-transform: uppercase;
 		color: $color-dark-blue;
 	}
+	h3.posttitle {
+		margin: 0 0 5px;
+		font-size: 1.5em;
+		font-weight: 600;
+		line-height: 1.2;
+		color: $color-dark-blue;
+	}
+	.author,
 	.jobtitle {
 		margin: 0 0;
 		color: $teal;
 		font-size: 1.35em;
 		font-weight: 500;
 		line-height: 1.2;
+	}
+	.author {
+		font-size: 15px;
+		margin: 15px 0 20px;
+		strong {
+			text-transform: capitalize;
+		}
 	}
 	.excerpt {
 		font-size: 1.3em;
@@ -1685,4 +1706,27 @@ body.error404 {
 	}
 }
 
-
+.pagination {
+	text-align: center;
+	&.wrapper {
+		padding-top: 28px !important;
+		padding-bottom: 20px !important;
+	}
+	a, span {
+		display: inline-block;
+		text-decoration: none;
+		font-size: 16px;
+		line-height: 1;
+		padding: 8px 11px;
+		color: #FFF;
+		background: $blue2;
+		overflow: hidden;
+		margin:2px;
+	}
+	a:hover {
+		background: #42a7e6;
+	}
+	span {
+		background: #c1c1c1;
+	}
+}
