@@ -46,7 +46,7 @@ get_header(); ?>
 		<?php /*=== SECTION 2 (Blogs) ===*/ ?>
 		<section id="blogs" data-anchor="page3" class="section subpage-section">
 				<?php
-				$perpage = 12;
+				$perpage = (get_field('pagenum','option')) ? get_field('pagenum','option') : 12;
 				$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 				$all = array(
 					'posts_per_page'=> -1,
@@ -156,7 +156,7 @@ get_header(); ?>
 				    $total_pages = $queried->max_num_pages;
 				    if ($total_pages > 1){ ?>
 
-				        <div id="pagination" class="pagination wrapper">
+				        <div id="pagination" data-section="#blogs" class="pagination wrapper">
 				            <?php
 				                $pagination = array(
 				                    'base' => @add_query_arg('pg','%#%'),

@@ -139,11 +139,14 @@ jQuery(document).ready(function ($) {
 		} 
 	});
 
-	if( $(".section#blogs .pagination").length ) {
-		$(".section#blogs .pagination a").each(function(){
-			var link = $(this).attr('href');
-			$(this).attr('href',link+'#blogs');
-		});
+	if( $('#pagination').length ) {
+		if( typeof $('#pagination').attr('data-section') != 'undefined' ) {
+			$('#pagination a').each(function(){
+				var hash = $('#pagination').attr('data-section');
+				var link = $(this).attr('href');
+				$(this).attr('href',link+hash);
+			});
+		}
 	}
 
 });// END #####################################    END
