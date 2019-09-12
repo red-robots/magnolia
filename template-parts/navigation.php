@@ -7,7 +7,7 @@
 	<div id="sideNav" class="side-navigation mtoggle">
 		<?php if ($login_link && $login_label) { ?>
 			<div class="snButtons">
-				<a href="<?php echo $login_link; ?>"><?php echo $login_label; ?></a>
+				<a href="<?php echo $login_link; ?>" target="_blank"><?php echo $login_label; ?></a>
 			</div>
 		<?php } ?>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mainmenu', 'container_class'=>'navwrap','link_before'=>'<span>','link_after'=>'</span><i class="xx"></i>' ) ); ?>
@@ -20,7 +20,7 @@
 		<nav id="site-navigation" class="main-navigation animated fadeInDown" role="navigation">
 			<?php if ($login_link && $login_label) { ?>
 			<ul id="primary-menu" class="menu">
-				<li class="menu-item-login custom_menu_link"><a href="<?php echo $login_link; ?>" target="_blank"><?php echo $login_label; ?></a></li>
+				<li class="menu-item-login custom_menu_link"><a href="<?php echo $login_link; ?>"><?php echo $login_label; ?></a></li>
 			</ul>
 			<?php } ?>
 		</nav>
