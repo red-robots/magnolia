@@ -87,7 +87,6 @@ get_header(); ?>
 									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
 									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
 									$pagelink = get_permalink($postId);
-									$postdate = get_the_date('F j, Y',$postId);
 									$issuedNum = get_field('issue',$postId);
 									$issuedDate = get_field('date',$postId);
 									?>
@@ -134,7 +133,6 @@ get_header(); ?>
 									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
 									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
 									$pagelink = get_permalink($postId);
-									$postdate = get_the_date('F j, Y',$postId);
 									$issuedNum = get_field('issue',$postId);
 									$issuedDate = get_field('date',$postId);
 									?>

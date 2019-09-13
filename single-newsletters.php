@@ -32,6 +32,8 @@ $px = get_bloginfo('template_url') . '/images/px.png';
 		<?php  
 			$description = get_field('description');
 			$photo = get_field('image');
+			$issuedNum = get_field('issue');
+			$issuedDate = get_field('date');
 		?>
 		<section id="texts" data-anchor="page2" class="section subpage-section">
 		    <div class="wrapper clear">
@@ -48,6 +50,18 @@ $px = get_bloginfo('template_url') . '/images/px.png';
 
 				<article class="single-content singlepost <?php echo ($photo) ? 'half':'full'?>">
 					<h1 class="pagetitle posttitle"><?php the_title(); ?></h1>
+					<div class="post-info">
+						<?php if ($issuedNum) { ?>
+							<div class="dt">
+								Issued #: <strong><?php echo $issuedNum ?></strong>
+							</div>
+						<?php } ?>
+						<?php if ($issuedDate) { ?>
+							<div class="dt">
+								Date: <span><?php echo $issuedDate ?></span>
+							</div>
+						<?php } ?>
+					</div>	
 					<div class="details"><?php the_content(); ?></div>
 				</article>
 
