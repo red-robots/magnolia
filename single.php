@@ -33,7 +33,7 @@ $parent_id = '';
 			
 			<?php /*=== SECTION 2 ===*/ ?>
 			<div id="content"></div>
-			<section id="section2" data-anchor="page2" class="section subpage-section">
+			<section id="texts" data-anchor="page2" class="section subpage-section">
 			    <div class="wrapper clear">
 					<?php get_template_part('template-parts/content','single-blog'); ?>
 				</div>

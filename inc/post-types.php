@@ -6,6 +6,14 @@ add_action('init', 'js_custom_init', 1);
 function js_custom_init() {
     $post_types = array(
         array(
+            'post_type' => 'newsletters',
+            'menu_name' => 'Newsletters',
+            'plural'    => 'Newsletters',
+            'single'    => 'Newsletter',
+            'menu_icon' => 'dashicons-megaphone',
+            'supports'  => array('title','editor')
+        ),
+        array(
             'post_type' => 'team',
             'menu_name' => 'Team',
             'plural'    => 'Team',

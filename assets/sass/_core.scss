@@ -815,123 +815,134 @@ html, body, .site {
 			color: $color-light-blue;
 		}
 	}
-	.gform_wrapper {
-		margin-bottom: 10%;
-		width: 100%;
-		float: left;
+}
+
+.gform_wrapper {
+	margin-bottom: 10%;
+	width: 100%;
+	float: left;
+	background: #FFF;
+}
+.gform_wrapper form {
+	display: block;
+	padding: 20px;
+	background: #FFF;
+	font-weight: 400;
+	position: relative;
+	z-index: 5;
+	width: 100%;
+	float: left;
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		border-radius: 0px;
+		border: 3px solid #dedede;
+		outline: none;
 		background: #FFF;
+		font-size: 18px!important;
+		@include transition(all ease .3s);
+		&:focus {
+			border-color: $color-dark-blue;
+		}
 	}
-	.gform_wrapper form {
-		display: block;
-		padding: 20px;
-		background: #FFF;
-		font-weight: 400;
+	input[type="text"],
+	input[type="email"] {
+		height: 45px;
+		line-height: 44px;
+	}
+	.field_sublabel_below .ginput_complex.ginput_container label {
+		margin-bottom: 0;
+	}
+	ul.gform_fields li.gfield {
 		position: relative;
-		z-index: 5;
-		width: 100%;
-		float: left;
-		input[type="text"],
-		input[type="email"],
-		textarea {
-			border-radius: 0px;
-			border: 3px solid #dedede;
-			outline: none;
-			@include transition(all ease .3s);
-			&:focus {
-				border-color: $color-dark-blue;
-			}
-		}
-		.field_sublabel_below .ginput_complex.ginput_container label {
-			margin-bottom: 0;
-		}
-		ul.gform_fields li.gfield {
-			position: relative;
-			margin-top: 25px;
-			padding-right: 0!important;
-		}
-		#field_1_1 label.gfield_label {
-			display: none;
-		}
-		label.gfield_label {
-			display: inline-block;
-			position: absolute;
-			top: 0;
+		margin-top: 25px;
+		padding-right: 0!important;
+	}
+	#field_1_1 label.gfield_label {
+		display: none;
+	}
+	label.gfield_label {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		top: 10px;
+		left: 10px;
+		font-size: 13px;
+		font-weight: 500;
+		color: #909090;
+		@include transition(all ease-out .3s);
+		&.on-focus {
+			top: -16px;
 			left: 0;
-			top: 10px;
-			left: 10px;
-			font-size: 13px;
-			font-weight: 500;
-			color: #909090;
-			@include transition(all ease-out .3s);
-			&.on-focus {
-				top: -16px;
-				left: 0;
-				font-size: 12px;
-			}
-		}
-		li.gfield.gfield_html {
-			text-align: center;
-		}
-		.field_sublabel_below .ginput_complex.ginput_container label {
 			font-size: 12px;
 		}
-		li.recaptcha-container {
-			text-align: center;
-			label {
-				display: none;
-			}
-			.ginput_recaptcha {
-				display: inline-block;
-			}
-		}
 	}
-
-	.gform_wrapper ul.gform_fields > li:first-child {
-		margin-top: 0!important;
-	}
-	.gform_footer {
+	li.gfield.gfield_html {
 		text-align: center;
 	}
-	.gform_wrapper .gform_footer input.button, 
-	.gform_wrapper .gform_footer input[type=submit] {
-		border: 3px solid #dedede;
-		box-shadow: none;
-		text-shadow: none;
-		border-radius: 0px;
-		-webkit-appearance: none;
-		background: #FFF;
-		padding: 10px 20px;
-		margin: 0 auto;
-		@include transition(all ease-out .3s);
-		&:hover {
-			color: #FFF;
-			border-color: $color-dark-blue;
-			background: $color-dark-blue;
-			transform: scale(1.1);
+	.field_sublabel_below .ginput_complex.ginput_container label {
+		font-size: 12px;
+	}
+	li.recaptcha-container {
+		text-align: center;
+		label {
+			display: none;
+		}
+		.ginput_recaptcha {
+			display: inline-block;
 		}
 	}
-	.gform_wrapper .gfield_description.validation_message, 
-	.gform_wrapper .top_label .gfield_description.validation_message {
-		font-size: 13px;
-		padding: 5px 15px!important;
+	.recaptcha-container label {
+		display: none!important;
 	}
-	.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
-		background-color: rgba(255,223,224,.25);
-		margin-bottom: 6px!important;
-		border-top: 1px solid #C89797;
-		border-bottom: 1px solid #C89797;
-		padding-bottom: 6px;
-		padding-top: 2px;
-		box-sizing: border-box;
-	}
-	.gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
-		max-width: calc(100%)!important;
-	}
-	.gform_wrapper .validation_message,
-	.gform_wrapper div.validation_error {
-		color: #e61d1d;
-	}
+}
 
+.gform_wrapper ul.gform_fields > li:first-child {
+	margin-top: 0!important;
+}
+.gform_footer {
+	text-align: center;
+}
+.contentwrapper .gform_wrapper .gform_footer input.button, 
+.contentwrapper .gform_wrapper .gform_footer input[type=submit] {
+	border: 3px solid #dedede;
+	box-shadow: none;
+	text-shadow: none;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	background: transparent;
+	padding: 10px 20px;
+	margin: 0 auto;
+	font-size: 25px;
+	@include transition(all ease-out .3s);
+	&:hover {
+		color: #FFF;
+		border-color: $color-dark-blue;
+		background: $color-dark-blue;
+		transform: scale(1.1);
+	}
+}
+.gform_wrapper .gfield_description.validation_message, 
+.gform_wrapper .top_label .gfield_description.validation_message {
+	font-size: 13px;
+	padding: 5px 15px!important;
+}
+.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+	background-color: rgba(255,223,224,.25);
+	margin-bottom: 6px!important;
+	border-top: 1px solid #C89797;
+	border-bottom: 1px solid #C89797;
+	padding-bottom: 6px;
+	padding-top: 2px;
+	box-sizing: border-box;
+}
+.gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+	max-width: calc(100%)!important;
+}
+.gform_wrapper .validation_message,
+.gform_wrapper div.validation_error {
+	color: #e61d1d;
 }
 
 .section-one {
@@ -1179,6 +1190,21 @@ body.subpage {
 		}
 	}
 }
+
+.subpage-section.subscribe {
+	.gform_wrapper {
+		max-width: 800px;
+		width: 100%;
+		margin: 0 auto;
+		float: none;
+	}
+	.gform_wrapper form {
+		width: 100%;
+		float: left;
+		background: #FFF;
+	}
+}
+
 .section-blue {
 	background: $color-dark-blue;
 	color: #FFF!important;

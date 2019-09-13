@@ -139,6 +139,22 @@ jQuery(document).ready(function ($) {
 		} 
 	});
 
+
+	/* Subscription hide Label */
+	$(document).on("focus",".subscribe .ginput_container input, .subscribe .ginput_container textarea",function(){
+		var wrapper = $(this).parents("li.gfield");
+		wrapper.find(".gfield_label").addClass('on-focus');
+	});
+	$(document).on("focusout blur",".subscribe .ginput_container input, .subscribe .ginput_container textarea",function(){
+		var wrapper = $(this).parents("li.gfield");
+		var str = $(this).val();
+		var txtVal = str.replace(/\s/g,'');
+		if( txtVal=='' ) {
+			$(this).val("");
+			wrapper.find(".gfield_label").removeClass('on-focus');
+		} 
+	});
+
 	if( $('#pagination').length ) {
 		if( typeof $('#pagination').attr('data-section') != 'undefined' ) {
 			$('#pagination a').each(function(){

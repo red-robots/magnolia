@@ -2,7 +2,7 @@
 
 <?php  
 $post_type = get_post_type();
-$parent_id = get_the_page_id('resources');
+$parent_id = get_the_page_id('newsletter');
 $banner = get_field('banner',$parent_id);
 $banner_src = ($banner) ? $banner['url'] : '';
 $banner_caption = get_field('banner_caption',$parent_id);
@@ -31,7 +31,7 @@ $px = get_bloginfo('template_url') . '/images/px.png';
 		<div id="content"></div>
 		<?php  
 			$description = get_field('description');
-			$photo = get_field('icon');
+			$photo = get_field('image');
 		?>
 		<section id="texts" data-anchor="page2" class="section subpage-section">
 		    <div class="wrapper clear">
@@ -48,9 +48,7 @@ $px = get_bloginfo('template_url') . '/images/px.png';
 
 				<article class="single-content singlepost <?php echo ($photo) ? 'half':'full'?>">
 					<h1 class="pagetitle posttitle"><?php the_title(); ?></h1>
-					<?php if ($description) { ?>
-					<div class="details"><?php echo $description; ?></div>
-					<?php } ?>
+					<div class="details"><?php the_content(); ?></div>
 				</article>
 
 
