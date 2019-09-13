@@ -10,8 +10,16 @@ function js_custom_init() {
             'menu_name' => 'Newsletters',
             'plural'    => 'Newsletters',
             'single'    => 'Newsletter',
-            'menu_icon' => 'dashicons-megaphone',
+            'menu_icon' => 'dashicons-email-alt',
             'supports'  => array('title','editor')
+        ),
+        array(
+            'post_type' => 'press',
+            'menu_name' => 'Press Room',
+            'plural'    => 'Press Room',
+            'single'    => 'Press Article',
+            'menu_icon' => 'dashicons-megaphone',
+            'supports'  => array('title','editor','thumbnail')
         ),
         array(
             'post_type' => 'team',
@@ -34,6 +42,7 @@ function js_custom_init() {
             'menu_name' => 'Testimonials',
             'plural'    => 'Testimonials',
             'single'    => 'Testimonial',
+            'menu_icon' => 'dashicons-testimonial',
             'supports'  => array('title','editor','thumbnail')
         ),
     );

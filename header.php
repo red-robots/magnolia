@@ -39,6 +39,9 @@ else if( is_singular('resources') ) {
 else if( is_singular('newsletters') ) {
 	$parent_id = get_the_page_id('newsletter');
 }
+else if( is_singular('press') ) {
+	$parent_id = get_the_page_id('press-room');
+}
 $banner = ($parent_id) ? get_field('banner',$parent_id) : get_field('banner');
 $has_banner = ($banner) ? 'hasHero':'noHero';
 ?>
