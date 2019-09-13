@@ -77,34 +77,50 @@ get_header(); ?>
 							<div class="wrapper">
 								<div class="flexbox">
 									<?php foreach ($list as $e) { 
-									$postId = $e->ID;
-									$name = $e->post_title;
-									$thumbId = get_post_thumbnail_id( $postId );
-									$photo = wp_get_attachment_image_src($thumbId,'large');
-									$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
-									$author = get_the_author($postId);
-									$excerpt = get_the_content($postId);
-									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-									$pagelink = get_permalink($postId);
-									$postdate = get_the_date('F j, Y',$postId);
-									?>
-									<div class="info">
-										<div class="pad">
-											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
-											</div>
-											<h3 class="posttitle"><?php echo $name; ?></h3>
-											<p class="author">Posted by: <strong><?php echo $author ?></strong><br>on <span><?php echo $postdate ?></span></p>	
-											<?php if ($excerpt) { ?>
-											<p class="excerpt"><?php echo $excerpt ?></p>	
-											<?php } ?>
+										$postId = $e->ID;
+										$name = $e->post_title;
+										$thumbId = get_post_thumbnail_id( $postId );
+										$photo = wp_get_attachment_image_src($thumbId,'large');
+										$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+										$authorId = $e->post_author;
+										$user = get_userdata($authorId);
+										$author = ( isset($user->data->display_name) && $user->data->display_name ) ? $user->data->display_name : ''; 
+										$excerpt = get_the_content($postId);
+										$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
+										$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
+										$pagelink = get_permalink($postId);
+										$date = $e->post_date;
+										$postdate = ($date) ? date('F j, Y',strtotime($date)) : ''; ?>
+										<div class="info">
+											<div class="pad">
+												<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
+													<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
+												</div>
+												<h3 class="posttitle"><?php echo $name; ?></h3>
+												<?php if ( $author || $postdate ) { ?>
+													<div class="author nt">
+														<?php if ($author) { ?>
+															<div class="dt">
+																Posted by: <strong style="text-transform: capitalize;"><?php echo $author ?></strong>
+															</div>
+														<?php } ?>
+														<?php if ($postdate) { ?>
+															<div class="dt">
+																on <span><?php echo $postdate ?></span>
+															</div>
+														<?php } ?>
+													</div>
+												<?php } ?>
+												
+												<?php if ($excerpt) { ?>
+												<p class="excerpt"><?php echo $excerpt ?></p>	
+												<?php } ?>
 
-											<div class="buttondiv">
-												<a href="<?php echo $pagelink ?>">Read More</a>
+												<div class="buttondiv">
+													<a href="<?php echo $pagelink ?>">Read More</a>
+												</div>
 											</div>
 										</div>
-									</div>	
 									<?php } ?>
 								</div>
 							</div>
@@ -116,34 +132,50 @@ get_header(); ?>
 						<div class="wrapper">
 							<div class="flexbox">
 								<?php foreach ($blogs as $e) { 
-								$postId = $e->ID;
-								$name = $e->post_title;
-								$thumbId = get_post_thumbnail_id( $postId );
-								$photo = wp_get_attachment_image_src($thumbId,'large');
-								$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
-								$author = get_the_author($postId);
-								$excerpt = get_the_content($postId);
-								$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-								$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-								$pagelink = get_permalink($postId);
-								$postdate = get_the_date('F j, Y',$postId);
-								?>
-								<div class="info">
-									<div class="pad">
-										<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-											<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
-										</div>
-										<h3 class="posttitle"><?php echo $name; ?></h3>
-										<p class="author">Posted by: <strong><?php echo $author ?></strong><br>on <span><?php echo $postdate ?></span></p>	
-										<?php if ($excerpt) { ?>
-										<p class="excerpt"><?php echo $excerpt ?></p>	
-										<?php } ?>
+									$postId = $e->ID;
+									$name = $e->post_title;
+									$thumbId = get_post_thumbnail_id( $postId );
+									$photo = wp_get_attachment_image_src($thumbId,'large');
+									$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+									$authorId = $e->post_author;
+									$user = get_userdata($authorId);
+									$author = ( isset($user->data->display_name) && $user->data->display_name ) ? $user->data->display_name : ''; 
+									$excerpt = get_the_content($postId);
+									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
+									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
+									$pagelink = get_permalink($postId);
+									$date = $e->post_date;
+									$postdate = ($date) ? date('F j, Y',strtotime($date)) : ''; ?>
+									<div class="info">
+										<div class="pad">
+											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
+												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
+											</div>
+											<h3 class="posttitle"><?php echo $name; ?></h3>
+											<?php if ( $author || $postdate ) { ?>
+												<div class="author nt">
+													<?php if ($author) { ?>
+														<div class="dt">
+															Posted by: <strong style="text-transform: capitalize;"><?php echo $author ?></strong>
+														</div>
+													<?php } ?>
+													<?php if ($postdate) { ?>
+														<div class="dt">
+															on <span><?php echo $postdate ?></span>
+														</div>
+													<?php } ?>
+												</div>
+											<?php } ?>
+											
+											<?php if ($excerpt) { ?>
+											<p class="excerpt"><?php echo $excerpt ?></p>	
+											<?php } ?>
 
-										<div class="buttondiv">
-											<a href="<?php echo $pagelink ?>">Read More</a>
+											<div class="buttondiv">
+												<a href="<?php echo $pagelink ?>">Read More</a>
+											</div>
 										</div>
-									</div>
-								</div>	
+									</div>	
 								<?php } ?>
 							</div>
 						</div>

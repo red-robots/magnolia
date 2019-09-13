@@ -95,7 +95,7 @@ big {
 .site-footer:after {
 	@include clearfix-after;
 }
-.author {
+.author:not(.nt) {
 	text-transform: capitalize;
 }
 .wrapper {
