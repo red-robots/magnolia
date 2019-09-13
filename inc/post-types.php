@@ -11,7 +11,8 @@ function js_custom_init() {
             'plural'    => 'Newsletters',
             'single'    => 'Newsletter',
             'menu_icon' => 'dashicons-email-alt',
-            'supports'  => array('title','editor')
+            'supports'  => array('title','editor'),
+            'rewrite'   => array( 'slug' => 'newsletter' )
         ),
         array(
             'post_type' => 'press',
@@ -58,6 +59,7 @@ function js_custom_init() {
             $taxonomies = ( isset($p['taxonomies']) && $p['taxonomies'] ) ? $p['taxonomies'] : array(); 
             $parent_item_colon = ( isset($p['parent_item_colon']) && $p['parent_item_colon'] ) ? $p['parent_item_colon'] : ""; 
             $menu_position = ( isset($p['menu_position']) && $p['menu_position'] ) ? $p['menu_position'] : 20; 
+            $rewrite = ( isset($p['rewrite']) && $p['rewrite'] ) ? $p['rewrite'] : true; 
             
             if($p_type) {
                 
@@ -85,7 +87,7 @@ function js_custom_init() {
                     'show_in_menu' => true, 
                     'show_in_rest' => true,
                     'query_var' => true,
-                    'rewrite' => true,
+                    'rewrite' => $rewrite,
                     'capability_type' => 'post',
                     'has_archive' => false, 
                     'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
