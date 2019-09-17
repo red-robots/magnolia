@@ -44,44 +44,44 @@ get_header(); ?>
 		$s3columns = get_field('s3columns'); 
 		$square = get_bloginfo('template_url') . '/images/px.png';
 	?>
-	<section id="section3" data-anchor="page3" class="section section-blue subpage-section">
-	    <div class="wrapper clear">
+	<section id="iconssection" data-anchor="page3" class="section iconssection services-section">
+		<div class="wrapper clear">
 			<?php if ($s3toptext) { ?>
-			<div class="top-text large-text text-center animated fadeInUp wow"><?php echo $s3toptext ?></div>	
+				<div class="top-text text-center fadeInUp wow"><?php echo $s3toptext ?></div>
 			<?php } ?>
-			<?php if ($s3columns) { ?>
-			<div class="icons-columns">
-				<div class="flexboxes">
-					<?php $j=1; foreach ($s3columns as $s) { 
-						$s_icon = $s['icon'];
-						$s_title = $s['title'];
-						$s_caption = $s['caption']; 
-						$delay = '.' . ($j+5) . 's';
-						?>
-						<div class="col text-center animated zoomIn wow" data-wow-delay="<?php echo $delay ?>">
-							<div class="pad clear">
-								<?php if ($s_icon) { ?>
-								<div class="icondiv">
-									<span style="background-image:url('<?php echo $s_icon['url'] ?>')">
-										<img src="<?php echo $square ?>" alt="" aria-hidden="true" />
-									</span>
-								</div>	
-								<?php } ?>
 
-								<div class="text">
-									<?php if ($s_title) { ?>
-									<h3 class="title"><?php echo $s_title ?></h3>	
-									<?php } ?>
-									<?php if ($s_caption) { ?>
-									<div class="caption"><?php echo $s_caption ?></div>	
-									<?php } ?>
-								</div>
-							</div>
+				
+			<?php if ($s3columns) { ?>
+			<div class="services fullwidth">
+				<div class="flexrow">
+					<?php $j=1; foreach ($s3columns as $svc) { 
+
+					// 	$s_icon = $s['icon'];
+					// $s_title = $s['title'];
+					// $s_caption = $s['caption']; 
+					// $delay = '.' . ($j+5) . 's';
+					$delay = '.' . ($j+5) . 's';
+					$s_icon = $svc['icon'];
+					$s_title = $svc['title'];
+					$s_text = $svc['caption']; ?>
+					<div class="fbox4 svc text-center fadeInUp wow" data-wow-delay="<?php echo $delay ?>">
+						<?php if ($s_icon) { ?>
+						<div class="svc-icon">
+							<span><img src="<?php echo $s_icon['url'] ?>" alt="<?php echo $s_icon['title'] ?>" /></span>
 						</div>	
+						<?php } ?>
+						<?php if ($s_title) { ?>
+							<h3 class="box-title"><?php echo $s_title ?></h3>
+						<?php } ?>
+						<?php if ($s_text) { ?>
+							<div class="svc-text"><?php echo $s_text ?></div>
+						<?php } ?>
+					</div>	
 					<?php $j++; } ?>
 				</div>
 			</div>	
 			<?php } ?>
+
 		</div>
 	</section>
 
@@ -116,37 +116,43 @@ get_header(); ?>
 		$s5columns = get_field('s5columns'); 
 	?>
 
-	<section id="section5-2" data-anchor="page5" class="section section-gray subpage-section">
-	    <div class="wrapper clear">
+	<section id="values" data-anchor="page3" class="section iconssection services-section">
+		<div class="wrapper clear">
 			<?php if ($valuestext) { ?>
-			<div class="top-text large-text text-center animated fadeInUp wow"><?php echo $valuestext ?></div>	
+				<div class="intro top-text text-center fadeInUp wow"><?php echo $valuestext ?></div>
 			<?php } ?>
+
+				
 			<?php if ($s5columns) { ?>
-			<div class="icons-columns animated fadeInUp wow">
-				<div class="flexboxes">
-					<?php $j=1; foreach ($s5columns as $s) { 
-						$s_title = $s['title'];
-						$s_caption = $s['caption']; 
-						$delay = '.' . ($j+5) . 's';
-						?>
-						<div class="col text-center">
-							<div class="pad clear">
-								<div class="text">
-									<?php if ($s_title) { ?>
-									<h3 class="title"><?php echo $s_title ?></h3>	
-									<?php } ?>
-									<?php if ($s_caption) { ?>
-									<div class="caption"><?php echo $s_caption ?></div>	
-									<?php } ?>
-								</div>
-							</div>
+			<div class="services fullwidth">
+				<div class="flexrow">
+					<?php $j=1; foreach ($s5columns as $svc) { 
+					$delay = '.' . ($j+5) . 's';
+					$s_icon = $svc['icon'];
+					$s_title = $svc['title'];
+					$s_text = $svc['caption']; ?>
+					<div class="fbox4 svc text-center fadeInUp wow" data-wow-delay="<?php echo $delay ?>">
+						<?php if ($s_icon) { ?>
+						<div class="svc-icon">
+							<span><img src="<?php echo $s_icon['url'] ?>" alt="<?php echo $s_icon['title'] ?>" /></span>
 						</div>	
+						<?php } ?>
+						<?php if ($s_title) { ?>
+							<h3 class="box-title"><?php echo $s_title ?></h3>
+						<?php } ?>
+						<?php if ($s_text) { ?>
+							<div class="svc-text"><?php echo $s_text ?></div>
+						<?php } ?>
+					</div>	
 					<?php $j++; } ?>
 				</div>
 			</div>	
 			<?php } ?>
+
 		</div>
 	</section>
+
+
 	
 	<?php /*=== SECTION 6 ===*/ ?>
 	<?php 
@@ -154,7 +160,7 @@ get_header(); ?>
 	?>
 	<section id="section6" data-anchor="page6" class="section subpage-section">
 	    <div class="wrapper clear">
-			<div class="top-text about text-center large-text animated fadeIn wow">
+			<div class="intro top-text text-center large-text animated fadeIn wow">
 				<?php echo $s6content ?>
 			</div>
 		</div>

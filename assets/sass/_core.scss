@@ -635,7 +635,10 @@ html, body, .site {
 		padding: 0 0;
 		font-weight: 700;
 		line-height: 1.2;
-		margin-bottom: 5px;
+		margin-bottom: 6px;
+	}
+	p:last-child {
+		margin-bottom: 0;
 	}
 }
 
@@ -669,20 +672,23 @@ html, body, .site {
 .section.services-section {
 	background: $color-light-grey;
 }
-.section-title {
-	font-size: 2em;
-	font-weight: 300;
-	margin: 0 0;
-	@include mid {
-		font-size: 2.7em;
-	}
-}
 
+.iconssection,
 .services {
 	.fbox {
 		padding: 20px;
 		@include tab {
 			width: 33.33%;
+		}
+	}
+	.fbox4 {
+		font-size: 16px;
+		padding: 20px;
+		@include tab {
+			width: 25%;
+		}
+		.svc-icon span {
+			padding: 15px;
 		}
 	}
 }
@@ -977,6 +983,17 @@ html, body, .site {
 	}
 }
 
+.section-title {
+	font-size: 2em;
+	font-weight: 300;
+	margin: 0 0;
+	@include mid {
+		font-size: 2.7em;
+	}
+}
+
+
+.section.iconssection,
 .section-three {
 	.wrapper {
 		padding-top: 6%;
@@ -986,6 +1003,20 @@ html, body, .site {
 		margin-bottom: 15px;
 	}
 }
+
+.section.iconssection {
+	background: $subtle_grey;
+	font-size: 30px;
+	h2 {
+		font-size: 1.35em;
+		font-weight: 300;
+		margin: 0 0;
+		@include mid {
+			font-size: 1.75em;
+		}
+	}
+}
+
 
 .section.footer-section {
 	background: $color-dark-blue;
@@ -1107,13 +1138,24 @@ body.subpage {
 	}
 	h3 {
 		font-size: 20px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 1.3;
 		@include tab {
 			font-size: 25px;
 		}
 		@include desk {
 			font-size: 30px;
+		}
+	}
+	.intro h3 {
+		margin:0 0 5px;
+		font-weight: 700;
+	}
+	.intro p {
+		margin-top: 0;
+		margin-bottom: 1.5em;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 	a {
@@ -1189,6 +1231,16 @@ body.subpage {
 			padding-bottom: 3%;
 		}
 	}
+	&.section-teal.last,
+	&.last {
+		.wrapper {
+			padding-top: 4%!important;
+			padding-bottom: 5%!important;
+			@include flexbox();
+			@include flexbox-align-items(center);
+			@include flexbox-justify(center);
+		}
+	}
 }
 
 .subpage-section.subscribe {
@@ -1201,7 +1253,7 @@ body.subpage {
 	.gform_wrapper form {
 		width: 100%;
 		float: left;
-		background: #FFF;
+		background: $grey2;
 	}
 }
 
@@ -1272,7 +1324,7 @@ body.subpage {
 	}
 }
 .section-gray {
-	background: #e8e8e7;
+	background: $grey2;
 	color: $color-dark-blue;
 	.top-text {
 		max-width: 100%;

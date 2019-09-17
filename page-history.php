@@ -158,7 +158,7 @@ get_header(); ?>
 	?>
 	<section id="section6" data-anchor="page6" class="section subpage-section">
 	    <div class="wrapper clear">
-			<div class="top-text about text-center large-text animated fadeIn wow">
+			<div class="top-text intro about text-center large-text animated fadeIn wow">
 				<?php echo $s6content ?>
 			</div>
 		</div>

@@ -46,7 +46,7 @@ get_header(); ?>
 	<section id="section3" data-anchor="page3" class="section section-blue subpage-section">
 	    <div class="wrapper clear">
 			<?php if ($s3toptext) { ?>
-			<div class="top-text large-text text-center animated fadeInUp wow"><?php echo $s3toptext ?></div>	
+			<div class="top-text intro large-text text-center animated fadeInUp wow"><?php echo $s3toptext ?></div>	
 			<?php } ?>
 			<?php if ($s3columns) { ?>
 			<div class="icons-columns">
@@ -123,7 +123,7 @@ get_header(); ?>
 	<section id="section5-2" data-anchor="page5" class="section section-gray subpage-section">
 	    <div class="wrapper clear">
 			<?php if ($valuestext) { ?>
-			<div class="top-text large-text text-center animated fadeInUp wow"><?php echo $valuestext ?></div>	
+			<div class="intro top-text large-text text-center animated fadeInUp wow"><?php echo $valuestext ?></div>	
 			<?php } ?>
 			<?php if ($s5columns) { ?>
 			<div class="icons-columns animated fadeInUp wow">
@@ -158,7 +158,7 @@ get_header(); ?>
 	?>
 	<section id="section6" data-anchor="page6" class="section subpage-section">
 	    <div class="wrapper clear">
-			<div class="top-text about text-center large-text animated fadeIn wow">
+			<div class="intro top-text about text-center large-text animated fadeIn wow">
 				<?php echo $s6content ?>
 			</div>
 		</div>
@@ -170,9 +170,9 @@ get_header(); ?>
 		$s7btn = get_field('s7btn'); 
 		$s7btnlink = get_field('s7btnlink'); 
 	?>
-	<section id="section7" data-anchor="page6" class="section section-teal subpage-section">
+	<section id="section7" data-anchor="page6" class="section section-teal subpage-section last">
 	    <div class="wrapper clear">
-			<div class="top-text animated zoomIn wow text-center large-text" data-wow-delay="0.5s">
+			<div class="intro top-text animated zoomIn wow text-center large-text" data-wow-delay="0.5s">
 				<?php echo $s76content ?>
 
 				<?php if ($s7btn && $s7btnlink) { ?>
