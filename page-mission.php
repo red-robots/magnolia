@@ -156,8 +156,9 @@ get_header(); ?>
 	
 	<?php /*=== SECTION 6 ===*/ ?>
 	<?php 
-		$s6content = get_field('s6content'); 
-	?>
+	$s6content = get_field('s6content'); 
+	$s6content2 = get_field('s6content2'); 
+	if($s6content) { ?>
 	<section id="section6" data-anchor="page6" class="section subpage-section">
 	    <div class="wrapper clear">
 			<div class="intro top-text text-center large-text animated fadeIn wow">
@@ -165,6 +166,17 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
+	<?php } ?>
+
+	<?php if($s6content2) { ?>
+	<section id="section6-1" data-anchor="page6-1" class="section section-gray subpage-section">
+	    <div class="wrapper clear">
+			<div class="intro top-text text-center large-text animated fadeIn wow">
+				<?php echo $s6content2 ?>
+			</div>
+		</div>
+	</section>
+	<?php } ?>
 
 	<?php /*=== SECTION 7 ===*/ ?>
 	<?php 

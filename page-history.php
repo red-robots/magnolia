@@ -118,12 +118,19 @@ get_header(); ?>
 	<?php 
 		$valuestext = get_field('valuestext'); 
 		$s5columns = get_field('s5columns'); 
+		$s5ctabtn = get_field('s5ctabtn'); 
+		$s5ctabtnlink = get_field('s5ctabtnlink'); 
 	?>
 
 	<section id="section5-2" data-anchor="page5" class="section section-gray subpage-section">
 	    <div class="wrapper clear">
 			<?php if ($valuestext) { ?>
-			<div class="top-text large-text text-center animated fadeInUp wow"><?php echo $valuestext ?></div>	
+			<div class="intro top-text large-text text-center animated fadeInUp wow">
+				<?php echo $valuestext ?>
+				<?php if ($s5ctabtn && $s5ctabtnlink) { ?>
+				<div class="buttondiv"><a href="<?php echo $s5ctabtnlink ?>" target="_blank" class="morebtn ongray"><?php echo $s5ctabtn ?></a></div>	
+				<?php } ?>
+			</div>	
 			<?php } ?>
 			<?php if ($s5columns) { ?>
 			<div class="icons-columns animated fadeInUp wow">

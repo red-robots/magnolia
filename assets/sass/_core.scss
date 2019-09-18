@@ -668,6 +668,12 @@ html, body, .site {
 		border-color: $color__text-main;
 		transform: scale(1.1);
 	}
+	&.ongray {
+		border-color: #d4d4d4;
+		&:hover {
+			border-color: $color__text-main;
+		}
+	}
 }
 .section.services-section {
 	background: $color-light-grey;
@@ -1135,6 +1141,9 @@ body.subpage {
 		@include desk {
 			font-size: 60px;
 		}
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 	h3 {
 		font-size: 20px;
@@ -1158,7 +1167,7 @@ body.subpage {
 			margin-bottom: 0;
 		}
 	}
-	a {
+	a:not(.morebtn) {
 		display: inline-block;
 		color: $color__link;
 		text-decoration: none;
@@ -1175,13 +1184,14 @@ body.subpage {
     		transform: scaleX(0);
     		opacity: 0;
 		}
-	}
-	a:hover {
-		&:after {
-			opacity: 1;
-			transform: scaleX(1);
+		&:hover {
+			&:after {
+				opacity: 1;
+				transform: scaleX(1);
+			}
 		}
 	}
+
 	.wrapper {
 		padding-top: 6%;
 		padding-bottom: 10%;
