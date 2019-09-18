@@ -1811,6 +1811,7 @@ html,body,.site{height:100% !important}
 .content-main-wrapper{height:100% !important}
 .default-template{background:#FFF;color:#091f40}
 .default-template .site-main{min-height:30em}
+.default-template .hentry{padding-bottom:60px}
 .section{background:#FFF;color:#091f40;font-weight:300;position:relative;z-index:1010}
 .section.parallax-window{background:transparent}
 .first-section{text-align:center}
