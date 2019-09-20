@@ -3,7 +3,7 @@
 	$login_label = get_field('button_text','option');
 ?>
 <div class="navOuterWrap">
-	<a href="#" class="menutoggle mtoggle"><span></span></a>
+	<a href="#" class="menutoggle mtoggle"><span></span><i>Menu</i></a>
 	<div id="sideNav" class="side-navigation mtoggle">
 		<?php if ($login_link && $login_label) { ?>
 			<div class="snButtons">

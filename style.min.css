@@ -1742,6 +1742,7 @@ html[xmlns] .flexslider .slides{display:block}
 .menutoggle.open span{background:transparent}
 .menutoggle.open span:before{-webkit-transform:translateY(16px) rotate(45deg);-ms-transform:translateY(16px) rotate(45deg);transform:translateY(16px) rotate(45deg)}
 .menutoggle.open span:after{-webkit-transform:translateY(-16px) rotate(-45deg);-ms-transform:translateY(-16px) rotate(-45deg);transform:translateY(-16px) rotate(-45deg)}
+.menutoggle i{display:inline-block;font-size:18px;font-style:normal;position:absolute;top:8px;right:-70px;color:#FFF;line-height:1}
 body.scrolled .menutoggle{background:rgba(5,3,29,0.5)}
 .footer-section .footernav ul{margin:20px 0 0;padding:0;list-style:none}
 .footer-section .footernav li{line-height:1.4}
