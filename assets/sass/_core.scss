@@ -159,10 +159,10 @@ big {
 .logoSVG {
 	display: inline-block;
 	width: 200px;
-	margin: 0 auto;
+	margin: 6px auto 0;
 	opacity: 0;
 	position: relative;
-	left: 18px;
+	left: 2px;
 	@include tab {
 		width: 310px;
 		left: 0;
@@ -173,6 +173,9 @@ big {
 	}
 	&.show {
 		opacity: 1;
+	}
+	@media screen and (max-width:480px) {
+		left: 30px;
 	}
 }
 
@@ -1717,8 +1720,8 @@ h1.entry-title {
 		color: #FFF;
 	}
 	.wrapper {
-		padding-top: 7%;
-		padding-bottom: 4%;
+		padding-top: 8%;
+		padding-bottom: 8%;
 		@include tab {
 			padding-top: 5%;
 			padding-bottom: 5%;

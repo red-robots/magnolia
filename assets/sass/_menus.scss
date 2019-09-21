@@ -80,7 +80,7 @@
 
 .navOuterWrap {
 	position: absolute;
-	width: 350px;
+	// width: 350px;
 	height: 100%;
 	top: 0;
 	left: 0;
@@ -116,7 +116,7 @@
 	transition: all ease-out .3s;
 	z-index: 1200;
 	transform: translateX(-100%);
-	background: rgba(5, 3, 29, 0.6);
+	background: rgba(5, 3, 29, 0.95);
 	overflow-y: scroll;
 	overflow-x: hidden;
 	&.open {
@@ -201,7 +201,7 @@
 	float: left;
 	background: transparent;
 	position: absolute;
-	top: 40px;
+	top: 45px;
 	left: 25px;
 	z-index: 1205;
 	@include tab {
@@ -243,13 +243,18 @@
 	}
 	i {
 		display: inline-block;
-		font-size: 18px;
+		font-size: 15px;
 		font-style: normal;
 		position: absolute;
-		top: 8px;
-		right: -70px;
+		top: -22px;
+		right: 4px;
 		color: #FFF;
 		line-height: 1;
+		@include tab {
+			font-size: 18px;
+			top: 8px;
+			right: -70px;
+		}
 	}
 }
 
