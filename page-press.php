@@ -33,7 +33,7 @@ get_header(); ?>
 			<div id="content"></div>
 			<?php if ( get_the_content() ) { ?>
 			<section id="section2" data-anchor="page2" class="section subpage-section">
-			    <div class="wrapper clear">
+			    <div class="wrapper clear smpad">
 					<div class="intro fadeInUp wow text-center large-text">
 						<?php the_content(); ?>
 					</div>
@@ -185,7 +185,7 @@ get_header(); ?>
 
 		<?php /*=== Subscription ===*/ ?>
 		<?php if ( $subscribe = get_field('subscribe') ) { ?>
-		<section id="section2" data-anchor="page2" class="section section-gray subpage-section subscribe">
+		<section id="subscribe-section" data-anchor="page2" class="section section-gray subpage-section subscribe">
 		    <div class="wrapper clear">
 				<div class="intro fadeInUp wow text-center large-text">
 					<?php echo $subscribe; ?>

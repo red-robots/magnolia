@@ -1,14 +1,6 @@
 <?php  
-// $photo = get_field('image');
-// $bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
-// $jobtitle = get_field('title');
-// $email = get_field('email');
-// $phone_number = get_field('phone_number');
-// $excerpt = get_field('experience');
-// $px = get_bloginfo('template_url') . '/images/px2.png';
-// $education = get_field('education');
-// $experience = get_field('experience');
-// $professional_affiliations = get_field('professional_affiliations');
+global $post;
+//global $authordata;
 
 $px = get_bloginfo('template_url') . '/images/px.png';
 $postId = get_the_ID();
@@ -18,12 +10,27 @@ $imageAlt = ($imageMeta) ? $imageMeta[0]->post_title : '';
 
 $photo = wp_get_attachment_image_src($thumbId,'large');
 $bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+$author_id = $post->post_author;
 $author = get_the_author($postId);
+$author_fullname = ($author) ? ucwords($author) : ''; 
+$author_firstname = get_the_author_meta('first_name',$author_id);
+$author_lastname = get_the_author_meta('last_name',$author_id);
+$fname =  array($author_firstname,$author_lastname);
+if( $fname && array_filter($fname) ) {
+	$author_name = implode(" ", array_filter($fname) );
+	$author_fullname = ucwords($author_name);
+}
 $excerpt = get_the_content('experience',$postId);
 $excerpt = ($excerpt) ? strip_tags($excerpt) : '';
 $excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
 $pagelink = get_permalink($postId);
 $postdate = get_the_date('F j, Y',$postId);
+$teaminfo = get_field('teaminfo','user_' . $author_id);
+if($teaminfo) {
+	$authorFull = $teaminfo->post_title;
+	$bio_page = get_permalink($teaminfo->ID) . '#bio';
+	$author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
+}
 ?>
 
 <?php if ($photo) { ?>
@@ -39,7 +46,7 @@ $postdate = get_the_date('F j, Y',$postId);
 <article class="single-content singlepost <?php echo ($photo) ? 'half':'full'?>">
 	<h1 class="pagetitle posttitle"><?php the_title(); ?></h1>
 	<p class="post-info">
-		Posted by: <strong class="author"><?php echo $author ?></strong> on <?php echo $postdate; ?>
+		Posted by: <strong class="author"><?php echo $author_fullname ?></strong> on <?php echo $postdate; ?>
 	</p>
 	
 	<div class="details"><?php the_content(); ?></div>

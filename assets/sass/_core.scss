@@ -72,6 +72,9 @@ mark, ins {
 big {
 	font-size: 125%;
 }
+#wpadminbar {
+	position: fixed;
+}
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -97,6 +100,9 @@ big {
 }
 .author:not(.nt) {
 	text-transform: capitalize;
+}
+.site {
+	position: relative;
 }
 .wrapper {
 	max-width: 1240px;
@@ -352,6 +358,10 @@ html, body, .site {
 	}
 	.hentry {
 		padding-bottom: 60px;
+	}
+	p img {
+		width: 100%;
+		height: auto;
 	}
 }
 .section {
@@ -852,7 +862,8 @@ html, body, .site {
 	float: left;
 	input[type="text"],
 	input[type="email"],
-	textarea {
+	textarea,
+	select {
 		border-radius: 0px;
 		border: 3px solid #dedede;
 		outline: none;
@@ -864,7 +875,8 @@ html, body, .site {
 		}
 	}
 	input[type="text"],
-	input[type="email"] {
+	input[type="email"],
+	select {
 		height: 45px;
 		line-height: 44px;
 	}
@@ -932,7 +944,7 @@ html, body, .site {
 	background: transparent;
 	padding: 10px 20px;
 	margin: 0 auto;
-	font-size: 25px;
+	font-size: 23px;
 	@include transition(all ease-out .3s);
 	&:hover {
 		color: #FFF;
@@ -1119,9 +1131,9 @@ body.subpage {
 			padding-bottom: 25px;
 		}
 	}
-	.side-navigation {
-		background: rgba(5, 3, 29, 0.85);
-	}
+	// .side-navigation {
+	// 	background: rgba(5, 3, 29, 0.85);
+	// }
 }
 .subpage-section {
 	h1 {
@@ -1209,7 +1221,11 @@ body.subpage {
 		}
 		@include desk {
 			padding-top: 6%;
-			padding-bottom: 8%;
+			padding-bottom: 6%;
+		}
+		&.smpad {
+			padding-top: 3%;
+			padding-bottom: 0;
 		}
 	}
 	.top-text {
@@ -1257,6 +1273,20 @@ body.subpage {
 			@include flexbox-justify(center);
 		}
 	}
+	&.topsection {
+		.wrapper {
+			padding-top: 3%;
+			padding-bottom: 3%;
+		}
+	}
+	.blogs .wrapper {
+		padding-top: 2%;
+		padding-bottom: 4%;
+	}
+	p img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .subpage-section.subscribe {
@@ -1270,6 +1300,30 @@ body.subpage {
 		width: 100%;
 		float: left;
 		background: $grey2;
+	}
+	.ginput_container select,
+	.ginput_container input {
+		width: 100%!important;
+	}
+}
+
+.gform_wrapper form ul.gform_fields li.gfield .ginput_container select {
+	font-size: 20px;
+	height: 45px;
+	line-height: 45px;
+	background: #FFF;
+}
+
+.gform_wrapper form ul.gform_fields li.gfield#field_2_9 {
+	margin-top: 0!important;
+	label {
+		position: relative!important;
+		margin-top: 0!important;
+		top: 0;
+		left: 0;
+	} 
+	.ginput_container {
+		margin-top: 0!important;
 	}
 }
 
@@ -1444,9 +1498,11 @@ body.subpage {
 			background: $teal;
 			color: #FFF;
 		}
-		&:before,&:after {
-			display: none;
-		}
+	}
+}
+.subpage-section .buttondiv a {
+	&:before,&:after {
+		display: none!important;
 	}
 }
 .photo {
@@ -1510,7 +1566,8 @@ body.subpage {
 	}
 }
 .subpage-section .hd3 {
-	font-size: 25px;
+	// font-size: 25px;
+	font-size: 1.15em;
 	font-weight: 600;
 	line-height: 1.2;
 	color: $teal;
@@ -1528,13 +1585,13 @@ body.subpage {
 .teaminfo {
 	font-size: 1.2em;
 	line-height: 1.4;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	@include tab {
 		font-size: 1.25em;
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}
 	.info {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 }
 .educations {
@@ -1608,9 +1665,37 @@ body.subpage {
 				font-size: 16px;
 				transition: all ease .3s;
 			}
-		}
-		a:hover .arrow {
-			margin-left: -5px;
+			&:hover .arrow {
+				margin-left: -5px;
+			}
+			&.rightArr {
+				padding: 4px 60px 4px 40px;
+				.arrow-r {
+					position: absolute;
+					right: 12px;
+					top: 11px;
+					font-size: 16px;
+					transition: all ease .3s;
+				}
+				&:hover .arrow-r {
+					margin-right: -5px;
+				}
+			}
+			&.white:hover {
+				background: $teal;
+				color: #FFF;
+				.arrow,
+				.arrow-r {
+					color: #FFF;
+				}
+			}
+			&.large {
+				padding-top: 8px;
+				padding-bottom: 8px;
+				&.rightArr .arrow-r {
+					top: 15px;
+				}
+			}
 		}
 	}
 }

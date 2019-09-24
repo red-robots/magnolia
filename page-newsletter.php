@@ -32,7 +32,7 @@ get_header(); ?>
 			<?php /*=== SECTION 2 ===*/ ?>
 			<div id="content"></div>
 			<?php if ( get_the_content() ) { ?>
-			<section id="section2" data-anchor="page2" class="section subpage-section">
+			<section id="section2" data-anchor="page2" class="section topsection subpage-section">
 			    <div class="wrapper clear">
 					<div class="intro fadeInUp wow text-center large-text">
 						<?php the_content(); ?>
@@ -69,7 +69,7 @@ get_header(); ?>
 				$px1 = get_bloginfo('template_url') . '/images/px.png';
 				$px2 = get_bloginfo('template_url') . '/images/px2.png';
 				if ( $blogs ) {  ?>
-				<div class="blogs clear">
+				<div class="blogs clear fadeIn wow">
 					
 					<?php if ($total>3) { $lists = array_chunk($blogs,3); ?>
 
@@ -192,12 +192,25 @@ get_header(); ?>
 				<?php } ?>
 		</section>
 
+		<?php  
+		$subcribePageId = get_the_page_id('subscribe');
+		$subscribe = get_field('subscribe');
+		$sectionBg = ($subscribe) ? ' whitebg':'section-gray';
+		?>
+		<?php if ($subcribePageId) { ?>
+		<section id="subscribe-cta" data-anchor="page2" class="section section-cta subscribe-cta subpage-section <?php echo $sectionBg ?>">
+			<div class="wrapper">
+				<div class="buttondiv"><a class="rightArr white large" href="<?php echo get_permalink($subcribePageId); ?>">Subscribe <i class="arrow-r fas fa-chevron-right"></i></a></div>
+			</div>
+		</section>
+		<?php } ?>
+
 
 		<?php /*=== Subscription ===*/ ?>
-		<?php if ( $subscribe = get_field('subscribe') ) { ?>
-		<section id="section2" data-anchor="page2" class="section section-gray subpage-section subscribe">
+		<?php if ( $subscribe ) { ?>
+		<section id="subscribe-section" data-anchor="page2" class="section section-gray subpage-section subscribe">
 		    <div class="wrapper clear">
-				<div class="intro fadeInUp wow text-center large-text">
+				<div class="intro fadeIn wow text-center large-text">
 					<?php echo $subscribe; ?>
 				</div>
 			</div>

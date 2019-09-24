@@ -90,7 +90,23 @@ $parent_link = get_permalink($parent_id);
 </section>
 <?php } ?>
 
+<?php  
+$blog_id = get_the_page_id('blog');
+$last_section_content = get_field('last_section_content',$blog_id); 
+$lsBtnName = get_field('lsBtnName',$blog_id); 
+$lsBtnLink = get_field('lsBtnLink',$blog_id);
+if($last_section_content) {  ?>
+<section id="lastsection" data-anchor="page3" class="section section-teal subpage-section">
+    <div class="wrapper clear">
+		<div class="top-text text-center large-text" data-wow-delay="0.5s">
+			<?php echo $last_section_content ?>
 
-
+			<?php if ($lsBtnName && $lsBtnLink) { ?>
+				<div class="buttondiv"><a class="morebtn" href="<?php echo $lsBtnLink ?>"><?php echo $lsBtnName ?></a></div>
+			<?php } ?>
+		</div>
+	</div>
+</section>
+<?php } ?>
 <?php
 get_footer();

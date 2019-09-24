@@ -9,6 +9,7 @@ $px = get_bloginfo('template_url') . '/images/px2.png';
 $education = get_field('education');
 $experience = get_field('experience');
 $professional_affiliations = get_field('professional_affiliations');
+$community_involvement = get_field('community_involvement');
 ?>
 
 <aside class="single-sidebar">
@@ -44,6 +45,22 @@ $professional_affiliations = get_field('professional_affiliations');
 				<div class="info">
 					<div class="aff"><?php echo $affiliation ?></div>
 				</div>
+				<?php } ?>
+			</div>
+		</div>
+	<?php } ?>
+
+	<?php if ($community_involvement) { ?>
+		<div class="swidget teaminfo">
+			<h3 class="hd3">Community Involvement</h3>
+			<div class="affiliations">
+				<?php foreach ($community_involvement as $ci) { 
+				$involvement = $ci['community_involvement']; ?>
+					<?php if ($involvement) { ?>
+					<div class="info">
+						<div class="aff"><?php echo $involvement ?></div>
+					</div>
+					<?php } ?>
 				<?php } ?>
 			</div>
 		</div>
