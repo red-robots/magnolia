@@ -1745,8 +1745,7 @@ html[xmlns] .flexslider .slides{display:block}
 .menutoggle.open span:after{-webkit-transform:translateY(-16px) rotate(-45deg);-ms-transform:translateY(-16px) rotate(-45deg);transform:translateY(-16px) rotate(-45deg)}
 .menutoggle i{display:inline-block;font-size:15px;font-style:normal;position:absolute;top:-22px;right:4px;color:#FFF;line-height:1}
 @media(min-width:740px){.menutoggle i{font-size:18px;top:8px;right:-70px}
-}body.scrolled .menutoggle{background:rgba(5,3,29,0.5)}
-.footer-section .footernav ul{margin:20px 0 0;padding:0;list-style:none}
+}.footer-section .footernav ul{margin:20px 0 0;padding:0;list-style:none}
 .footer-section .footernav li{line-height:1.4}
 .footer-section .footernav a{display:inline-block;text-decoration:none;color:rgba(255,255,255,0.75);font-size:16px;line-height:1.2;padding:0}
 .footer-section .footernav a:hover{color:#FFF}
