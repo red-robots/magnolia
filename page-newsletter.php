@@ -44,7 +44,7 @@ get_header(); ?>
 		<?php endwhile; wp_reset_postdata(); ?>
 	
 		<?php /*=== Newsleter Feeds ===*/ ?>
-		<section id="posts" data-anchor="page3" class="section subpage-section">
+		<section id="posts" data-anchor="page3" class="section subpage-section <?php echo ( get_the_content() ) ? 'hastoptext':'notoptext';?>">
 				<?php
 				$perpage = (get_field('pagenum','option')) ? get_field('pagenum','option') : 12;
 				$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
@@ -95,7 +95,7 @@ get_header(); ?>
 											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
 												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
 											</div>
-											<h3 class="posttitle"><?php echo $name; ?></h3>
+											<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
 											<div class="author">
 												<?php if ($issuedNum) { ?>
 													<div class="dt">
@@ -141,7 +141,7 @@ get_header(); ?>
 											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
 												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
 											</div>
-											<h3 class="posttitle"><?php echo $name; ?></h3>
+											<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
 											<div class="author">
 												<?php if ($issuedNum) { ?>
 													<div class="dt">

@@ -1008,11 +1008,11 @@ html, body, .site {
 }
 
 .section-title {
-	font-size: 2em;
+	font-size: 35px;
 	font-weight: 300;
 	margin: 0 0;
 	@include mid {
-		font-size: 2.7em;
+		font-size: 45px;
 	}
 }
 
@@ -1140,6 +1140,7 @@ body.subpage {
 		font-size: 1.8em;
 		font-weight: 500;
 		line-height: 1.3;
+		margin-top: 0;
 		@include tab {
 			font-size: 2em;
 		}
@@ -1280,13 +1281,45 @@ body.subpage {
 		}
 	}
 	.blogs .wrapper {
-		padding-top: 2%;
-		padding-bottom: 4%;
+		padding-top: 0;
+		padding-bottom: 2%;
 	}
 	p img {
 		width: 100%;
 		height: auto;
 	}
+}
+
+.subpage-section .wp-share-button a {
+	position: relative;
+	padding: 5px 8px!important;
+	&:before,&:after {
+		display: none;
+	}
+	span {
+		transition: all ease-out .3s;
+	}
+}
+#content .wp-share-button.theme10 .share-button, 
+#content .wp-share-button.theme10 .share-button-more {
+	margin: 3px;
+}
+.wp-share-button.theme10 .share-button .button-count {
+	display: inline-block!important;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: -99;
+}
+.wp-share-button.theme10 .share-button:hover .button-count {
+	width: auto;
+	overflow: visible;
+	visibility: visible;
+	opacity: 1;
+	position: static;
+	z-index: 10;
 }
 
 .subpage-section.subscribe {
@@ -1313,13 +1346,37 @@ body.subpage {
 	line-height: 45px;
 	background: #FFF;
 }
+#content .gform_wrapper form ul.gform_fields li.gfield.gf_left_half,
+#content .gform_wrapper form ul.gform_fields li.gfield.gf_right_half {
+	label {
+		margin-top: 7px;
+	}
+}
 
-.gform_wrapper form ul.gform_fields li.gfield#field_2_9 {
-	margin-top: 0!important;
+#content .gform_wrapper form ul.gform_fields li.gfield.gf_left_half {
+	margin-top: 0;
+	margin-bottom: 20px;
+	clear: none;
+	@include tab {
+		width: 49%!important;
+		float: left;
+	}
+}
+#content .gform_wrapper form ul.gform_fields li.gfield.gf_right_half {
+	margin-top: 0;
+	margin-bottom: 20px;
+	clear: none;
+	@include tab {
+		width: 49%!important;
+		float: right;
+	}
+}
+#content .gform_wrapper form ul.gform_fields li.gfield.selectField {
+	margin-top: 0;
 	label {
 		position: relative!important;
 		margin-top: 0!important;
-		top: 0;
+		top: 2px;
 		left: 0;
 	} 
 	.ginput_container {
@@ -1500,6 +1557,11 @@ body.subpage {
 		}
 	}
 }
+
+.subpage-section.hastoptext .blogs .group:first-child {
+	margin-top: 30px;
+}
+
 .subpage-section .buttondiv a {
 	&:before,&:after {
 		display: none!important;
@@ -1948,5 +2010,47 @@ body.error404 {
 	}
 	span {
 		background: #c1c1c1;
+	}
+}
+.subscribe-cta.section-cta {
+	.wrapper {
+		padding-top: 0;
+		padding-bottom: 80px;
+	}
+}
+.section.defaultsection {
+	.wrapper {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		@include mid {
+			padding-top: 100px;
+			padding-bottom: 120px;
+		}
+	}
+	h2 {
+		font-size: 35px;
+		font-weight: 300;
+		margin: 0 0;
+		@include mid {
+			font-size: 45px;
+		}
+	}
+}
+
+.page-template-page-newsletter {
+	.subpage-section.topsection .wrapper {
+		padding-bottom: 30px;
+	}
+}
+.page-template-page-press {
+	#section2.subpage-section h1 {
+		margin-bottom: 10px;
+	}
+}
+
+.subpage-section .blogs .group {
+	.wrapper {
+		padding-top: 60px;
+		padding-bottom: 60px;
 	}
 }

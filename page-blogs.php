@@ -44,7 +44,7 @@ get_header(); ?>
 		<?php endwhile; wp_reset_postdata(); ?>
 	
 		<?php /*=== SECTION 2 (Blogs) ===*/ ?>
-		<section id="blogs" data-anchor="page3" class="section subpage-section">
+		<section id="blogs" data-anchor="page3" class="section subpage-section <?php echo ( get_the_content() ) ? 'hastoptext':'notoptext';?>">
 				<?php
 				$perpage = (get_field('pagenum','option')) ? get_field('pagenum','option') : 12;
 				$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
@@ -115,7 +115,7 @@ get_header(); ?>
 												<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
 													<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
 												</div>
-												<h3 class="posttitle"><?php echo $name; ?></h3>
+												<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
 												<?php if ( $author_fullname || $postdate ) { ?>
 													<div class="author nt">
 														<?php if ($author_fullname) { ?>
@@ -124,9 +124,9 @@ get_header(); ?>
 															</div>
 														<?php } ?>
 														<?php if ($postdate) { ?>
-															<div class="dt">
-																on <span><?php echo $postdate ?></span>
-															</div>
+															<!-- <div class="dt">
+																on <span><?php //echo $postdate ?></span>
+															</div> -->
 														<?php } ?>
 													</div>
 												<?php } ?>
@@ -188,7 +188,7 @@ get_header(); ?>
 											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
 												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
 											</div>
-											<h3 class="posttitle"><?php echo $name; ?></h3>
+											<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
 											<?php if ( $author_fullname || $postdate ) { ?>
 												<div class="author nt">
 													<?php if ($author) { ?>
@@ -197,9 +197,9 @@ get_header(); ?>
 														</div>
 													<?php } ?>
 													<?php if ($postdate) { ?>
-														<div class="dt">
-															on <span><?php echo $postdate ?></span>
-														</div>
+														<!-- <div class="dt">
+															on <span><?php //echo $postdate ?></span>
+														</div> -->
 													<?php } ?>
 												</div>
 											<?php } ?>

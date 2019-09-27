@@ -131,6 +131,33 @@
 		</div>
 	</section>
 
+	<?php 
+	/*=== Subscription ===*/ 
+	$subcribe_text = get_field('subcribe_text'); 
+	$subscribeBtn = get_field('subscribeBtn'); 
+	$subscribeBtnLink = get_field('subscribeBtnLink'); 
+	$siteURL = get_site_url();
+	$site_parse = parse_url($siteURL);
+	$siteHost = ( isset($site_parse['host']) && $site_parse['host'] ) ? $site_parse['host'] : '';
+	$urlData = '';
+	if($subscribeBtnLink) {
+		$sub_url = trim($subscribeBtnLink);
+		$urlData = parse_external_url( $sub_url, 'internal-link-class', 'external-link-class' );
+	}
+	?>
+	<section id="homeSubscribeSection" data-anchor="page5" class="section section-gray defaultsection">
+		<div class="wrapper">
+			<div class="intro top-text large-text text-center animated fadeInUp wow">
+				<?php echo $subcribe_text; ?>
+				<?php if ($subscribeBtn && $subscribeBtnLink) { ?>
+				<div class="buttondiv">
+					<a href="<?php echo $urlData['url']; ?>" target="<?php echo $urlData['target']; ?>" class="morebtn ongray <?php echo $urlData['class']; ?>"><?php echo $subscribeBtn; ?></a>
+				</div>
+				<?php } ?>
+			</div>	
+		</div>
+	</section>
+
 	<?php  
 	/*=== Contact Us ===*/
 	$contact_description = get_field('contact_description');

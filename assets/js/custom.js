@@ -165,4 +165,14 @@ jQuery(document).ready(function ($) {
 		}
 	}
 
+	if( $("ul.gform_fields li.gfield").length ) {
+		$("ul.gform_fields li.gfield").each(function(){
+			var target = $(this);
+			if( target.find('select').length ) {
+				target.addClass('selectField');
+			}
+		});
+	}
+	
+
 });// END #####################################    END

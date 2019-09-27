@@ -46,9 +46,9 @@ if($teaminfo) {
 <article class="single-content singlepost <?php echo ($photo) ? 'half':'full'?>">
 	<h1 class="pagetitle posttitle"><?php the_title(); ?></h1>
 	<p class="post-info">
-		Posted by: <strong class="author"><?php echo $author_fullname ?></strong> on <?php echo $postdate; ?>
+		Posted by: <strong class="author"><?php echo $author_fullname ?></strong>
 	</p>
 	
 	<div class="details"><?php the_content(); ?></div>
-
+	<?php echo do_shortcode("[social_share_button themes='theme10']"); ?>
 </article>
