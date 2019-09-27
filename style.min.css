@@ -1883,7 +1883,7 @@ to{width:100%}
 .about p:last-child{margin-bottom:0}
 .fullwidth{width:100%;float:left}
 @media screen and (min-width:740px){.flexrow{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-}.morebtn{color:#091f40;font-weight:300;text-decoration:none;display:inline-block;padding:6px 18px;background:transparent;border:5px solid #ebebeb}
+}.morebtn{color:#091f40;font-weight:300;text-decoration:none;display:inline-block;padding:6px 18px;background:transparent;border:3px solid #ebebeb}
 .morebtn:hover{color:#FFF;background:#091f40;border-color:#091f40;-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
 .morebtn.ongray{border-color:#d4d4d4}
 .morebtn.ongray:hover{border-color:#091f40}
@@ -2183,4 +2183,10 @@ body.error404 .icondiv span{font-size:6em;color:#e4e4e4}
 .desktop-staff-info{display:none}
 @media(min-width:740px){.desktop-staff-info{display:block}
 }@media screen and (max-width:739px){.staffinfo .hd3{font-size:1.15em;font-weight:600;line-height:1.2;color:#547489;text-transform:uppercase;margin:45px 0 20px;padding-bottom:15px;border-bottom:1px solid #acacac}
+}.section .morebtn{font-size:23px;padding:10px 20px;border:3px solid #dedede;text-align:center}
+.section .morebtn:hover{border-color:#091f40}
+@media screen and (max-width:739px){.section .morebtn{font-size:20px}
+}@media screen and (max-width:739px){.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]){line-height:1.3 !important}
+.subpage-section .wrapper,.subpage-section.topsection .wrapper,.contactpage .wrapper{padding-top:50px;padding-bottom:50px}
+.section-teal .wrapper,.subpage-section.section-teal.last .wrapper,.subpage-section.last .wrapper{padding-top:20px !important;padding-bottom:35px !important}
 }

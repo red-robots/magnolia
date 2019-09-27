@@ -677,7 +677,7 @@ html, body, .site {
 	display: inline-block;
 	padding: 6px 18px;
 	background: transparent;
-	border: 5px solid $color-light-grey;
+	border: 3px solid $color-light-grey;
 	&:hover {
 		color: #FFF;
 		background: $color__text-main;
@@ -2209,5 +2209,38 @@ body.error404 {
 		border-bottom: 1px solid #acacac;
 	}
 }
+
+.section {
+	.morebtn {
+		font-size: 23px;
+		padding: 10px 20px;
+		border: 3px solid #dedede;
+		text-align: center;
+		&:hover {
+			border-color: $color-dark-blue;
+		}
+		@media screen and (max-width:$tabwidth - 1px) {
+			font-size: 20px;
+		}
+	}
+}
+@media screen and (max-width:$tabwidth - 1px) {
+	.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]) {
+    	line-height: 1.3!important;
+    }
+    .subpage-section .wrapper,
+    .subpage-section.topsection .wrapper,
+    .contactpage .wrapper {
+    	padding-top: 50px;
+    	padding-bottom: 50px;
+    }
+    .section-teal .wrapper,
+    .subpage-section.section-teal.last .wrapper, 
+    .subpage-section.last .wrapper {
+    	padding-top: 20px!important;
+    	padding-bottom: 35px!important;
+    }
+}
+
 
 
