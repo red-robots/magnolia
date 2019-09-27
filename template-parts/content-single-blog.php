@@ -50,5 +50,5 @@ if($teaminfo) {
 	</p>
 	
 	<div class="details"><?php the_content(); ?></div>
-	<?php echo do_shortcode("[social_share_button themes='theme10']"); ?>
+	<?php //echo do_shortcode("[social_share_button themes='theme10']"); ?>
 </article>
