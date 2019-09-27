@@ -77,70 +77,8 @@ get_header(); ?>
 							<div class="wrapper">
 								<div class="flexbox">
 									<?php foreach ($list as $e) { 
-										$postId = $e->ID;
-										$name = $e->post_title;
-										$thumbId = get_post_thumbnail_id( $postId );
-										$photo = wp_get_attachment_image_src($thumbId,'large');
-										$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
-										$authorId = $e->post_author;
-										//$user = get_userdata($authorId);
-										//$author = ( isset($user->data->display_name) && $user->data->display_name ) ? $user->data->display_name : ''; 
-										
-										$excerpt = get_the_content($postId);
-										$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-										$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-										$pagelink = get_permalink($postId);
-										$date = $e->post_date;
-										$postdate = ($date) ? date('F j, Y',strtotime($date)) : ''; 
-
-										$author = get_the_author($postId);
-										$author_fullname = ($author) ? ucwords($author) : ''; 
-										$author_firstname = get_the_author_meta('first_name',$authorId);
-										$author_lastname = get_the_author_meta('last_name',$authorId);
-										$fname =  array($author_firstname,$author_lastname);
-										if( $fname && array_filter($fname) ) {
-											$author_name = implode(" ", array_filter($fname) );
-											$author_fullname = ucwords($author_name);
-										}
-										$teaminfo = get_field('teaminfo','user_' . $authorId);
-										if($teaminfo) {
-											$authorFull = $teaminfo->post_title;
-											$bio_page = get_permalink($teaminfo->ID) . '#bio';
-											$author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
-										}
-
-										?>
-										<div class="info">
-											<div class="pad">
-												<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-													<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
-												</div>
-												<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
-												<?php if ( $author_fullname || $postdate ) { ?>
-													<div class="author nt">
-														<?php if ($author_fullname) { ?>
-															<div class="dt">
-																Posted by: <strong style="text-transform: capitalize;"><?php echo $author_fullname ?></strong>
-															</div>
-														<?php } ?>
-														<?php if ($postdate) { ?>
-															<!-- <div class="dt">
-																on <span><?php //echo $postdate ?></span>
-															</div> -->
-														<?php } ?>
-													</div>
-												<?php } ?>
-												
-												<?php if ($excerpt) { ?>
-												<p class="excerpt"><?php echo $excerpt ?></p>	
-												<?php } ?>
-
-												<div class="buttondiv">
-													<a href="<?php echo $pagelink ?>">Read More</a>
-												</div>
-											</div>
-										</div>
-									<?php } ?>
+										echo get_post_blog_posts($e);
+									} ?>
 								</div>
 							</div>
 						</div>	
@@ -151,69 +89,8 @@ get_header(); ?>
 						<div class="wrapper">
 							<div class="flexbox">
 								<?php foreach ($blogs as $e) { 
-									$postId = $e->ID;
-									$name = $e->post_title;
-									$thumbId = get_post_thumbnail_id( $postId );
-									$photo = wp_get_attachment_image_src($thumbId,'large');
-									$bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
-									$authorId = $e->post_author;
-
-									//$user = get_userdata($authorId);
-									//$author = ( isset($user->data->display_name) && $user->data->display_name ) ? $user->data->display_name : ''; 
-									
-									$excerpt = get_the_content($postId);
-									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-									$pagelink = get_permalink($postId);
-									$date = $e->post_date;
-									$postdate = ($date) ? date('F j, Y',strtotime($date)) : ''; 
-									$author = get_the_author($postId);
-									$author_fullname = ($author) ? ucwords($author) : ''; 
-									$author_firstname = get_the_author_meta('first_name',$authorId);
-									$author_lastname = get_the_author_meta('last_name',$authorId);
-									$fname =  array($author_firstname,$author_lastname);
-									if( $fname && array_filter($fname) ) {
-										$author_name = implode(" ", array_filter($fname) );
-										$author_fullname = ucwords($author_name);
-									}
-									$teaminfo = get_field('teaminfo','user_' . $authorId);
-									if($teaminfo) {
-										$authorFull = $teaminfo->post_title;
-										$bio_page = get_permalink($teaminfo->ID) . '#bio';
-										$author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
-									}
-									?>
-									<div class="info">
-										<div class="pad">
-											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
-											</div>
-											<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
-											<?php if ( $author_fullname || $postdate ) { ?>
-												<div class="author nt">
-													<?php if ($author) { ?>
-														<div class="dt">
-															Posted by: <strong style="text-transform: capitalize;"><?php echo $author_fullname ?></strong>
-														</div>
-													<?php } ?>
-													<?php if ($postdate) { ?>
-														<!-- <div class="dt">
-															on <span><?php //echo $postdate ?></span>
-														</div> -->
-													<?php } ?>
-												</div>
-											<?php } ?>
-											
-											<?php if ($excerpt) { ?>
-											<p class="excerpt"><?php echo $excerpt ?></p>	
-											<?php } ?>
-
-											<div class="buttondiv">
-												<a href="<?php echo $pagelink ?>">Read More</a>
-											</div>
-										</div>
-									</div>	
-								<?php } ?>
+									echo get_post_blog_posts($e);
+								} ?>
 							</div>
 						</div>
 

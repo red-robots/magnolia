@@ -28,7 +28,7 @@ $px = get_bloginfo('template_url') . '/images/px.png';
 		
 		
 		<?php /*=== SECTION 2 ===*/ ?>
-		<div id="content"></div>
+		<div id="info"></div>
 		<?php  
 			$description = get_field('description');
 			$photo = get_field('image');
@@ -36,7 +36,7 @@ $px = get_bloginfo('template_url') . '/images/px.png';
 			$issuedDate = get_field('date');
 		?>
 		<section id="texts" data-anchor="page2" class="section subpage-section">
-		    <div class="wrapper clear">
+		    <div class="wrapper clear animated fadeIn">
 
 				<?php if ($photo) { ?>
 				<aside class="single-sidebar <?php echo ($photo) ? 'yes':'no-image'?>">

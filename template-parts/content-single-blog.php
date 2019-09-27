@@ -45,9 +45,20 @@ if($teaminfo) {
 
 <article class="single-content singlepost <?php echo ($photo) ? 'half':'full'?>">
 	<h1 class="pagetitle posttitle"><?php the_title(); ?></h1>
-	<div class="post-info">
-		Posted by: <strong class="author"><?php echo $author_fullname ?></strong>
-		<?php echo do_shortcode("[social_share_button themes='theme10']"); ?>
+	<div class="post-info clear">
+		<div class="authordiv">
+			Posted by: <strong class="author"><?php echo $author_fullname ?></strong>
+		</div>
+		<div class="socialshare">
+			<span id="shareitBtn" data-rel=".social-buttons" class="socbtn">
+				<span><i class="fas fa-share-alt-square"></i></span>
+			</span>
+			<a id="contactUsBtn" class="socbtn" href="<?php echo get_permalink(256); ?>#contactform"><span>Contact Us</span></a>
+			<div class="social-buttons">
+				<?php echo do_shortcode("[social_share_button themes='theme10']"); ?>
+			</div>
+		</div>
+		
 	</div>
 	
 	<div class="details"><?php the_content(); ?></div>

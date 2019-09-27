@@ -11,7 +11,7 @@ get_header(); ?>
 	$banner_caption = get_field('banner_caption');
 	$form = get_field('form');
 	?>
-	
+	 
 	<?php if ($banner) { ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -29,13 +29,10 @@ get_header(); ?>
 			</div>
 		</section>
 		
-		
-		
-		<div id="content"></div>
 
 		<?php /*=== SECTION 2 ===*/ ?>
 		<?php if( get_the_content() ) { ?>
-		<div id="content"></div>
+		<div id="contactform"></div>
 		<section class="section subpage-section contactpage">
 		    <div class="wrapper clear">
 				<div class="intro about animated fadeIn wow text-center large-text">

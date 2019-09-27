@@ -489,3 +489,215 @@ function parse_external_url( $url = '', $internal_class = 'internal-link', $exte
 
     return $output;
 }
+
+/* Blog Posts */
+function get_post_blog_posts($e) {
+    $content = '';
+    $px1 = get_bloginfo('template_url') . '/images/px.png';
+    $px2 = get_bloginfo('template_url') . '/images/px2.png';
+    
+    if(!$e) return false;
+
+    $postId = $e->ID;
+    $name = $e->post_title;
+    $thumbId = get_post_thumbnail_id( $postId );
+    $photo = wp_get_attachment_image_src($thumbId,'large');
+    $bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+    $authorId = $e->post_author;
+
+    $excerpt = get_the_content($postId);
+    $excerpt = ($excerpt) ? strip_tags($excerpt) : '';
+    $excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
+    $pagelink = get_permalink($postId);
+    $date = $e->post_date;
+    $postdate = ($date) ? date('F j, Y',strtotime($date)) : ''; 
+
+    $author = get_the_author($postId);
+    $author_fullname = ($author) ? ucwords($author) : ''; 
+    $author_firstname = get_the_author_meta('first_name',$authorId);
+    $author_lastname = get_the_author_meta('last_name',$authorId);
+    $fname =  array($author_firstname,$author_lastname);
+    if( $fname && array_filter($fname) ) {
+        $author_name = implode(" ", array_filter($fname) );
+        $author_fullname = ucwords($author_name);
+    }
+    $teaminfo = get_field('teaminfo','user_' . $authorId);
+    if($teaminfo) {
+        $authorFull = $teaminfo->post_title;
+        $bio_page = get_permalink($teaminfo->ID) . '#bio';
+        $author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
+    }
+
+    ob_start(); ?>
+    <div class="info animated fadeIn wow">
+        <div class="pad">
+            <div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
+                <img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
+            </div>
+            <h3 class="posttitle"><?php echo $name; ?></h3>
+            <?php if ( $author_fullname || $postdate ) { ?>
+                <div class="author nt">
+                    <?php if ($author_fullname) { ?>
+                        <div class="dt">
+                            Posted by: <strong style="text-transform: capitalize;"><?php echo $author_fullname ?></strong>
+                        </div>
+                    <?php } ?>
+                    <?php if ($postdate) { ?>
+                        <!-- <div class="dt">
+                            on <span><?php //echo $postdate ?></span>
+                        </div> -->
+                    <?php } ?>
+                </div>
+            <?php } ?>
+            
+            <?php if ($excerpt) { ?>
+            <p class="excerpt"><?php echo $excerpt ?></p>   
+            <?php } ?>
+
+            <div class="buttondiv">
+                <a href="<?php echo $pagelink ?>#info">Read More</a>
+            </div>
+        </div>
+    </div>
+    <?php
+    $content = ob_get_contents();
+    ob_end_clean();
+    return $content;
+}
+
+/* Newsletter Entries */
+function get_post_newsletter_entries($e) {
+    $content = '';
+    $px1 = get_bloginfo('template_url') . '/images/px.png';
+    $px2 = get_bloginfo('template_url') . '/images/px2.png';
+    
+    if(!$e) return false;
+
+    $postId = $e->ID;
+    $name = $e->post_title;
+    $photo = get_field('image',$postId);
+    $bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
+    $author = get_the_author($postId);
+    $excerpt = $e->post_content;
+    $excerpt = ($excerpt) ? strip_tags($excerpt) : '';
+    $excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
+    $pagelink = get_permalink($postId);
+    $issuedNum = get_field('issue',$postId);
+    $issuedDate = get_field('date',$postId);
+
+    ob_start(); ?>
+    <div class="info animated fadeIn wow">
+        <div class="pad">
+            <div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
+                <img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
+            </div>
+            <h3 class="posttitle"><?php echo $name; ?></h3>
+            <div class="author">
+                <?php if ($issuedNum) { ?>
+                    <div class="dt">
+                        Issued #: <strong><?php echo $issuedNum ?></strong>
+                    </div>
+                <?php } ?>
+                <?php if ($issuedDate) { ?>
+                    <div class="dt">
+                        Date: <span><?php echo $issuedDate ?></span>
+                    </div>
+                <?php } ?>
+            </div>  
+            <div class="buttondiv">
+                <a href="<?php echo $pagelink ?>#info">Read More</a>
+            </div>
+        </div>
+    </div>  
+    <?php
+    $content = ob_get_contents();
+    ob_end_clean();
+    return $content;
+}
+
+/* Press Room Posts */
+function get_press_room_posts($e) {
+    $content = '';
+    $px1 = get_bloginfo('template_url') . '/images/px.png';
+    $px2 = get_bloginfo('template_url') . '/images/px2.png';
+    
+    if(!$e) return false;
+
+    $postId = $e->ID;
+    $name = $e->post_title;
+    $authorId = $e->post_author;
+    $user = get_userdata($authorId);
+    $author = ( isset($user->data->display_name) && $user->data->display_name ) ? $user->data->display_name : ''; 
+    $excerpt = $e->post_content;
+    $excerpt = ($excerpt) ? strip_tags($excerpt) : '';
+    $excerpt = ($excerpt) ? shortenText($excerpt,50,' ','...') : '';
+    $pagelink = get_permalink($postId);
+    $date = $e->post_date;
+    $postdate = ($date) ? date('F j, Y',strtotime($date)) : '';
+    ob_start(); ?>
+    <div class="info animated fadeIn wow">
+        <div class="pad">
+            <h3 class="posttitle"><?php echo $name; ?></h3>
+            <?php if ( $postdate ) { ?>
+                <div class="author nt">
+                    <?php if ($postdate) { ?>
+                        <div class="dt">
+                            on <span><?php echo $postdate ?></span>
+                        </div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+            <p class="excerpt"><?php echo $excerpt ?></p>
+            <div class="buttondiv">
+                <a href="<?php echo $pagelink ?>#info">Read More</a>
+            </div>
+        </div>
+    </div>  
+    <?php
+    $content = ob_get_contents();
+    ob_end_clean();
+    return $content;
+}
+
+
+/* Press Room Posts */
+function get_team_posts($e) {
+    $content = '';
+    $px1 = get_bloginfo('template_url') . '/images/px.png';
+    $px2 = get_bloginfo('template_url') . '/images/px2.png';
+    
+    if(!$e) return false;
+
+    $postId = $e->ID;
+    $name = $e->post_title;
+    $photo = get_field('image',$postId);
+    $bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
+    $jobtitle = get_field('title',$postId);
+    $excerpt = get_field('experience',$postId);
+    $excerpt = ($excerpt) ? strip_tags($excerpt) : '';
+    $excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
+    $pagelink = get_permalink($postId);
+    ob_start(); ?>
+    <div class="info">
+        <div class="pad">
+            <div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
+                <img src="<?php echo $px2 ?>" alt="" aria-hidden="true">
+            </div>
+            <h3 class="name"><?php echo $name; ?></h3>
+            <?php if ($jobtitle) { ?>
+            <p class="jobtitle"><?php echo $jobtitle ?></p> 
+            <?php } ?>
+            <?php if ($excerpt) { ?>
+            <p class="excerpt"><?php echo $excerpt ?></p>   
+            <?php } ?>
+
+            <div class="buttondiv">
+                <a href="<?php echo $pagelink ?>#info">Read More</a>
+            </div>
+        </div>
+    </div>  
+    <?php
+    $content = ob_get_contents();
+    ob_end_clean();
+    return $content;
+}

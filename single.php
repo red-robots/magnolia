@@ -32,9 +32,9 @@ $parent_id = '';
 			
 			
 			<?php /*=== SECTION 2 ===*/ ?>
-			<div id="content"></div>
+			<div id="info"></div>
 			<section id="texts" data-anchor="page2" class="section subpage-section">
-			    <div class="wrapper clear">
+			    <div class="wrapper clear animated fadeIn">
 					<?php get_template_part('template-parts/content','single-blog'); ?>
 				</div>
 			</section>
@@ -43,7 +43,7 @@ $parent_id = '';
 
 
 	<?php } else { ?>
-		<div id="primary" class="full-content-area clear default-template">
+		<div id="primary" class="full-content-area clear default-template animated fadeIn">
 			<main id="main" class="site-main wrapper clear" role="main">
 
 				<?php

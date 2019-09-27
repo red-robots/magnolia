@@ -19,6 +19,19 @@ $community_involvement = get_field('community_involvement');
 	</div>
 	<?php } ?>
 
+	<div class="mobile-staff-info">
+		<h2 class="pagetitle staffname"><?php the_title(); ?></h2>
+		<?php if ($jobtitle) { ?>
+		<div class="jobtitle"><?php echo $jobtitle ?></div>	
+		<?php } ?>
+		<?php if ($email) { ?>
+		<div class="email ilink"><a href="mailto:<?php echo antispambot($email,1) ?>"><?php echo antispambot($email); ?></a></div>	
+		<?php } ?>
+		<?php if ($phone_number) { ?>
+		<div class="phone ilink"><a href="tel:<?php echo format_phone_number($phone_number) ?>"><?php echo $phone_number ?></a></div>	
+		<?php } ?>
+	</div>
+
 	<?php if ($education) { ?>
 		<div class="swidget teaminfo">
 			<h3 class="hd3">Education</h3>
@@ -69,16 +82,19 @@ $community_involvement = get_field('community_involvement');
 </aside>
 
 <article class="single-content staffinfo">
-	<h1 class="pagetitle staffname"><?php the_title(); ?></h1>
-	<?php if ($jobtitle) { ?>
-	<div class="jobtitle"><?php echo $jobtitle ?></div>	
-	<?php } ?>
-	<?php if ($email) { ?>
-	<div class="email ilink"><a href="mailto:<?php echo antispambot($email,1) ?>"><?php echo antispambot($email); ?></a></div>	
-	<?php } ?>
-	<?php if ($phone_number) { ?>
-	<div class="phone ilink"><a href="tel:<?php echo format_phone_number($phone_number) ?>"><?php echo $phone_number ?></a></div>	
-	<?php } ?>
+
+	<div class="desktop-staff-info">
+		<h1 class="pagetitle staffname"><?php the_title(); ?></h1>
+		<?php if ($jobtitle) { ?>
+		<div class="jobtitle"><?php echo $jobtitle ?></div>	
+		<?php } ?>
+		<?php if ($email) { ?>
+		<div class="email ilink"><a href="mailto:<?php echo antispambot($email,1) ?>"><?php echo antispambot($email); ?></a></div>	
+		<?php } ?>
+		<?php if ($phone_number) { ?>
+		<div class="phone ilink"><a href="tel:<?php echo format_phone_number($phone_number) ?>"><?php echo $phone_number ?></a></div>	
+		<?php } ?>
+	</div>
 	
 	<?php if ($experience) { ?>
 	<h3 class="hd3">Experience</h3>

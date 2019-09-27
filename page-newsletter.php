@@ -78,42 +78,8 @@ get_header(); ?>
 							<div class="wrapper">
 								<div class="flexbox">
 									<?php foreach ($list as $e) { 
-									$postId = $e->ID;
-									$name = $e->post_title;
-									$photo = get_field('image',$postId);
-									$bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
-									$author = get_the_author($postId);
-									$excerpt = $e->post_content;
-									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-									$pagelink = get_permalink($postId);
-									$issuedNum = get_field('issue',$postId);
-									$issuedDate = get_field('date',$postId);
-									?>
-									<div class="info">
-										<div class="pad">
-											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
-											</div>
-											<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
-											<div class="author">
-												<?php if ($issuedNum) { ?>
-													<div class="dt">
-														Issued #: <strong><?php echo $issuedNum ?></strong>
-													</div>
-												<?php } ?>
-												<?php if ($issuedDate) { ?>
-													<div class="dt">
-														Date: <span><?php echo $issuedDate ?></span>
-													</div>
-												<?php } ?>
-											</div>	
-											<div class="buttondiv">
-												<a href="<?php echo $pagelink ?>">Read More</a>
-											</div>
-										</div>
-									</div>	
-									<?php } ?>
+										echo get_post_newsletter_entries($e);
+									} ?>
 								</div>
 							</div>
 						</div>	
@@ -124,42 +90,8 @@ get_header(); ?>
 						<div class="wrapper">
 							<div class="flexbox">
 								<?php foreach ($blogs as $e) { 
-									$postId = $e->ID;
-									$name = $e->post_title;
-									$photo = get_field('image',$postId);
-									$bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
-									$author = get_the_author($postId);
-									$excerpt = $e->post_content;
-									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-									$pagelink = get_permalink($postId);
-									$issuedNum = get_field('issue',$postId);
-									$issuedDate = get_field('date',$postId);
-									?>
-									<div class="info">
-										<div class="pad">
-											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-												<img src="<?php echo $px1 ?>" alt="" aria-hidden="true">
-											</div>
-											<h3 class="posttitle"><?php echo shortenText($name,50,' ','...'); ?></h3>
-											<div class="author">
-												<?php if ($issuedNum) { ?>
-													<div class="dt">
-														Issued #: <strong><?php echo $issuedNum ?></strong>
-													</div>
-												<?php } ?>
-												<?php if ($issuedDate) { ?>
-													<div class="dt">
-														Date: <span><?php echo $issuedDate ?></span>
-													</div>
-												<?php } ?>
-											</div>	
-											<div class="buttondiv">
-												<a href="<?php echo $pagelink ?>">Read More</a>
-											</div>
-										</div>
-									</div>	
-								<?php } ?>
+									echo get_post_newsletter_entries($e);	
+								} ?>
 							</div>
 						</div>
 

@@ -1990,7 +1990,7 @@ to{width:100%}
 .subpage-section a:not(.morebtn){display:inline-block;color:#0e97d0;text-decoration:none;position:relative}
 .subpage-section a:not(.morebtn):after{content:"";display:inline-block;width:100%;border-bottom:1px solid #0e97d0;position:absolute;bottom:0;left:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);opacity:0}
 .subpage-section a:not(.morebtn):hover:after{opacity:1;-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1)}
-.subpage-section .wrapper{padding-top:6%;padding-bottom:10%;padding-left:30px;padding-right:30px}
+.subpage-section .wrapper{padding-top:6%;padding-bottom:6%;padding-left:30px;padding-right:30px}
 @media(min-width:900px){.subpage-section .wrapper{padding-left:3%;padding-right:3%}
 }@media(min-width:1200px){.subpage-section .wrapper{padding-top:6%;padding-bottom:6%}
 }.subpage-section .wrapper.smpad{padding-top:3%;padding-bottom:0}
@@ -2005,12 +2005,28 @@ to{width:100%}
 .subpage-section.topsection .wrapper{padding-top:3%;padding-bottom:3%}
 .subpage-section .blogs .wrapper{padding-top:0;padding-bottom:2%}
 .subpage-section p img{width:100%;height:auto}
-.subpage-section .wp-share-button a{position:relative;padding:5px 8px !important}
+.subpage-section.notoptext .blogs .wrapper{padding-top:3%}
+.subpage-section .wp-share-button a{display:inline-block;position:relative;padding:5px 8px !important;float:left}
 .subpage-section .wp-share-button a:before,.subpage-section .wp-share-button a:after{display:none}
 .subpage-section .wp-share-button a span{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 #content .singlepost .post-info{position:relative}
-#content .post-info .wp-share-button.theme10{display:block;width:100%;margin:6px 0 0}
+#content .post-info .wp-share-button.theme10{display:block;margin:6px 0 0}
 #content .wp-share-button.theme10 .share-button,#content .wp-share-button.theme10 .share-button-more{margin:3px}
+#content .post-info{width:100%}
+#content .post-info .authordiv,#content .post-info .socialshare{display:inline-block;float:left}
+#content .post-info .socialshare{padding-left:15px;position:relative;top:-9px}
+#content .post-info .socialshare a:before,#content .post-info .socialshare a:after{display:none !important}
+#content .post-info .socbtn{-webkit-transition:all ease-out .3s;transition:all ease-out .3s;float:left;display:inline-block;position:relative;z-index:5}
+#content .post-info #shareitBtn{font-size:30px;color:#a2a1a0;line-height:25px;top:-1px}
+#content .post-info #contactUsBtn{width:85px;margin-left:6px;background:#a2a1a0;color:#FFF;padding:3px 7px 4px;font-size:14px;text-align:center;border-radius:3px;top:1px}
+#content .post-info .socbtn#contactUsBtn:hover{background:#4098c1}
+#content .post-info .socbtn#shareitBtn.active,#content .post-info .socbtn#shareitBtn:hover{color:#4098c1}
+#content .post-info .socbtn#shareitBtn.active .wp-share-button,#content .post-info .socbtn#shareitBtn:hover .wp-share-button{display:block !important}
+#content .post-info .social-buttons{-webkit-transition:all ease-out .3s;transition:all ease-out .3s;width:280px;float:left;position:absolute;top:30px;left:15px;visibility:hidden;opacity:0;margin-top:-10px}
+#content .post-info .social-buttons .wp-share-button{background:#FFFF;border:1px solid #CCC;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;padding:5px;position:absolute;box-shadow:0 0 5px 0 rgba(0,0,0,0.28)}
+#content .post-info .social-buttons .wp-share-button:before{content:"";display:block;width:0;height:0;border-bottom:7px solid #FFF;border-left:6px solid transparent;border-right:6px solid transparent;position:absolute;top:-7px;left:7px;z-index:3}
+#content .post-info .social-buttons .wp-share-button:after{content:"";display:block;width:0;height:0;border-bottom:8px solid #CCC;border-left:7px solid transparent;border-right:7px solid transparent;position:absolute;top:-8px;left:6px}
+#content .post-info .social-buttons.show{visibility:visible;opacity:1;margin-top:0}
 .wp-share-button.theme10 .share-button .button-count{display:inline-block !important;overflow:hidden;visibility:hidden;width:0;opacity:0;position:absolute;z-index:-99}
 .wp-share-button.theme10 .share-button:hover .button-count{width:auto;overflow:visible;visibility:visible;opacity:1;position:static;z-index:10}
 .subpage-section.subscribe .gform_wrapper{max-width:800px;width:100%;margin:0 auto;float:none}
@@ -2090,7 +2106,7 @@ to{width:100%}
 }.singlepost h1.pagetitle.posttitle,.staffinfo h1.pagetitle.posttitle{margin-bottom:15px}
 .singlepost .jobtitle,.staffinfo .jobtitle{font-size:25px;font-weight:700;text-transform:uppercase}
 .singlepost .ilink,.staffinfo .ilink{line-height:1.6}
-.singlepost .ilink a,.staffinfo .ilink a{text-decoration:none;color:#091f40}
+.singlepost .ilink a,.staffinfo .ilink a{text-decoration:none;color:#0e97d0}
 .singlepost .hd3,.staffinfo .hd3{font-size:25px;padding-bottom:0;border-bottom:0;margin-top:50px;margin-bottom:30px}
 @media(min-width:740px){.singlepost .hd3,.staffinfo .hd3{margin-top:70px}
 }.section-cta .wrapper{padding-top:5%;padding-bottom:5%}
@@ -2106,7 +2122,7 @@ to{width:100%}
 .section-cta .buttondiv a.large{padding-top:8px;padding-bottom:8px}
 .section-cta .buttondiv a.large.rightArr .arrow-r{top:15px}
 h1.entry-title{font-size:2em;font-weight:400;margin:40px 0 10px}
-.contactpage .wrapper{padding-top:2%;padding-bottom:5%}
+.contactpage .wrapper{padding-top:3%;padding-bottom:5%}
 .contactpage .contactus{padding-top:0;padding-bottom:0}
 .contactpage .contactus .gform_title{display:none}
 .contactpage .contact-text .gform_wrapper{max-width:800px;width:100%;margin:0 auto;float:none}
@@ -2159,3 +2175,12 @@ body.error404 .icondiv span{font-size:6em;color:#e4e4e4}
 }.page-template-page-newsletter .subpage-section.topsection .wrapper{padding-bottom:30px}
 .page-template-page-press #section2.subpage-section h1{margin-bottom:10px}
 .subpage-section .blogs .group .wrapper{padding-top:60px;padding-bottom:60px}
+.mobile-staff-info{display:block;width:100%;float:left;margin-bottom:45px}
+@media(min-width:740px){.mobile-staff-info{display:none}
+}.mobile-staff-info .staffname{font-size:2.25em;margin-bottom:15px}
+.mobile-staff-info .jobtitle{font-weight:700;text-transform:uppercase;font-size:1.35em}
+.mobile-staff-info .ilink a{font-size:1.15em}
+.desktop-staff-info{display:none}
+@media(min-width:740px){.desktop-staff-info{display:block}
+}@media screen and (max-width:739px){.staffinfo .hd3{font-size:1.15em;font-weight:600;line-height:1.2;color:#547489;text-transform:uppercase;margin:45px 0 20px;padding-bottom:15px;border-bottom:1px solid #acacac}
+}

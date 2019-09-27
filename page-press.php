@@ -78,37 +78,8 @@ get_header(); ?>
 							<div class="wrapper">
 								<div class="flexbox">
 									<?php foreach ($list as $e) { 
-										$postId = $e->ID;
-										$name = $e->post_title;
-										$authorId = $e->post_author;
-										$user = get_userdata($authorId);
-										$author = ( isset($user->data->display_name) && $user->data->display_name ) ? $user->data->display_name : ''; 
-										$excerpt = $e->post_content;
-										$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-										$excerpt = ($excerpt) ? shortenText($excerpt,50,' ','...') : '';
-										$pagelink = get_permalink($postId);
-										$date = $e->post_date;
-										$postdate = ($date) ? date('F j, Y',strtotime($date)) : '';
-										?>
-										<div class="info">
-											<div class="pad">
-												<h3 class="posttitle"><?php echo $name; ?></h3>
-												<?php if ( $postdate ) { ?>
-													<div class="author nt">
-														<?php if ($postdate) { ?>
-															<div class="dt">
-																on <span><?php echo $postdate ?></span>
-															</div>
-														<?php } ?>
-													</div>
-												<?php } ?>
-												<p class="excerpt"><?php echo $excerpt ?></p>
-												<div class="buttondiv">
-													<a href="<?php echo $pagelink ?>">Read More</a>
-												</div>
-											</div>
-										</div>	
-									<?php } ?>
+										echo get_press_room_posts($e);
+									} ?>
 								</div>
 							</div>
 						</div>	
@@ -119,37 +90,8 @@ get_header(); ?>
 						<div class="wrapper">
 							<div class="flexbox">
 								<?php foreach ($blogs as $e) { 
-									$postId = $e->ID;
-									$name = $e->post_title;
-									$authorId = $e->post_author;
-									$user = get_userdata($authorId);
-									$author = ( isset($user->data->display_name) && $user->data->display_name ) ? $user->data->display_name : ''; 
-									$excerpt = $e->post_content;
-									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-									$excerpt = ($excerpt) ? shortenText($excerpt,50,' ','...') : '';
-									$pagelink = get_permalink($postId);
-									$date = $e->post_date;
-									$postdate = ($date) ? date('F j, Y',strtotime($date)) : '';
-									?>
-									<div class="info">
-										<div class="pad">
-											<h3 class="posttitle"><?php echo $name; ?></h3>
-											<?php if ( $postdate ) { ?>
-												<div class="author nt">
-													<?php if ($postdate) { ?>
-														<div class="dt">
-															on <span><?php echo $postdate ?></span>
-														</div>
-													<?php } ?>
-												</div>
-											<?php } ?>
-											<p class="excerpt"><?php echo $excerpt ?></p>
-											<div class="buttondiv">
-												<a href="<?php echo $pagelink ?>">Read More</a>
-											</div>
-										</div>
-									</div>	
-								<?php } ?>
+									echo get_press_room_posts($e);
+								} ?>
 							</div>
 						</div>
 

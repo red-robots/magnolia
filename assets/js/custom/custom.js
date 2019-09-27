@@ -173,6 +173,39 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	}
+
+	$("#shareitBtn").hover(
+		function(){
+			var social = $(this).attr('data-rel');
+			$(social).addClass('show');
+			$(this).addClass('active');
+		}, function() {
+
+		}
+	);
+
+	$(document).click("#shareitBtn",function(e) { 
+	    var social = $(this).attr('data-rel');
+		$(social).addClass('show');
+		$(this).addClass('active');
+	});
+
+	// $(".socialshare .wp-share-button").hover(
+	// 	function(){
+
+	// 	}, function() {
+	// 		$(".social-buttons").removeClass('show');
+	// 	}
+	// );
+
+	$(document).click(function(e) { 
+	    var container = $("#shareitBtn");
+	    // If the target of the click isn't the container
+	    if(!container.is(e.target) && container.has(e.target).length === 0){
+	        $(".social-buttons").removeClass('show');
+	        $("#shareitBtn").removeClass('active');
+	    }
+	});
 	
 
 });// END #####################################    END

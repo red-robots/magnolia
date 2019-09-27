@@ -31,9 +31,9 @@ $banner_caption = get_field('banner_caption',$parent_id);
 		
 		
 		<?php /*=== SECTION 2 ===*/ ?>
-		<div id="content"></div>
+		<div id="info"></div>
 		<section id="texts" data-anchor="page2" class="section subpage-section">
-		    <div class="wrapper clear">
+		    <div class="wrapper clear animated fadeIn">
 				<?php get_template_part('template-parts/content','single-press'); ?>
 			</div>
 		</section>

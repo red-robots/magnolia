@@ -1213,7 +1213,7 @@ body.subpage {
 
 	.wrapper {
 		padding-top: 6%;
-		padding-bottom: 10%;
+		padding-bottom: 6%;
 		padding-left: 30px;
 		padding-right: 30px;
 		@include mid {
@@ -1290,9 +1290,14 @@ body.subpage {
 	}
 }
 
+.subpage-section.notoptext .blogs .wrapper {
+	padding-top: 3%;
+}
 .subpage-section .wp-share-button a {
+	display: inline-block;
 	position: relative;
 	padding: 5px 8px!important;
+	float: left;
 	&:before,&:after {
 		display: none;
 	}
@@ -1305,14 +1310,113 @@ body.subpage {
 }
 #content .post-info .wp-share-button.theme10 {
 	display: block;
-	width: 100%;
 	margin: 6px 0 0;
-	// position: absolute;
-	// margin: -15px 0 0 15px;
 }
 #content .wp-share-button.theme10 .share-button, 
 #content .wp-share-button.theme10 .share-button-more {
 	margin: 3px;
+}
+
+#content .post-info {
+	width: 100%;
+	.authordiv,
+	.socialshare {
+		display: inline-block;
+		float: left;
+	}
+	.socialshare {
+	    padding-left: 15px;
+	    position: relative;
+	    top: -9px;
+	    a {
+	    	&:before,&:after {
+				display: none!important;
+			}
+	    }
+	}
+	.socbtn {
+		transition: all ease-out .3s;
+		float: left;
+		display: inline-block;
+		position: relative;
+		z-index: 5;
+	}
+	#shareitBtn {
+		font-size: 30px;
+		color: #a2a1a0;
+		line-height: 25px;
+		top: -1px;
+	}
+	#contactUsBtn {
+		width: 85px;
+		margin-left: 6px;
+		background: #a2a1a0;
+		color: #FFF;
+		padding: 3px 7px 4px;
+		font-size: 14px;
+		text-align: center;
+		border-radius: 3px;
+		top: 1px;
+	}
+	.socbtn#contactUsBtn:hover {
+		background: #4098c1;
+	}
+	.socbtn#shareitBtn.active,
+	.socbtn#shareitBtn:hover {
+		color: #4098c1;
+		.wp-share-button {
+			display: block!important;
+		}
+	}
+	.social-buttons {
+		transition: all ease-out .3s;
+		width: 280px;
+		float: left;
+		position: absolute;
+		top: 30px;
+		left: 15px;
+		visibility: hidden;
+		opacity: 0;
+		margin-top: -10px;
+		.wp-share-button {
+		    background: #FFFF;
+		    border: 1px solid #CCC;
+		    transition: all ease-out .3s;
+		    padding: 5px;
+		    position: absolute;
+		    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.28);
+		    &:before {
+				content:"";
+				display: block;
+				width: 0; 
+				height: 0; 
+				border-bottom: 7px solid #FFF; 
+				border-left: 6px solid transparent; 
+				border-right: 6px solid transparent;
+				position: absolute;
+				top: -7px;
+				left: 7px;
+				z-index: 3;
+		    }
+			&:after {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				border-bottom: 8px solid #CCC;
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				position: absolute;
+				top: -8px;
+				left: 6px;
+			}
+		}
+	}
+	.social-buttons.show {
+		visibility: visible;
+		opacity: 1;
+		margin-top: 0;
+	}
 }
 
 .wp-share-button.theme10 .share-button .button-count {
@@ -1703,7 +1807,7 @@ body.subpage {
 	}
 	.ilink a {
 		text-decoration: none;
-		color: $color-dark-blue;
+		color: $color__link;
 	}
 	.hd3 {
 		font-size: 25px;
@@ -1779,7 +1883,7 @@ h1.entry-title {
 }
 .contactpage  {
 	.wrapper {
-		padding-top: 2%;
+		padding-top: 3%;
 		padding-bottom: 5%;
 	}
 	.contactus {
@@ -2065,3 +2169,45 @@ body.error404 {
 		padding-bottom: 60px;
 	}
 }
+
+.mobile-staff-info {
+	display: block;
+	width: 100%;
+	float: left;
+	margin-bottom: 45px;
+	@include tab {
+		display: none;
+	}
+	.staffname {
+		font-size: 2.25em;
+		margin-bottom: 15px;
+	}
+	.jobtitle {
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 1.35em;
+	}
+	.ilink a {
+		font-size: 1.15em;
+	}
+}
+.desktop-staff-info {
+	display: none;
+	@include tab {
+		display: block;
+	}
+}
+.staffinfo .hd3 {
+	@media screen and (max-width:$tabwidth - 1px) {
+		font-size: 1.15em;
+		font-weight: 600;
+		line-height: 1.2;
+		color: #547489;
+		text-transform: uppercase;
+		margin: 45px 0 20px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #acacac;
+	}
+}
+
+

@@ -61,35 +61,8 @@ get_header(); ?>
 							<div class="wrapper">
 								<div class="flexbox">
 									<?php foreach ($list as $e) { 
-									$postId = $e->ID;
-									$name = $e->post_title;
-									$photo = get_field('image',$postId);
-									$bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
-									$jobtitle = get_field('title',$postId);
-									$excerpt = get_field('experience',$postId);
-									$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-									$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-									$pagelink = get_permalink($postId);
-									?>
-									<div class="info">
-										<div class="pad">
-											<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-												<img src="<?php echo $px ?>" alt="" aria-hidden="true">
-											</div>
-											<h3 class="name"><?php echo $name; ?></h3>
-											<?php if ($jobtitle) { ?>
-											<p class="jobtitle"><?php echo $jobtitle ?></p>	
-											<?php } ?>
-											<?php if ($excerpt) { ?>
-											<p class="excerpt"><?php echo $excerpt ?></p>	
-											<?php } ?>
-
-											<div class="buttondiv">
-												<a href="<?php echo $pagelink ?>">Read More</a>
-											</div>
-										</div>
-									</div>	
-									<?php } ?>
+										echo get_team_posts($e);
+									} ?>
 								</div>
 							</div>
 						</div>	
@@ -99,30 +72,8 @@ get_header(); ?>
 						<div class="wrapper">
 							<div class="flexbox">
 								<?php foreach ($teams as $e) { 
-								$postId = $e->ID;
-								$name = $e->post_title;
-								$photo = get_field('image',$postId);
-								$bg = ($photo) ? ' style="background-image:url('.$photo['url'].')"':'';
-								$jobtitle = get_field('title',$postId);
-								$excerpt = get_field('experience',$postId);
-								$excerpt = ($excerpt) ? strip_tags($excerpt) : '';
-								$excerpt = ($excerpt) ? shortenText($excerpt,120,' ',' [...]') : '';
-								?>
-								<div class="info">
-									<div class="pad">
-										<div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
-											<img src="<?php echo $px ?>" alt="" aria-hidden="true">
-										</div>
-										<h3 class="name"><?php echo $name; ?></h3>
-										<?php if ($jobtitle) { ?>
-										<p class="jobtitle"><?php echo $jobtitle ?></p>	
-										<?php } ?>
-										<?php if ($excerpt) { ?>
-										<p class="excerpt"><?php echo $excerpt ?></p>	
-										<?php } ?>
-									</div>
-								</div>	
-								<?php } ?>
+									echo get_team_posts($e); 
+								} ?>
 							</div>
 						</div>
 
