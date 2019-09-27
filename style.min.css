@@ -1992,7 +1992,7 @@ to{width:100%}
 .subpage-section a:not(.morebtn):hover:after{opacity:1;-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1)}
 .subpage-section .wrapper{padding-top:6%;padding-bottom:6%;padding-left:30px;padding-right:30px}
 @media(min-width:900px){.subpage-section .wrapper{padding-left:3%;padding-right:3%}
-}@media(min-width:1200px){.subpage-section .wrapper{padding-top:6%;padding-bottom:6%}
+}@media(min-width:1200px){.subpage-section .wrapper{padding-top:4%;padding-bottom:4%}
 }.subpage-section .wrapper.smpad{padding-top:3%;padding-bottom:0}
 .subpage-section .top-text{max-width:1000px;width:100%;margin:0 auto}
 .subpage-section#section3 .wrapper{padding-top:3%;padding-bottom:5%}

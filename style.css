@@ -7657,8 +7657,8 @@ body.subpage.noHero .site-header {
 
 @media (min-width: 1200px) {
   .subpage-section .wrapper {
-    padding-top: 6%;
-    padding-bottom: 6%; } }
+    padding-top: 4%;
+    padding-bottom: 4%; } }
 
 .subpage-section .wrapper.smpad {
   padding-top: 3%;
