@@ -1300,10 +1300,21 @@ body.subpage {
 		transition: all ease-out .3s;
 	}
 }
+#content .singlepost .post-info {
+	position: relative;
+}
+#content .post-info .wp-share-button.theme10 {
+	display: block;
+	width: 100%;
+	margin: 6px 0 0;
+	// position: absolute;
+	// margin: -15px 0 0 15px;
+}
 #content .wp-share-button.theme10 .share-button, 
 #content .wp-share-button.theme10 .share-button-more {
 	margin: 3px;
 }
+
 .wp-share-button.theme10 .share-button .button-count {
 	display: inline-block!important;
 	overflow: hidden;

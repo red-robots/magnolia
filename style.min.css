@@ -2008,6 +2008,8 @@ to{width:100%}
 .subpage-section .wp-share-button a{position:relative;padding:5px 8px !important}
 .subpage-section .wp-share-button a:before,.subpage-section .wp-share-button a:after{display:none}
 .subpage-section .wp-share-button a span{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+#content .singlepost .post-info{position:relative}
+#content .post-info .wp-share-button.theme10{display:block;width:100%;margin:6px 0 0}
 #content .wp-share-button.theme10 .share-button,#content .wp-share-button.theme10 .share-button-more{margin:3px}
 .wp-share-button.theme10 .share-button .button-count{display:inline-block !important;overflow:hidden;visibility:hidden;width:0;opacity:0;position:absolute;z-index:-99}
 .wp-share-button.theme10 .share-button:hover .button-count{width:auto;overflow:visible;visibility:visible;opacity:1;position:static;z-index:10}
