@@ -2118,6 +2118,7 @@ to{width:100%}
 .section-cta .buttondiv{text-align:center}
 .section-cta .buttondiv a{display:inline-block;text-decoration:none;font-size:20px;padding:4px 40px 4px 60px;border:5px solid #547489;color:#547489;position:relative}
 .section-cta .buttondiv a .arrow{position:absolute;left:12px;top:11px;font-size:16px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-cta .buttondiv a:hover{color:#FFF;background:#547489}
 .section-cta .buttondiv a:hover .arrow{margin-left:-5px}
 .section-cta .buttondiv a.rightArr{padding:4px 60px 4px 40px}
 .section-cta .buttondiv a.rightArr .arrow-r{position:absolute;right:12px;top:11px;font-size:16px;-webkit-transition:all ease .3s;transition:all ease .3s}
