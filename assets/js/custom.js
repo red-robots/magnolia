@@ -125,19 +125,42 @@ jQuery(document).ready(function ($) {
 	// }).scrollSpy();
 
 	/* CONTACT FORM hide Label */
-	$(document).on("focus",".contact-text .ginput_container input, .contact-text .ginput_container textarea",function(){
-		var wrapper = $(this).parents("li.gfield");
-		wrapper.find(".gfield_label").addClass('on-focus');
+	var gforms = [".contact-text .ginput_container input",".contact-text .ginput_container textarea", "#gform_2 .ginput_container input", "#gform_2 .ginput_container textarea"];
+	console.log( gforms );
+
+	$(gforms).each(function(k){
+		var selector = gforms[k];
+
+		$(document).on("focus", selector,function(){
+			var wrapper = $(this).parents("li.gfield");
+			wrapper.find(".gfield_label").addClass('on-focus');
+		});
+
+		$(document).on("focusout blur",selector,function(){
+			var wrapper = $(this).parents("li.gfield");
+			var str = $(this).val();
+			var txtVal = str.replace(/\s/g,'');
+			if( txtVal=='' ) {
+				$(this).val("");
+				wrapper.find(".gfield_label").removeClass('on-focus');
+			} 
+		});
 	});
-	$(document).on("focusout blur",".contact-text .ginput_container input, .contact-text .ginput_container textarea",function(){
-		var wrapper = $(this).parents("li.gfield");
-		var str = $(this).val();
-		var txtVal = str.replace(/\s/g,'');
-		if( txtVal=='' ) {
-			$(this).val("");
-			wrapper.find(".gfield_label").removeClass('on-focus');
-		} 
-	});
+
+	// $(document).on("focus",".contact-text .ginput_container input, .contact-text .ginput_container textarea",function(){
+	// 	var wrapper = $(this).parents("li.gfield");
+	// 	wrapper.find(".gfield_label").addClass('on-focus');
+	// });
+
+	// $(document).on("focusout blur",".contact-text .ginput_container input, .contact-text .ginput_container textarea",function(){
+	// 	var wrapper = $(this).parents("li.gfield");
+	// 	var str = $(this).val();
+	// 	var txtVal = str.replace(/\s/g,'');
+	// 	if( txtVal=='' ) {
+	// 		$(this).val("");
+	// 		wrapper.find(".gfield_label").removeClass('on-focus');
+	// 	} 
+	// });
 
 
 	/* Subscription hide Label */

@@ -63,4 +63,7 @@ if($teaminfo) {
 	
 	<div class="details"><?php the_content(); ?></div>
 	
+	<div class="bottomButton buttondiv">
+		<a href="<?php echo get_site_url() ?>/contact/#contactform" class="defaultbtn">Contact Us</a>
+	</div>
 </article>

@@ -688,11 +688,11 @@ function get_team_posts($e) {
             <p class="jobtitle"><?php echo $jobtitle ?></p> 
             <?php } ?>
             <?php if ($excerpt) { ?>
-            <p class="excerpt"><?php echo $excerpt ?></p>   
+            <!-- <p class="excerpt"><?php //echo $excerpt ?></p> -->   
             <?php } ?>
 
             <div class="buttondiv">
-                <a href="<?php echo $pagelink ?>#info">Read More</a>
+                <a href="<?php echo $pagelink ?>#info">Read Bio</a>
             </div>
         </div>
     </div>  

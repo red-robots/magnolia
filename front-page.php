@@ -81,9 +81,23 @@
 		</div>
 	</section>
 
+	<?php 
+		/*=== Experience ===*/ 
+		$exp_section_text = get_field('exp_section_text');
+	?>
+	<?php if ($exp_section_text) { ?>
+	<section id="experience" class="section defaultsection experience-section">
+		<div class="wrapper clear">
+			<div class="intro about fullwidth text-center large-text fadeInUp wow">
+				<?php echo $exp_section_text ?>
+			</div>	
+		</div>
+	</section>
+	<?php } ?>
+
 
 	<?php  
-		/*=== SECTION 4 ===*/
+		/*=== Why Magnolia Trust Company ===*/
 		$why_title = get_field('why_title');
 		$description = get_field('description');
 		$details = get_field('details');
