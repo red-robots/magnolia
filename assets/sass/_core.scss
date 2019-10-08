@@ -265,29 +265,6 @@ big {
 	}
 }
 
-// body.subpage {
-// 	.site-header {
-// 		position: relative;
-// 	}
-// 	.logo-wrapper {
-// 		padding-top: 15px;
-// 	}
-// 	.main-navigation {
-// 		top: 0;
-// 		margin-top: 10px;
-// 		padding-bottom: 8px;
-// 		@include mid {
-// 			top: 25px;
-// 			margin-top: 0;
-// 			padding-bottom: 0;
-// 		}
-// 	}
-// 	.main-navigation,
-// 	.animateThis * {
-// 		animation: none!important;
-// 	}
-// }
-
 body.scrolled {
 	.site-header {
 		transform: translateY(-100%);
@@ -1963,26 +1940,30 @@ h1.entry-title {
 			font-size: 3em;
 		}
 	}
-	.gform_wrapper .gform_footer,
-	.gform_wrapper form ul.gform_fields li.gfield,
-	.gform_wrapper form ul.gform_fields li.gfield .ginput_container,
-	.gform_wrapper form ul.gform_fields li.gfield input,
-	.gform_wrapper form ul.gform_fields li.gfield textarea,
-	.gform_wrapper form ul.gform_fields li.gfield select {
+}
+
+#gform_wrapper_1.gform_wrapper {
+	.gform_footer,
+	form ul.gform_fields li.gfield,
+	form ul.gform_fields li.gfield .ginput_container,
+	form ul.gform_fields li.gfield input,
+	form ul.gform_fields li.gfield textarea,
+	form ul.gform_fields li.gfield select {
 		width: 100%;
 		float: left;
 	}
-	.gform_wrapper form ul.gform_fields li.gfield {
+	form ul.gform_fields li.gfield {
 		margin-top: 18px;
 	}
-	.gform_wrapper form ul.gform_fields li.gfield label {
+	form ul.gform_fields li.gfield label {
 		margin-top: 5px;
 	}
-	.gform_wrapper form ul.gform_fields li.gfield .ginput_container.ginput_recaptcha {
+	form ul.gform_fields li.gfield .ginput_container.ginput_recaptcha {
 		width: auto;
 		float: none;
 	}
 }
+
 .sitemaplink {
 	.sitemapnav {
 		display: inline-block;
