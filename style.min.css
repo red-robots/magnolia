@@ -1810,7 +1810,12 @@ big{font-size:125%}
 }@media(min-width:740px){.site-footer .col-right{width:40%;float:right}
 }.site-footer .cta-btn a{display:inline-block;text-decoration:none;padding:8px 20px;background:#FFF;font-size:25px;color:#091f40}
 .site-footer .cta-btn a:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
-.first-section .site-header{position:relative}
+.footerlogos{margin-top:20px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center}
+.footerlogos .ftlogo{display:inline-block;width:65px;padding:4px}
+.footerlogos img{width:100%;height:auto;float:left}
+@media screen and (max-width:380px){#footer{text-align:center}
+.footerlogos{margin-top:30px;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+}.first-section .site-header{position:relative}
 .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute !important;height:1px;width:1px;overflow:hidden}
 html,body,.site{height:100% !important}
 .content-main-wrapper{height:100% !important}

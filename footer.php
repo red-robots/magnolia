@@ -21,6 +21,7 @@ $arr = get_field('arr','option');
 // $legal_disclaimer = get_field('legal_disclaimer','option');
 $requestBtn = get_field('req_btn_name','option');
 $requestLink = get_field('req_btn_link','option');
+$footlogos = get_field('footlogos','option');
 ?>
 </div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear site-footer footer-section">
@@ -61,6 +62,15 @@ $requestLink = get_field('req_btn_link','option');
 					<div class="cta-btn"><a href="<?php echo $requestLink ?>"><?php echo $requestBtn ?></a></div>
 				<?php } ?>
 				<?php wp_nav_menu( array( 'menu' => 'Footer Menu', 'menu_id' => 'footermenu', 'container_class'=>'footernav','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
+				
+				<?php /* FOOTER LOGOS */ ?>
+				<?php if ($footlogos) { ?>
+				<div class="footerlogos">
+					<?php foreach ($footlogos as $f) { ?>
+					<span class="ftlogo"><img src="<?php echo $f['url'] ?>" alt="<?php echo $f['title'] ?>" /></span>	
+					<?php } ?>
+				</div>
+				<?php } ?>
 			</div>
 
 		</div>

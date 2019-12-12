@@ -307,6 +307,32 @@ body.scrolled {
 	}
 }
 
+.footerlogos {
+	margin-top: 20px;
+	@include flexbox();
+	@include flexbox-align-items(center);
+	@include flexbox-align-content(center);
+	.ftlogo {
+		display: inline-block;
+		width: 65px;
+		padding: 4px;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		float: left;
+	}
+}
+@media screen and (max-width: 380px) {
+	#footer {
+		text-align: center;
+	}
+	.footerlogos {
+		margin-top: 30px;
+		@include flexbox-justify(center);
+	}
+}
+
 .first-section {
 	.site-header {
 		position: relative;
