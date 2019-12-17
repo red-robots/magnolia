@@ -66,8 +66,16 @@ $footlogos = get_field('footlogos','option');
 				<?php /* FOOTER LOGOS */ ?>
 				<?php if ($footlogos) { ?>
 				<div class="footerlogos">
-					<?php foreach ($footlogos as $f) { ?>
-					<span class="ftlogo"><img src="<?php echo $f['url'] ?>" alt="<?php echo $f['title'] ?>" /></span>	
+					<?php foreach ($footlogos as $f) { 
+					$logoLink = get_field("pagelink",$f['ID']); 
+					$open_link = '';
+					$close_link = '';
+					if($logoLink) {
+						$open_link = '<a href="'.$logoLink.'" target="_blank">';
+						$close_link = '</a>';
+					}
+					?>
+					<span class="ftlogo"><?php echo $open_link ?><img src="<?php echo $f['url'] ?>" alt="<?php echo $f['title'] ?>" /><?php echo $close_link ?></span>	
 					<?php } ?>
 				</div>
 				<?php } ?>

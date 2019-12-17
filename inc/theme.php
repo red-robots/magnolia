@@ -290,6 +290,13 @@ class WP_Image_Size_Limit {
     }
     <?php endif; ?>
 
+    .toplevel_page_acf-options [data-name="footlogos"] [data-name="caption"],
+    .toplevel_page_acf-options [data-name="footlogos"] [data-name="alt"],
+    .toplevel_page_acf-options [data-name="footlogos"] [data-name="description"],
+    .toplevel_page_acf-options [data-name="footlogos"] p.media-types-required-info {
+      display: none!important;
+    }
+
     </style>
     <!-- END Custom Max Upload Size -->
     <?php
