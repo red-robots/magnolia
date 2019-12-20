@@ -309,19 +309,22 @@ body.scrolled {
 
 .footerlogos {
 	margin-top: 20px;
+	margin-left: -10px;
+	margin-right: -10px;
 	@include flexbox();
 	@include flexbox-align-items(center);
 	@include flexbox-align-content(center);
 	.ftlogo {
 		display: inline-block;
-		width: 65px;
-		padding: 4px;
+		float: left;
+		padding: 10px;
 	}
 	a {
 		display: block;
 		float: left;
 	}
 	img {
+		max-width: 100px;
 		width: 100%;
 		height: auto;
 		float: left;
