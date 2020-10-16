@@ -87,5 +87,18 @@ $footlogos = get_field('footlogos','option');
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Poppins:400,500,600,700|Roboto+Slab:100,300,400,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+
 </body>
 </html>
