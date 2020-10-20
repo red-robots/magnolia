@@ -23,6 +23,34 @@ $requestBtn = get_field('req_btn_name','option');
 $requestLink = get_field('req_btn_link','option');
 $footlogos = get_field('footlogos','option');
 ?>
+
+<!-- Logos Section -->
+<?php if( have_rows('industry_memberships', 'option') ) : ?>
+	
+		<div class="ilogos intro top-text large-text text-center animated fadeInUp wow animated sut-grey">
+			<div class="wrapper">
+			<h2 class="section-title">Industry Memberships</h2>
+				<div class="ilogo-flex">
+					<?php while( have_rows('industry_memberships', 'option') ) : the_row(); 
+						$iLogo = get_sub_field('logo', 'option');
+						// echo '<pre>';
+						// print_r($iLogo);
+						// echo '</pre>';
+						$iLink = get_field(  'pagelink', $iLogo['ID']  );
+						?>
+						<div class="ilogo-img">
+							<?php if($iLink) {   echo '<a href="'.$iLink.'" target="_blank">';   } ?>
+								<img src="<?php echo $iLogo['url']; ?>"  alt="<?php echo $iLogo['alt']; ?>">
+							<?php if($iLink) { echo '</a>'; } ?>
+						</div>
+					<?php endwhile; ?>
+				</div>
+		</div>
+	</div>
+<?php endif; ?>
+<!-- /Logos Section -->
+
+
 </div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear site-footer footer-section">
 		<div class="wrapper clear">
