@@ -140,7 +140,55 @@ big {
 		/*width: 1200px;*/
 	}
 }
+.sut-grey {
+	width: 100%;
+	float: left;
+	background-color: $slgrey;
+}
+.ilogos {
+	width: 100%;
+	float: left;
+	padding: 50px 0;
+}
+.ilogo-flex {
+	width: 100%;
+	float: left;
+	padding: 40px 0;
+	@media screen and (min-width: $tabwidth) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: stretch;
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+	.ilogo-img {
+		margin: 20px 0;
+		@media screen and (min-width: $tabwidth) {
+			flex-basis: auto;
+			flex-grow: 1;
+			border-left: 1px solid #fff;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		@media screen and (min-width: $deskwidth) {
+		
+		}
+		&:first-child {
+			@media screen and (min-width: $tabwidth) {
+				border: 0;
+			}
+		}
+		img {
 
+		}
+	}
+}
 /* Logo */
 .sr-only {
 	display: none;
