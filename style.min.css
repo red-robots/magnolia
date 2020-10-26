@@ -322,7 +322,7 @@ html,body,.site{height:100% !important}
 .tagline{position:relative;margin:0;display:inline-block;color:#FFF;font-size:2em}
 .tagline span{display:block;width:100%;line-height:1;position:relative;color:transparent}
 .tagline span em{font-style:normal;display:block}
-.tagline span.t1{font-family:"Roboto Slab",serif;font-weight:200;font-size:.7em;text-transform:lowercase;padding:30px 50px 15px}
+.tagline span.t1{font-family:"Roboto Slab",serif;font-weight:200;text-transform:lowercase;padding:30px 50px 15px}
 .tagline span.t2{font-family:'Poppins',sans-serif;font-weight:600;font-size:1.5em;text-transform:uppercase;position:relative;top:0}
 .tagline span.t2 em{font-style:normal;display:block}
 .tagline.animated:before{content:"";display:block;background:#FFF;position:absolute;top:0;left:0;width:0;height:4px;-webkit-animation:vertical_middle_line 1s normal forwards ease;animation:vertical_middle_line 1s normal forwards ease;-webkit-animation-delay:2.2s;animation-delay:2.2s}
