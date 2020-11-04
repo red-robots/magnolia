@@ -9,20 +9,20 @@
                     *.googleapis.com 
                     *.gstatic.com
                     *.typekit.net
-                    https://use.fontawesome.com
-                    https://www.google.com 
+                    *.fontawesome.com
+                    *.google.com 
                     data:;
 
     img-src         https: 'self' 'unsafe-inline'
                     *.gravatar.com
-                    https://use.fontawesome.com
-                    https://www.google.com
-                    https://www.facebook.com  
+                    *.fontawesome.com
+                    *.google.com
+                    *.facebook.com  
                     data:;
 
     style-src       https: 'unsafe-inline' 
-                    https://fonts.googleapis.com 
-                    https://use.typekit.net ;
+                    *.googleapis.com 
+                    *.typekit.net ;
 
     script-src      'self' 'unsafe-inline'
                     'nonce-<?php echo $nonce; ?>' 
@@ -34,21 +34,24 @@
     script-src-elem 'self' 'unsafe-inline'
                     'nonce-<?php echo $nonce; ?>' 
                     *.facebook.net
-                    http://www.google-analytics.com
+                    *.google-analytics.com
                     *.googleapis.com
                     *.fontawesome.com ;
 
     style-src-elem  'self' 'unsafe-inline'
                     *.typekit.net
                     *.fontawesome.com
-                    *.googleapis.com ;
+                    *.googleapis.com
+                    *.googletagmanager.com
+                    *.google-analytics.com
+                    *.google.com  ;
 
     frame-src       *.facebook.com
                     *.google.com
                     *.gstatic.com ;
 
-    connect-src     https://www.google-analytics.com 
-                    www.google-analytics.com 
+    connect-src     *.google-analytics.com 
+                    *.google-analytics.com 
                     https://stats.g.doubleclick.net ;
     child-src 'none' ; 
     object-src 'none' ;
