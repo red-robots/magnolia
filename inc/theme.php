@@ -20,6 +20,16 @@ function bw_enable_strict_transport_security_hsts_header_wordpress() {
 }
 add_action( 'send_headers', 'bw_enable_strict_transport_security_hsts_header_wordpress' );
 
+add_filter( 'script_loader_tag', 'add_nonce_to_script', 10, 3 );
+
+function add_nonce_to_script( $tag, $handle, $src ) {
+    global $my_nonce;
+    return '<script type="text/javascript" src="' . esc_url( $src ) . '" nonce="' . esc_attr( $my_nonce ) . '"></script>';
+}
+
+// Then... $data is the inline JS from wherever
+wp_add_inline_script('my-script', $data, 'before');
+
 /*-------------------------------------
 	Custom client login, link and title.
 ---------------------------------------*/
