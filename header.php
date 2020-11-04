@@ -3,43 +3,46 @@
 <head>
 	<meta http-equiv="Content-Security-Policy" content="default-src 'none' ; 
 
-    font-src        'self' 
-                    https://fonts.googleapis.com 
-                    https://fonts.gstatic.com
-                    https://use.typekit.net
-                    https://p.typekit.net
-                    https://use.fontawesome.com
-                    https://www.google.com ;
 
-    img-src         'self' 'unsafe-inline' 
-                    https://secure.gravatar.com
-                    http://0.gravatar.com
+    font-src        https: 'self' 'unsafe-inline'
+                    *.googleapis.com 
+                    *.gstatic.com
+                    *.typekit.net
                     https://use.fontawesome.com
-                    https://www.google.com  ;
+                    https://www.google.com 
+                    data:;
 
-    style-src       'self' 'unsafe-inline' 
+    img-src         https: 'self' 'unsafe-inline'
+                    *.gravatar.com
+                    https://use.fontawesome.com
+                    https://www.google.com
+                    https://www.facebook.com  
+                    data:;
+
+    style-src       https: 'unsafe-inline' 
                     https://fonts.googleapis.com 
                     https://use.typekit.net ;
 
-    script-src      'self' 
-                    https://ajax.googleapis.com
-                    https://use.fontawesome.com  ;
+    script-src      'self'
+                    *.googleapis.com
+                    *.fontawesome.com  ;
 
-    manifest-src    'self'
+    manifest-src    'self' ;
 
-    script-src-elem 'self' 
-                    https://ajax.googleapis.com
-                    https://use.fontawesome.com ;
+    script-src-elem https: 'self' 'unsafe-inline'
+                    *.facebook.net
+                    http://www.google-analytics.com
+                    *.googleapis.com
+                    *.fontawesome.com ;
 
-    style-src-elem 'self' 'unsafe-inline'
-                    https://p.typekit.net
-                    https://use.fontawesome.com
-                    https://fonts.googleapis.com
-                    https://use.typekit.net
-                    https://fonts.googleapis.com ;
+    style-src-elem  'self' 'unsafe-inline'
+                    *.typekit.net
+                    *.fontawesome.com
+                    *.googleapis.com ;
 
-    frame-src       'self'
-                    https://www.google.com ;
+    frame-src       *.facebook.com
+                    *.google.com
+                    *.gstatic.com ;
 
     connect-src     https://www.google-analytics.com 
                     www.google-analytics.com 
