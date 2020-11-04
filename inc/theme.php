@@ -16,6 +16,7 @@
 function bw_enable_strict_transport_security_hsts_header_wordpress() {
     
       header( 'Strict-Transport-Security: max-age=15768000' );
+      header("X-XSS-Protection: 1; mode=block");
 
 }
 add_action( 'send_headers', 'bw_enable_strict_transport_security_hsts_header_wordpress' );
