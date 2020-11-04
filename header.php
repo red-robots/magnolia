@@ -36,15 +36,15 @@
                     *.facebook.net
                     *.google-analytics.com
                     *.googleapis.com
-                    *.fontawesome.com ;
+                    *.fontawesome.com
+                    *.googletagmanager.com
+                    *.google-analytics.com
+                    *.google.com ;
 
     style-src-elem  'self' 'unsafe-inline'
                     *.typekit.net
                     *.fontawesome.com
-                    *.googleapis.com
-                    *.googletagmanager.com
-                    *.google-analytics.com
-                    *.google.com  ;
+                    *.googleapis.com ;
 
     frame-src       *.facebook.com
                     *.google.com
