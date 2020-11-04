@@ -24,14 +24,14 @@
                     https://fonts.googleapis.com 
                     https://use.typekit.net ;
 
-    script-src      https: 'self'
+    script-src      'self' 'unsafe-inline'
                     'nonce-<?php echo $nonce; ?>' 
                     *.googleapis.com
                     *.fontawesome.com  ;
 
     manifest-src    'self' ;
 
-    script-src-elem https: 'self'
+    script-src-elem 'self' 'unsafe-inline'
                     'nonce-<?php echo $nonce; ?>' 
                     *.facebook.net
                     http://www.google-analytics.com
