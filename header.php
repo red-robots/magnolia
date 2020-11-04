@@ -3,19 +3,47 @@
 <head>
 	<meta http-equiv="Content-Security-Policy" content="default-src 'none' ; 
 
-    font-src 'self' https://fonts.googleapis.com 
-                    https://fonts.gstatic.com ;
+    font-src        'self' 
+                    https://fonts.googleapis.com 
+                    https://fonts.gstatic.com
+                    https://use.typekit.net
+                    https://p.typekit.net
+                    https://use.fontawesome.com
+                    https://www.google.com ;
 
-    img-src 'self' 'unsafe-inline' 
-                    magnoliatrust.com  ;
+    img-src         'self' 'unsafe-inline' 
+                    https://secure.gravatar.com
+                    http://0.gravatar.com
+                    https://use.fontawesome.com
+                    https://www.google.com  ;
 
-    style-src 'self' 'unsafe-inline' 
+    style-src       'self' 'unsafe-inline' 
+                    https://fonts.googleapis.com 
+                    https://use.typekit.net ;
+
+    script-src      'self' 
+                    https://ajax.googleapis.com
+                    https://use.fontawesome.com  ;
+
+    manifest-src    'self'
+
+    script-src-elem 'self' 
+                    https://ajax.googleapis.com
+                    https://use.fontawesome.com ;
+
+    style-src-elem 'self' 'unsafe-inline'
+                    https://p.typekit.net
+                    https://use.fontawesome.com
+                    https://fonts.googleapis.com
+                    https://use.typekit.net
                     https://fonts.googleapis.com ;
 
-    script-src      https://www.magnoliatrust.com 
-                    https://magnoliatrust.com  ; 
+    frame-src       'self'
+                    https://www.google.com ;
 
-    connect-src 'none' ;
+    connect-src     https://www.google-analytics.com 
+                    www.google-analytics.com 
+                    https://stats.g.doubleclick.net ;
     child-src 'none' ; 
     object-src 'none' ;
     frame-ancestors 'none' ; ">
