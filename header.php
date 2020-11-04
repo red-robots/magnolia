@@ -37,7 +37,8 @@
                     *.fontawesome.com
                     *.googletagmanager.com
                     *.google-analytics.com
-                    *.google.com ;
+                    *.google.com
+                    *.gstatic.com ;
 
     style-src-elem  'self' 'unsafe-inline'
                     *.typekit.net
