@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <?php $nonce = wp_create_nonce('my-nonce'); ?>
+    <?php //$nonce = wp_create_nonce('my-nonce'); ?>
 	<meta http-equiv="Content-Security-Policy" content="default-src 'none' ; 
 
 
@@ -25,14 +25,12 @@
                     *.typekit.net ;
 
     script-src      'self' 'unsafe-inline'
-                    'nonce-<?php echo $nonce; ?>' 
                     *.googleapis.com
                     *.fontawesome.com  ;
 
     manifest-src    'self' ;
 
     script-src-elem 'self' 'unsafe-inline'
-                    'nonce-<?php echo $nonce; ?>' 
                     *.facebook.net
                     *.google-analytics.com
                     *.googleapis.com
@@ -66,11 +64,11 @@
 <!--
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
 -->
-<script nonce="<?php echo $nonce; ?>">var siteURL = '<?php echo get_site_url();?>';</script>
+<script >var siteURL = '<?php echo get_site_url();?>';</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144338734-1"></script>
-<script nonce="<?php echo $nonce; ?>">
+<script >
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
