@@ -38,7 +38,8 @@
                     *.googletagmanager.com
                     *.google-analytics.com
                     *.google.com
-                    *.gstatic.com ;
+                    *.gstatic.com
+                    *.hrmdirect.com ;
 
     style-src-elem  'self' 'unsafe-inline'
                     *.typekit.net
@@ -47,7 +48,8 @@
 
     frame-src       *.facebook.com
                     *.google.com
-                    *.gstatic.com ;
+                    *.gstatic.com 
+                    *.hrmdirect.com ;
 
     connect-src     *.google-analytics.com 
                     *.google-analytics.com 
