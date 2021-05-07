@@ -683,15 +683,15 @@ function get_team_posts($e) {
             <div class="photo <?php echo ($photo) ? 'yes':'noimage'?>"<?php echo $bg ?>>
                 <img src="<?php echo $px2 ?>" alt="" aria-hidden="true">
             </div>
-            <h3 class="name"><?php echo $name; ?></h3>
+            <h3 class="name js-titles"><?php echo $name; ?></h3>
             <?php if ($jobtitle) { ?>
-            <p class="jobtitle"><?php echo $jobtitle ?></p> 
+            <p class="jobtitle js-blocks"><?php echo $jobtitle ?></p> 
             <?php } ?>
             <?php if ($excerpt) { ?>
             <!-- <p class="excerpt"><?php //echo $excerpt ?></p> -->   
             <?php } ?>
 
-            <div class="buttondiv">
+            <div class="buttondiv ">
                 <a href="<?php echo $pagelink ?>#info">Read Bio</a>
             </div>
         </div>

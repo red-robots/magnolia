@@ -9,11 +9,16 @@ function acstarter_scripts() {
 		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2', false);
 		wp_enqueue_script('jquery');
 
-	
+	wp_enqueue_script( 
+			'acstarter-vendors', 
+			get_template_directory_uri() . '/assets/js/vendors.min.js', 
+			array(), '20120206', 
+			true 
+		);
 
 	wp_enqueue_script( 
 			'acstarter-blocks', 
-			get_template_directory_uri() . '/assets/js/vendors.min.js', 
+			get_template_directory_uri() . '/assets/js/vendors/blocks.js', 
 			array(), '20120206', 
 			true 
 		);
