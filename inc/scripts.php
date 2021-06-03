@@ -79,5 +79,8 @@ function acstarter_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Then... $data is the inline JS from wherever
+// wp_add_inline_script('my-script', $data, 'before');
 }
 add_action( 'wp_enqueue_scripts', 'acstarter_scripts' );
