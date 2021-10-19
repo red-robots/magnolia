@@ -2379,6 +2379,10 @@ body.error404 {
     	padding-bottom: 35px!important;
     }
 }
-
+article.singlepost p a,
+section.subpage-section article.singlepost p a {
+	font-weight: bold;
+	display: inline;
+}
 
 
