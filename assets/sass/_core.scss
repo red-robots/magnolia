@@ -1124,9 +1124,11 @@ html, body, .site {
 		position: relative;
 	}
 	.r-col-bott {
-		position: absolute;
-		bottom: 0;
-		left: 0;
+		@media screen and (min-width: $tabwidth) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
 	}
 }
 

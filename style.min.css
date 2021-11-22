@@ -411,7 +411,6 @@ html,body,.site{height:100% !important}
 .section.footer-section .footernav ul#footermenu li:first-child{border-left:0;padding:0 8px 0 0}
 .section.footer-section .footer-text{font-size:14px;line-height:1.8;margin-top:30px}
 .section.footer-section .col-left{position:relative}
-.section.footer-section .r-col-bott{position:absolute;bottom:0;left:0}
 .section-logo{margin-bottom:6%}
 .section-logo .magnoliasvg .st0{fill:#091f40}
 .section-logo .magnoliasvg .st0.logotxt2{fill:#5c8097}
@@ -668,6 +667,7 @@ article.singlepost p a,section.subpage-section article.singlepost p a{font-weigh
 .ilogo-flex .ilogo-img{-ms-flex-preferred-size:auto;flex-basis:auto;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;border-left:1px solid #fff;margin:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .ilogo-flex .ilogo-img:first-child{border:0}
 .flexrow{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.section.footer-section .r-col-bott{position:absolute;bottom:0;left:0}
 }@media(min-width:900px){.main-navigation{top:50px;margin-top:0;width:300px;float:none;-webkit-animation-delay:1.1s;animation-delay:1.1s}
 .main-navigation .menu{float:right;padding-left:20px;padding-right:20px}
 .logo-wrapper{padding-top:40px;padding-bottom:0;left:0}
