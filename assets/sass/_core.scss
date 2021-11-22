@@ -1103,6 +1103,31 @@ html, body, .site {
 .section.footer-section {
 	background: $color-dark-blue;
 	color: #FFF;
+	.footernav ul#footermenu {
+		li {
+			display: inline-block;
+			border-left: 1px solid #fff;
+			line-height: .8;
+			padding: 0 8px 0 12px;
+			&:first-child {
+				border-left: 0;
+				padding: 0 8px 0 0;
+			}
+		}
+	}
+	.footer-text {
+		font-size: 14px;
+		line-height: 1.8;
+		margin-top: 30px;
+	}
+	.col-left {
+		position: relative;
+	}
+	.r-col-bott {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 .section-logo {

@@ -54,7 +54,7 @@ $footlogos = get_field('footlogos','option');
 </div><!-- #content -->
 	<footer id="footer" data-anchor="page6" class="section clear site-footer footer-section">
 		<div class="wrapper clear">
-			<div class="intro footer-info col-left">
+			<div class="intro footer-info col-left js-blocks">
 				<h2 class="section-title wtm"><?php echo get_bloginfo('name'); ?><sup>TM</sup></h2>
 				<?php if ($phone_number) { ?>
 				<div class="phone"><?php echo $phone_number; ?></div>	
@@ -66,30 +66,43 @@ $footlogos = get_field('footlogos','option');
 					<?php  } ?>
 				<?php } ?>
 
-				<?php if ($linkedin || $facebook || $twitter) { ?>
-				<div class="social-links">
-					<?php if ($linkedin) { ?>
-					<a href="<?php echo $linkedin; ?>" target="_blank"><i class="fab fa-linkedin-in"></i><span class="sr-only">Linkedin</span></a>
+				<div class="r-col-bott">
+					<?php if ($linkedin || $facebook || $twitter) { ?>
+					<div class="social-links">
+						<?php if ($linkedin) { ?>
+						<a href="<?php echo $linkedin; ?>" target="_blank"><i class="fab fa-linkedin-in"></i><span class="sr-only">Linkedin</span></a>
+						<?php } ?>
+						<?php if ($facebook) { ?>
+						<a href="<?php echo $facebook; ?>" target="_blank"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+						<?php } ?>
+						<?php if ($twitter) { ?>
+						<a href="<?php echo $twitter; ?>" target="_blank"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+						<?php } ?>
+					</div>
 					<?php } ?>
-					<?php if ($facebook) { ?>
-					<a href="<?php echo $facebook; ?>" target="_blank"><i class="fab fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-					<?php } ?>
-					<?php if ($twitter) { ?>
-					<a href="<?php echo $twitter; ?>" target="_blank"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
-					<?php } ?>
-				</div>
-				<?php } ?>
 
-				<div class="copyright clear">
-					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?><sup>TM</sup>. <?php if($arr)echo $arr; ?>
+					<?php wp_nav_menu( array( 'menu' => 'Footer Menu', 'menu_id' => 'footermenu', 'container_class'=>'footernav','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
 				</div>
+
+				
 			</div>
 
-			<div class="footer-menu col-right">
+			<div class="footer-menu col-right js-blocks">
 				<?php if ($requestBtn && $requestLink) { ?>
 					<div class="cta-btn"><a href="<?php echo $requestLink ?>"><?php echo $requestBtn ?></a></div>
 				<?php } ?>
-				<?php wp_nav_menu( array( 'menu' => 'Footer Menu', 'menu_id' => 'footermenu', 'container_class'=>'footernav','link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
+				<?php 
+					$footerD = get_field('footer_text', 'option');
+					if( $footerD ){
+				 ?>
+					 <div class="footer-text">
+					 	<?php echo $footerD; ?>
+					 </div>
+				<?php } ?>
+				
+				<div class="copyright clear">
+					&copy; <?php echo date('Y') ?> <?php echo get_bloginfo('name'); ?><sup>TM</sup>. <?php if($arr)echo $arr; ?>
+				</div>
 				
 				<?php /* FOOTER LOGOS */ ?>
 				<?php if ($footlogos) { ?>

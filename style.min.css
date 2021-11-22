@@ -407,6 +407,11 @@ html,body,.site{height:100% !important}
 .section.iconssection{background:#f3f3f3;font-size:30px}
 .section.iconssection h2{font-size:1.35em;font-weight:300;margin:0}
 .section.footer-section{background:#091f40;color:#FFF}
+.section.footer-section .footernav ul#footermenu li{display:inline-block;border-left:1px solid #fff;line-height:.8;padding:0 8px 0 12px}
+.section.footer-section .footernav ul#footermenu li:first-child{border-left:0;padding:0 8px 0 0}
+.section.footer-section .footer-text{font-size:14px;line-height:1.8;margin-top:30px}
+.section.footer-section .col-left{position:relative}
+.section.footer-section .r-col-bott{position:absolute;bottom:0;left:0}
 .section-logo{margin-bottom:6%}
 .section-logo .magnoliasvg .st0{fill:#091f40}
 .section-logo .magnoliasvg .st0.logotxt2{fill:#5c8097}
