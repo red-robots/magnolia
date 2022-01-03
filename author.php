@@ -132,7 +132,7 @@ get_header(); ?>
 							            <?php } ?>
 
 							            <div class="buttondiv">
-							                <a href="<?php echo $pagelink ?>#info">Read More</a>
+							                <a href="<?php the_permalink(); ?>">Read More</a>
 							            </div>
 							        </div>
 							    </div>
@@ -260,7 +260,7 @@ get_header(); ?>
 							            <?php } ?>
 
 							            <div class="buttondiv">
-							                <a href="<?php echo $pagelink ?>#info">Read More</a>
+							                <a href="<?php the_permalink(); ?>">Read More</a>
 							            </div>
 							        </div>
 							    </div>
