@@ -85,6 +85,12 @@ get_header(); ?>
 						<?php $j++; } ?>
 
 					<?php } else { 
+						$postId = $e->ID;
+					    $name = $e->post_title;
+					    $thumbId = get_post_thumbnail_id( $postId );
+					    $photo = wp_get_attachment_image_src($thumbId,'large');
+					    $bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+					    $authorId = $e->post_author;
 
 						$excerpt = get_the_excerpt();
 						$author = get_the_author($postId);
@@ -213,7 +219,12 @@ get_header(); ?>
 						<?php $j++; } ?>
 
 					<?php } else { 
-
+						$postId = $e->ID;
+					    $name = $e->post_title;
+					    $thumbId = get_post_thumbnail_id( $postId );
+					    $photo = wp_get_attachment_image_src($thumbId,'large');
+					    $bg = ($photo) ? ' style="background-image:url('.$photo[0].')"':'';
+					    $authorId = $e->post_author;
 						$excerpt = get_the_excerpt();
 						$author = get_the_author($postId);
 					    $author_fullname = ($author) ? ucwords($author) : ''; 
