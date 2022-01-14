@@ -689,11 +689,12 @@ function get_team_posts($e) {
             <?php } ?>
             <?php if ($excerpt) { ?>
             <!-- <p class="excerpt"><?php //echo $excerpt ?></p> -->   
-            <?php } ?>
+            
 
             <div class="buttondiv ">
                 <a href="<?php echo $pagelink ?>#info">Read Bio</a>
             </div>
+            <?php } ?>
         </div>
     </div>  
     <?php
