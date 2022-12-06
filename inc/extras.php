@@ -522,10 +522,17 @@ function get_post_blog_posts($e) {
         $author_fullname = ucwords($author_name);
     }
     $teaminfo = get_field('teaminfo','user_' . $authorId);
+    $disable_author = get_field('disable_link_to_author', 'user_' . $authorId );
     if($teaminfo) {
         $authorFull = $teaminfo->post_title;
         $bio_page = get_permalink($teaminfo->ID) . '#bio';
-        $author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
+        
+        // echo $disable_author;
+        if( $disable_author == 'yes' ) {
+            $author_fullname = $authorFull;
+        } else {
+            $author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
+        }
     }
 
     ob_start(); ?>

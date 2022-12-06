@@ -29,7 +29,12 @@ $teaminfo = get_field('teaminfo','user_' . $author_id);
 if($teaminfo) {
 	$authorFull = $teaminfo->post_title;
 	$bio_page = get_permalink($teaminfo->ID) . '#bio';
-	$author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
+	$disable_author = get_field('disable_link_to_author', 'user_' . $author_id );
+	if( $disable_author == 'yes' ) {
+		$author_fullname = $authorFull;
+	} else {
+		$author_fullname = '<a href="'.$bio_page.'">'.$authorFull.'</a>';
+	}
 }
 ?>
 
