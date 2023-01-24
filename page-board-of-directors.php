@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Team
+ * Template Name: Board
  */
 global $post;
 $pageId = $post->ID;
@@ -52,7 +52,7 @@ get_header(); ?>
 						array(
 							'taxonomy' => 'team_type', // your custom taxonomy
 							'field' => 'slug',
-							'terms' => array( 'staff' ) // the terms (categories) you created
+							'terms' => array( 'board-of-directors' ) // the terms (categories) you created
 						)
 					)
 				);

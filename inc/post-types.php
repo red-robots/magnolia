@@ -108,15 +108,15 @@ function js_custom_init() {
 add_action( 'init', 'ii_custom_taxonomies', 0 );
 function ii_custom_taxonomies() {
         $posts = array();
-        // $posts = array(
-        //     array(
-        //         'post_type' => 'position',
-        //         'menu_name' => 'Categories',
-        //         'plural'    => 'Assignment Categories',
-        //         'single'    => 'Category',
-        //         'taxonomy'  => 'position_categories'
-        //     ),
-        // );
+        $posts = array(
+            array(
+                'post_type' => 'team',
+                'menu_name' => 'Team Type',
+                'plural'    => 'Team Type',
+                'single'    => 'Team Type',
+                'taxonomy'  => 'team_type'
+            ),
+        );
     
     if($posts) {
         foreach($posts as $p) {
