@@ -1274,26 +1274,28 @@ body.subpage {
 	a:not(.morebtn) {
 		display: inline-block;
 		color: $color__link;
-		text-decoration: none;
+		text-decoration: underline 0.1em rgba($color__link, 0);
+  		transition: text-decoration-color 300ms;
 		position: relative;
-		&:after {
-			content:"";
-			display: inline-block;
-			width: 100%;
-			border-bottom: 1px solid $color__link;
-			position: absolute;
-			bottom: -2px;
-    		left: 0;
-    		transition: all ease-out .3s;
-    		transform: scaleX(0);
-    		opacity: 0;
-		}
+		// &:after {
+		// 	content:"";
+		// 	display: inline-block;
+		// 	width: 100%;
+		// 	border-bottom: 1px solid $color__link;
+		// 	position: absolute;
+		// 	bottom: -2px;
+  //   		left: 0;
+  //   		transition: all ease-out .3s;
+  //   		transform: scaleX(0);
+  //   		opacity: 0;
+		// }
 		&:hover {
 			color: $color__link;
-			&:after {
-				opacity: 1;
-				transform: scaleX(1);
-			}
+			text-decoration-color: rgba($color__link, 1);
+			// &:after {
+			// 	opacity: 1;
+			// 	transform: scaleX(1);
+			// }
 		}
 	}
 
@@ -2412,4 +2414,10 @@ section.subpage-section article.singlepost p a {
 	display: inline;
 }
 
-
+.details ol li, .details ul li {
+	margin-bottom: 15px;
+}
+section.subpage-section article.singlepost li a {
+	font-weight:bold;
+	display: inline;
+}
