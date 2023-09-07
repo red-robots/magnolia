@@ -1,0 +1,65 @@
+.section-locations .details {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  border-top: 1px solid #CCC;
+}
+.section-locations .details:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.section-locations .details .infocol {
+  width: 100%;
+  position: relative;
+}
+.section-locations .details.twocol .infocol {
+  width: 50%;
+}
+.section-locations .details .infocol.address-info {
+  padding-right: 8vw;
+}
+.section-locations .details .infocol.map-info img.resizer {
+  width: 100%;
+  float: left;
+}
+.section-locations .details .infocol.map-info iframe {
+  width: 100%!important;
+  height: 100%!important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #F0F3F4!important;
+  z-index: 5;
+}
+.section-locations address {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.section-locations address p {
+  margin-top: 0;
+}
+.section-locations address p:last-child {
+  margin-bottom: 0;
+}
+.section-locations .subhead {
+  margin-bottom: 5px;
+  color: #091f40;
+}
+.section-locations h3 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 25px;
+}
+
+@media screen and (max-width:1024px) {
+  .section-locations .details.twocol .infocol {
+    width: 100%;
+  }
+  .section-locations .details .infocol.address-info {
+    padding-right: 0;
+  }
+}
