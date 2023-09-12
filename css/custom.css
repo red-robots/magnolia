@@ -14,6 +14,16 @@
   width: 100%;
   position: relative;
 }
+.section-locations .details .infocol a {
+  color: #045b9e;
+  text-decoration: none;
+  border-bottom: 1px dotted #045b9e;
+  line-height: 1.2;
+}
+.section-locations .details .infocol a:hover,
+.section-locations .details .infocol a:focus {
+  color: #0e90f4;
+}
 .section-locations .details.twocol .infocol {
   width: 50%;
 }
