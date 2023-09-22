@@ -1,8 +1,8 @@
-<?php 
+<?php
 /*
  * Template Name: Locations
  */
-get_header(); 
+get_header();
 ?>
 
 	<?php
@@ -10,11 +10,11 @@ get_header();
 	$banner_src = ($banner) ? $banner['url'] : '';
 	$banner_caption = get_field('banner_caption');
 	?>
-	
+
 	<?php if ($banner) { ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
-		
+
 		<h1 style="display:none;"><?php the_title(); ?></h1>
 
 		<?php /*=== SECTION 1 ===*/ ?>
@@ -27,8 +27,8 @@ get_header();
 				</div>
 			</div>
 		</section>
-		
-		
+
+
 		<?php /*=== SECTION 2 ===*/ ?>
 		<div id="content"></div>
 		<section id="section2" data-anchor="page2" class="section subpage-section">
@@ -41,12 +41,12 @@ get_header();
         <?php } ?>
 
 
-        <?php  
+        <?php
         $locations = get_field('locations');
         if($locations) { ?>
 
         <div class="section-locations">
-          <?php foreach ($locations as $a) { 
+          <?php foreach ($locations as $a) {
             $name = $a['name'];
             $address = $a['address'];
             $map = $a['google_map_embed'];
@@ -60,11 +60,10 @@ get_header();
               <?php } ?>
               <?php if ($address) { ?>
                 <address>
-                  <div class="subhead"><strong>Office Address:</strong></div>
                   <div class="address"><?php echo $address ?></div>
                 </address>
               <?php } ?>
-            </div>  
+            </div>
             <?php } ?>
 
             <?php if ($map) { ?>
@@ -78,14 +77,14 @@ get_header();
         </div>
 
         <?php } ?>
-				
+
 			</div>
 		</section>
 
 
 		<?php /*=== Learn More ===*/ ?>
 		<?php  get_template_part( 'template-parts/content', 'learnmore' ); ?>
-	
+
 	<?php endwhile; ?>
 
 	<?php } else { ?>
